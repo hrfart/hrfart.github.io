@@ -112,12 +112,14 @@ function Star(){
     this.b=150+random(55); 
     
     
+     
     this.updatedraw = function(){
     noStroke();
+    var ww=max(w,h*1280/720);
     this.p += this.os;
     for(var j=srin;j>0;j--){
       fill(250,max(0,min(255,.4*(srin-j)/srin*this.b*(.1+.9*pow(sin(this.p),2)))));
-      ellipse(this.x*w,this.y*h,this.s*w*j/srin*2,this.s*w*j/srin*2); 
+      ellipse(this.x*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
     }
     };
     
