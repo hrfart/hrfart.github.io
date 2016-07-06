@@ -32,11 +32,12 @@ var approachang=0;
 
 function preload(){
   noCursor();
-  hand=loadImage("http://hrfart.github.io/hand.png");
+ hand=loadImage("http://hrfart.github.io/hand.png");
   brush=loadImage("http://hrfart.github.io/brrush.png");
   blink=loadImage("http://hrfart.github.io/blink.png");
   moon=loadImage("http://hrfart.github.io/moon.png");
 	for(var i=0;i<3;i++)leaves[i]=loadImage("http://hrfart.github.io/leaf"+(i+1)+".png");
+
 
 }
 
@@ -187,7 +188,7 @@ function Tree(){
       //update the angles
       stroke(this.col);
       //tint(this.col);
-      strokeWeight(w*.01);
+      strokeWeight(min(w,h*1280/720)*.01);
       //draw the tree here.
       this.index=0;
       this.totalang=0;
@@ -264,7 +265,7 @@ function Moon(){
  	this.drawmoon = function(my,h){
  	imageMode(CENTER);
 	push();
- 	if(mouseIsPressed) handang+=PI/15;
+	if(mouseIsPressed) handang+=PI/15;
  	else if(abs(sin(handang))>.3)handang+=PI/7.5;
 /*
  this.approachang=min(h*.1,max((-my+oldyy),-h*.1))/h/.1*1.5;
@@ -276,7 +277,7 @@ function Moon(){
 */
 
 //oldyy-my
-
+var ww=min(w,h*1280/720);
  approachang=min(h*.1,max((-my+this.oldyyy),-h*.1))/h/.1*1.5;
  // approachang=PI;
   this.moonang+=(approachang-this.moonang)*.15;
@@ -285,19 +286,19 @@ function Moon(){
  	rotate(this.moonang);
  	translate(-mouseX,-mouseY);
 	//this.mang=moonang;
-   	translate(mouseX+w*.15,mouseY+w*.035);
+   	translate(mouseX+ww*.15,mouseY+ww*.035);
     // ellipse(0,0,w*.2,w*.2);
     push();
-    translate(-w*angpos,-w*angpos*ap2);
+    translate(-ww*angpos,-ww*angpos*ap2);
     rotate(PI/20*sin(handang));
-    translate(w*angpos,w*angpos*ap2);
-    image(brush,0,0,w*.3,w*.3);
+    translate(ww*angpos,ww*angpos*ap2);
+    image(brush,0,0,ww*.3,ww*.3);
     //ellipse(-w*angpos,-w*angpos*ap2,10,10);
     pop();
-   image(hand,0,0,w*.3,w*.3);
-   image(moon,0,0,w*.3,w*.3);
+   image(hand,0,0,ww*.3,ww*.3);
+   image(moon,0,0,ww*.3,ww*.3);
    if(blinkt>0){
-     image(blink,0,0,w*.3,w*.3);
+     image(blink,0,0,ww*.3,ww*.3);
      blinkt--;
    }else if(random(10)<.35)blinkt=3+random(3);
    pop();
