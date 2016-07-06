@@ -264,8 +264,8 @@ function Moon(){
  	this.drawmoon = function(my,h){
  	imageMode(CENTER);
 	push();
- 	if(mouseIsPressed) handang+=PI/30;
- 	else if(abs(sin(handang))>.3)handang+=PI/15;
+ 	if(mouseIsPressed) handang+=PI/15;
+ 	else if(abs(sin(handang))>.3)handang+=PI/7.5;
 /*
  this.approachang=min(h*.1,max((-my+oldyy),-h*.1))/h/.1*1.5;
  if(this.approachang>this.moonang)this.moonspeed=min(this.moonspeed+.03,.2);
