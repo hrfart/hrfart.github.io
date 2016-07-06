@@ -32,11 +32,11 @@ var approachang=0;
 
 function preload(){
   noCursor();
-  hand=loadImage("http://localhost/hand.png");
-  brush=loadImage("http://localhost/brrush.png");
-  blink=loadImage("http://localhost/blink.png");
-  moon=loadImage("http://localhost/moon.png");
-	for(var i=0;i<3;i++)leaves[i]=loadImage("http://localhost/leaf"+(i+1)+".png");
+  hand=loadImage("http://hrfart.github.io/hand.png");
+  brush=loadImage("http://hrfart.github.io/brrush.png");
+  blink=loadImage("http://hrfart.github.io/blink.png");
+  moon=loadImage("http://hrfart.github.io/moon.png");
+	for(var i=0;i<3;i++)leaves[i]=loadImage("http://hrfart.github.io/leaf"+(i+1)+".png");
 
 }
 
