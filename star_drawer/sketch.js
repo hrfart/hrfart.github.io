@@ -55,11 +55,11 @@ function setup(){
 	tinkle.setVolume(0);
 	tinkle.loop();
 	
-	wind.setVolume(.3);
+	wind.setVolume(.45);
 	wind.pan(-.5);
 	wind.loop();
 	
-	music.setVolume(.15);
+	music.setVolume(.3);
 	music.pan(.3);
 	music.loop();
 	
@@ -89,7 +89,7 @@ createCanvas(windowWidth, windowHeight);
  
  if(mouseIsPressed){
  //tinkle.setVolume(.01);
- 	if(tinksound<.03)tinksound+=.003;
+ 	if(tinksound<.04)tinksound+=.003;
     clickt=min(clickt+.02,1);
     xx=mouseX;
     yy=mouseY;
