@@ -26,12 +26,21 @@ var handang=0;
 var angpos=.045;
 var ap2=.9;
 var blinkt=0;
-
+var tinksound=0;
 //var moonang;
 var approachang=0;
+var tinkpan=0;
+var wind;
+var tinkle;
+var music
 
 function preload(){
   noCursor();
+  wind=loadSound("http://hrfart.github.io/wind.mp3");
+    tinkle=loadSound("http://hrfart.github.io/tinkle.m4a");
+music=loadSound("http://hrfart.github.io/music.m4a");
+
+
  hand=loadImage("http://hrfart.github.io/hand.png");
   brush=loadImage("http://hrfart.github.io/brrush.png");
   blink=loadImage("http://hrfart.github.io/blink.png");
@@ -43,6 +52,17 @@ function preload(){
 
 
 function setup(){
+	tinkle.setVolume(0);
+	tinkle.loop();
+	
+	wind.setVolume(.3);
+	wind.pan(-.5);
+	wind.loop();
+	
+	music.setVolume(.15);
+	music.pan(.3);
+	music.loop();
+	
 	mooner = new Moon();
 	imageMode(CENTER);
 	stars=[];
@@ -59,6 +79,7 @@ var oldx,oldy,speed,clus,xx,yy,clickt;
 var starsper=2;
 
 function draw(){
+
 createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
 	h= windowHeight;
@@ -67,6 +88,8 @@ createCanvas(windowWidth, windowHeight);
  for(var i=0;i<numstars;i++)stars[i].updatedraw();
  
  if(mouseIsPressed){
+ //tinkle.setVolume(.01);
+ 	if(tinksound<.03)tinksound+=.003;
     clickt=min(clickt+.02,1);
     xx=mouseX;
     yy=mouseY;
@@ -86,11 +109,17 @@ createCanvas(windowWidth, windowHeight);
     //  mouseX+xx*j/starsper,mouseY+yy*j/starsper,clus));
       
     }
-  }else clickt=0;
+  }else {clickt=0;
+  if(tinksound>0)tinksound-=.003;
+  if(tinksound<0)tinksound=0;
+  }
   mooner.drawmoon(mouseY,h);
   oldx=mouseX;
   oldy=mouseY;
-
+  
+tinkle.setVolume(tinksound);
+tinkle.pan(sin(tinkpan)*.7);
+tinkpan+=.1;
  for(var i=0;i<numtrees;i++)trees[i].updatedraw();
 
 }
