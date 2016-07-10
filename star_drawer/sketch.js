@@ -87,7 +87,7 @@ createCanvas(windowWidth, windowHeight);
 
  for(var i=0;i<numstars;i++)stars[i].updatedraw();
  
- if(mouseIsPressed){
+ if(mouseIsPressed||touchIsDown){
  //tinkle.setVolume(.01);
  	if(tinksound<.04)tinksound+=.003;
     clickt=min(clickt+.02,1);
