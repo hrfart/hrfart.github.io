@@ -55,11 +55,11 @@ function setup(){
 	tinkle.setVolume(0);
 	tinkle.loop();
 	
-	wind.setVolume(.45);
+	wind.setVolume(.82);
 	wind.pan(-.5);
 	wind.loop();
 	
-	music.setVolume(.3);
+	music.setVolume(.6);
 	music.pan(.3);
 	music.loop();
 	
@@ -89,7 +89,7 @@ createCanvas(windowWidth, windowHeight);
  
  if(mouseIsPressed||touchIsDown){
  //tinkle.setVolume(.01);
- 	if(tinksound<.04)tinksound+=.003;
+ 	if(tinksound<.07)tinksound+=.004;
     clickt=min(clickt+.02,1);
     xx=mouseX;
     yy=mouseY;
@@ -110,7 +110,7 @@ createCanvas(windowWidth, windowHeight);
       
     }
   }else {clickt=0;
-  if(tinksound>0)tinksound-=.003;
+  if(tinksound>0)tinksound-=.004;
   if(tinksound<0)tinksound=0;
   }
   mooner.drawmoon(mouseY,h);
