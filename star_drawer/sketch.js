@@ -36,7 +36,7 @@ var music
 
 function preload(){
   noCursor();
-  wind=loadSound("http://hrfart.github.io/wind.mp3");
+  wind=loadSound("http://hrfart.github.io/wind2.mp3");
     tinkle=loadSound("http://hrfart.github.io/tinkle.m4a");
 music=loadSound("http://hrfart.github.io/music.m4a");
 
