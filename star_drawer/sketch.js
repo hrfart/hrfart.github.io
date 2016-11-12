@@ -45,7 +45,7 @@ music=loadSound("http://hrfart.github.io/music.m4a");
   brush=loadImage("http://hrfart.github.io/brrush.png");
   blink=loadImage("http://hrfart.github.io/blink.png");
   moon=loadImage("http://hrfart.github.io/moon.png");
-	for(var i=0;i<3;i++)leaves[i]=loadImage("http://hrfart.github.io/leaf"+(i+1)+".png");
+	for(var i=0;i<3;i++)leaves[i]=loadImage("http://hrfart.github.io/leaf"+(i+1)+"s.png");
 
 
 }
