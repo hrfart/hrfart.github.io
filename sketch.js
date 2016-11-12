@@ -17,7 +17,7 @@ var w;
 var h;
 var fr=30;
 
-var basepath="";
+var basepath="http://hrfart.github.io/";
 
 //management of buttons and menus
 var trans;
