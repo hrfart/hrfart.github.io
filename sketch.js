@@ -1,6 +1,6 @@
 //to do:
 
-//not resizing
+//height can't decrease
 //sound bad on mobile
 //custom loading page
 
@@ -68,7 +68,6 @@ swells=loadSound(basepath+"swell.mp3");
 shrink=loadSound(basepath+"shrink.mp3");
 
 //load in sounds here
-h=displayHeight;
 for(var i=0;i<9;i++)leaves[i]=loadImage(basepath+"leaf"+i+".png");
 populatemenus();
 
@@ -267,6 +266,8 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	};
 	
 	this.click = function(){
+		touchX=-1000;
+		touchY=-1000;
 		if(this.sound) this.dosound();
 		else{
 			if(!this.internal){
