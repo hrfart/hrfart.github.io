@@ -1,9 +1,11 @@
 //to do:
 
+//not resizing
+//sound bad on mobile
+//custom loading page
 
 
-//do sound effects
-
+//occasional loud swelling??
 //galaxies??? probably not
 
 
@@ -94,9 +96,10 @@ function setup(){
 
 
 function draw(){
-	if(windowHeight!=0)h= windowHeight;
-	createCanvas(windowWidth, h);
+	
+	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
+	h= windowHeight;
 	
 
   	fr=getFrameRate();
