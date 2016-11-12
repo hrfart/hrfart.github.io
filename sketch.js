@@ -1,9 +1,9 @@
 //to do:
 
 //height can't decrease
-//sound bad on mobile
 //custom loading page
-
+//speed up stars on mobile
+//reset click on mobile
 
 //occasional loud swelling??
 //galaxies??? probably not
@@ -75,11 +75,10 @@ populatemenus();
 
 
 function setup(){
-	//tinkle.setVolume(0);
-	//tinkle.loop();
+
 	music[currentsong].loop();
 	musicplaying=true;
-	//trans=new Transit();
+
 	trans=0;
 	menu=1;
 	prevmenu=2;
@@ -212,8 +211,8 @@ function Star(){
     this.updatedraw = function(){
     noStroke();
     var ww=max(w,h*1280/720);
-    this.p += this.os*30/fr;
-    this.x-=this.s*.3*30/fr+.075*(.5-abs(.5-trans));
+    this.p += this.os;
+    this.x-=this.s*.3+.075*(.5-abs(.5-trans));
     if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
       fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
