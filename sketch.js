@@ -212,8 +212,8 @@ function Star(){
     this.updatedraw = function(){
     noStroke();
     var ww=max(w,h*1280/720);
-    this.p += this.os;
-    this.x-=this.s*.3+.075*(.5-abs(.5-trans));
+    this.p += this.os*30/fr;
+    this.x-=this.s*.3*30/fr+.075*(.5-abs(.5-trans));
     if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
       fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
@@ -638,15 +638,15 @@ function Windleaf(){
    this.updateanddraw=function(){
     
     //update position
-   this.x-=3*(this.speed+random(this.speed*2))+.05*(.5-abs(.5-trans));;  
+   this.x-=3*(this.speed+random(this.speed*2))*30/fr+.05*(.5-abs(.5-trans));;  
      //this.y+=3*(this.speed*4.5-random(this.speed*8))*1.2;
-     this.yv+=random(this.speed)*this.ya*.5;
+     this.yv+=random(this.speed)*this.ya*.5*30/fr;
      if(abs(this.yv)>.005){
      	this.ya=-this.ya;
-     	this.yv=.0049*this.yv/abs(this.yv);
+     	this.yv=.0049*this.yv/abs(this.yv)*30/fr;
      }
      this.y+=this.yv+.001;
-     this.angle+=.5*(this.speed/15.0+random(this.speed)/10.0+.1);
+     this.angle+=.5*(this.speed/15.0+random(this.speed)/10.0+.1)*30/fr;
      
    
      
