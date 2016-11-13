@@ -3,7 +3,9 @@
 //height can't decrease
 //custom loading page
 //speed up stars on mobile
-//reset click on mobile
+
+//reset click on mobile-fixed?
+//music starts on mobile-fixed?
 
 //occasional loud swelling??
 //galaxies??? probably not
@@ -51,6 +53,9 @@ var evol=.06;
 var wvol=.21;
 
 
+var lasttouchX=999999;
+var lasttouchY=999999;
+
 function preload(){
 mute2=loadImage(basepath+"mute2.png");
 //image(mute2,0,0,w,h);
@@ -76,8 +81,7 @@ populatemenus();
 
 function setup(){
 
-	music[currentsong].loop();
-	musicplaying=true;
+
 
 	trans=0;
 	menu=1;
@@ -169,6 +173,11 @@ function draw(){
 function domusic(){
 	var hush=.3;
 	
+	if(musicplaying==false){
+			music[currentsong].loop();
+			musicplaying=true;
+	}
+		
 	if(menu!=4 && currentsong!=0){
 		music[currentsong].stop();
 		currentsong=0;
@@ -258,6 +267,9 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.mouseover = function(){
 		
+		
+		if(touchX==lasttouchX && touchY==lasttouchY) return false;
+		
 		if(abs(this.x-mouseX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-mouseY/h)<this.hi/2*this.mm/h*sm) return true;
 		else if(abs(this.x-touchX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-touchY/h)<this.hi/2*this.mm/h*sm) return true;
 
@@ -265,8 +277,11 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	};
 	
 	this.click = function(){
-		touchX=-1000;
-		touchY=-1000;
+
+			lasttouchX=touchX;
+			lasttouchY=touchY;
+		
+		
 		if(this.sound) this.dosound();
 		else{
 			if(!this.internal){
