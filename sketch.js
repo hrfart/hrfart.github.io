@@ -598,8 +598,8 @@ function populatemenus(){
 	
 	menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
 	menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
-	menus[23].add(new Button(true,3,.97,.65,.1,.1,false,"back"));
-	menus[24].add(new Button(true,3,.97,.65,.1,.1,false,"back"));
+	menus[23].add(new Button(true,3,.97,.65,.1,.1,false,"back2"));
+	menus[24].add(new Button(true,3,.97,.65,.1,.1,false,"back2"));
 	//menus[22].add(new Vid(false,"1696192640"));
 	//add back buttons
 	for(var i=7;i<19;i++)menus[i].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
