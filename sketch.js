@@ -3,7 +3,7 @@
 
 
 //custom loading page
-//brief loud volume after vis
+//brief loud volume after vids
 //external links 
 
 //occasional loud swelling?? not a huge deal.
@@ -274,10 +274,10 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		else{
 			if(!this.internal){
 			//addTab(this.link);
-			 //link(this.link);
+			 link(this.link,"m");
 			// var links=window.open('',"_blank");
 			 //links.location.href = this.link;
-			 location = this.link;
+			// location = this.link+" target='_blank'";
 			 }else {
 				
 					mouseIsPressed=false;
@@ -655,7 +655,9 @@ function frontleaves(){
    }
 }
 
-
+function link(url, winName, options) {
+  winName && open(url, winName, options) || (location = url);
+}
 
 function Windleaf(){
 
