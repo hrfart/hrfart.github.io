@@ -5,8 +5,8 @@
 //speed up stars on mobile
 
 
-//music starts on mobile
 
+//music only starts after click on mobile
 //occasional loud swelling??
 //galaxies??? probably not
 
@@ -19,7 +19,7 @@ var stars=[];
 //main enviornment vairables
 var w;
 var h;
-var fr=30;
+var fr;
 
 var basepath="http://hrfart.github.io/";
 
@@ -56,6 +56,8 @@ var omobile=false;
 var lasttouchX=999999;
 var lasttouchY=999999;
 
+
+
 function preload(){
 mute2=loadImage(basepath+"mute2.png");
 //image(mute2,0,0,w,h);
@@ -88,7 +90,7 @@ function setup(){
 	prevmenu=2;
 	imageMode(CENTER);
 	fullscreen();
-  	 frameRate(fr);
+  	 frameRate(30);
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	
 	if(deviceOrientation=="undefined") omobile=false;
@@ -105,11 +107,12 @@ function draw(){
 	if(omobile)evol=0;
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
-	h= windowHeight;
+	h=windowHeight;
 	
 	
 
   	fr=getFrameRate();
+
   	domusic();
   	
   	sitebackground();
@@ -205,49 +208,6 @@ function domusic(){
 
 
 
-//////////////////////BACKGROUND//////////////////////
-function sitebackground(){
-	background(0); 
-
- 	for(var i=0;i<numstars;i++)stars[i].updatedraw();
- 	
- }
- 
- 
-
-//stars
-var srin=5;
-function Star(){
-	this.x=random(1.2); 
-    this.y=random(1); 
-    this.s=.002+random(.002);
-    this.p=random(TWO_PI);
-    this.os=(.6+random(1.2))/fr;
-    this.b=150+random(55); 
-    
-    
-     
-    this.updatedraw = function(){
-    noStroke();
-    var ww=max(w,h*1280/720);
-    this.p += this.os;
-    this.x-=this.s*.3+.075*(.5-abs(.5-trans));
-    if(this.x<0)this.x+=1.2;
-    for(var j=srin;j>0;j--){
-      fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
-      ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
-    }
-    };
-    
-    this.setxys = function(x1,y1,speed){
-		this.x=(x1/w-(speed-random(speed*2))); 
-    	this.y=(y1/h-(speed-random(speed*2))*w/h); 
-     	//this.s=.002+random(.001); 
-     	this.os=(1+random(2.5))/fr;
-    	this.b=100+random(140);  
-    };
-
-}
 
 
 
@@ -688,4 +648,51 @@ function Windleaf(){
      if(this.x<-.1)return 1;
      return 0;
   }
+}
+
+
+
+
+
+//////////////////////BACKGROUND//////////////////////
+function sitebackground(){
+	background(0); 
+
+ 	for(var i=0;i<numstars;i++)stars[i].updatedraw();
+ 	
+ }
+ 
+ 
+
+//stars
+var srin=5;
+function Star(){
+	this.x=random(1.2); 
+    this.y=random(1); 
+    this.s=.002+random(.002);
+    this.p=random(TWO_PI);
+    this.os=(.6+random(1.2));
+    this.b=150+random(55); 
+
+    this.updatedraw = function(){
+    noStroke();
+    var ww=max(w,h*1280/720);
+    var twop;
+    for(var k=30;k>=1;k--)
+    	if(fr<k)
+    		twop=k;
+    twop=1/twop;
+    this.p = (this.p+this.os*1.2*twop)%TWO_PI;
+    this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
+    fill(255,0);
+    text(twop,w/2,h/2);
+    if(this.x<0)this.x+=1.2;
+    for(var j=srin;j>0;j--){
+      fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
+      ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
+    }
+  //  return 0;
+    };
+    
+
 }
