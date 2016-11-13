@@ -1,7 +1,7 @@
 //to do:
 
 
-//dissappearing stars with math art and interactive
+
 //custom loading page
 //brief loud volume after vis
 //external links 
