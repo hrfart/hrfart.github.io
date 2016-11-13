@@ -102,7 +102,7 @@ function setup(){
 function draw(){
 
 
-	if(touchX != 0)evol=0;
+	if(omobile)evol=0;
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
 	h= windowHeight;
@@ -626,7 +626,7 @@ function frontleaves(){
   
 
   
-    if(leafgentime>0)leafgentime-=1+25*(.5-abs(.5-trans));
+    if(leafgentime>0)leafgentime-=30/fr+25*(.5-abs(.5-trans));
     else if(random(1)<likelyhoodofleaf){
        leafgentime= framesbetweenleaves;
        append(wleaves,new Windleaf());
