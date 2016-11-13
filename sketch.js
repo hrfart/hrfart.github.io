@@ -1,12 +1,11 @@
 //to do:
 
-//height can't decrease
 //custom loading page
+//brief loud volume after vis
+//external links 
 
-
-
-//music only starts after click on mobile
-//occasional loud swelling??
+//occasional loud swelling?? not a huge deal.
+//music only starts after click on mobile. also w/e
 //galaxies??? probably not
 
 
@@ -20,7 +19,7 @@ var w;
 var h;
 var fr;
 
-var basepath="http://hrfart.github.io/";
+var basepath="";//"http://hrfart.github.io/";
 
 //management of buttons and menus
 var trans;
@@ -48,14 +47,15 @@ var fade=0;
 var leaves=[];
 
 var gosounds;
-var evol=.06;
+var evol=.05;
 var wvol=.21;
 
 var omobile=false;
 var lasttouchX=999999;
 var lasttouchY=999999;
 
-
+var silentm;
+var silentpm;
 
 function preload(){
 mute2=loadImage(basepath+"mute2.png");
@@ -112,14 +112,17 @@ function draw(){
 
   	fr=getFrameRate();
 
-  	domusic();
+  	
   	
   	sitebackground();
  
  //	fill(255);
  //	text(""+omobile,w/2,h/2);
  	
-	
+	silentm=false;
+	silentpm=false;
+	if(menu>6 && menu!=22 && menu!=23)silentm=true;
+	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23)silentpm=true;
 	
  	cursor(ARROW);
  	var k=menus[0].domenu();
@@ -136,9 +139,11 @@ function draw(){
   
    }
    
-   if(prevmenu>6)fade=trans;
+   if(menu>6 && prevmenu>6) fade=1;
+   else if(prevmenu>6)fade=trans;
    else if (menu>6)fade=(1-trans);
    else fade=0;
+   
    var drewleaves=false;
 	if(menu>6||(prevmenu>6&&trans>0)){
 		frontleaves()	
@@ -151,14 +156,15 @@ function draw(){
   //  var oldm=menu;
   	fill(155);
     if(trans>0){
-    	if(prevmenu>6&&trans<.1) menus[prevmenu].close();
+    	
     	trans=trans-.008*(5-9*abs(trans-.5))*30/fr;
     	//pushMatrix();
     	translate((trans-1)*w,0);
-    
-    	menus[prevmenu].domenu();
+    	
+    	if(prevmenu>6&&(trans<.1||menu==22)) menus[prevmenu].close();
+    	else menus[prevmenu].domenu();
+    	
     	translate(w,0);
-   
     	menus[menu].domenu();
     	if(trans<=.005)trans=0;
     	translate(-trans*w,0);
@@ -179,7 +185,7 @@ function draw(){
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
-    
+    domusic();
 
 }
 
@@ -200,12 +206,12 @@ function domusic(){
 	}
 	
 	if(currentsong!=0)music[currentsong].setVolume(1);
-	else if(menu>6)music[currentsong].setVolume(trans*mute*hush);
-	else if(prevmenu>6&&trans>0)music[currentsong].setVolume((1-trans)*mute*hush);
+	else if(silentm)music[currentsong].setVolume(trans*mute*hush);
+	else if(silentpm&&trans>0&&trans!=1)music[currentsong].setVolume((1-trans)*mute*hush);
 	else music[currentsong].setVolume(mute*hush);
 	
 	gosounds=true;
-	if(mute==0 || currentsong>0 || menu>6)gosounds=false;
+	if(mute==0 || currentsong>0 || silentm)gosounds=false;
 }
 
 
@@ -268,8 +274,10 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 				
 					mouseIsPressed=false;
 					touchIsDown=false;
-					prevmenu=menu;
-					menu=this.ourmenu;
+					if(!(this.ourmenu==22 && menu==22)){
+						prevmenu=menu;
+						menu=this.ourmenu;
+					}
 				//	this.transs=1;
 					
 					//PLAYSWAPSOUND
@@ -302,7 +310,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 				if(mouseIsPressed||touchIsDown||omobile==true && ok2click==0){
 					
 					
-					if( this.internal==true && this.sound == false){
+					if( this.internal==true && this.sound == false && !(this.ourmenu==22 && menu==22)){
 					this.transs=1;
 					//fill(255);
 					//text(""+this.transs,.5*w,.5*h);
@@ -397,25 +405,45 @@ function Disptext(ss,xx,yy,si){
 
 }
 
-var div;
-var div2;
-function Vid(youtube,ss){
+
+function Vid(youtubes,ss,mmm){
 	this.t=ss;
 	this.running=false;
-	
+	this.div;
+	this.div2;
+	this.ourmenu=mmm;
 	this.updateanddraw = function(){
-		
-		if(this.running==false&&menu>6){
-			if(youtube==true) div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen></iframe>");
-  			else div=createDiv("<iframe src=https://bandcamp.com/EmbeddedPlayer/album="+this.t+"/size=large/bgcol=333333/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/' seamless></iframe>");
+	this.youtube=youtubes;	
+		if(this.running==false&&this.ourmenu>6){
+			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen></iframe>");
+  			else if(this.youtube>1) this.div= createDiv("<iframe src='"+this.t+"' frameborder='0'></iframe>");
+  			else this.div=createDiv("<iframe src=https://bandcamp.com/EmbeddedPlayer/album="+this.t+"/size=large/bgcol=333333/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/' seamless></iframe>");
   			this.running=true;
   		}
   		if(this.running==true){
-			div2=createDiv("<style> iframe{ width: "+min(w*.7,700)+"px; height: "+(h*.5)+"px; } </style>");
-  			if(menu>6)
-  				div.position((.15+trans)*w,.2*h);
-  			else
-  				div.position((.15+(trans-1))*w,.2*h);
+			if(this.youtube==0)this.div2=createDiv("<style> iframe{ width: "+min(w*.7,700)+"px; height: "+(h*.5)+"px; } </style>");
+  			else if(this.youtube==3) this.div2=createDiv("<style> iframe{ width: "+(w*.95)+"px; height: "+(h*.6)+"px; } </style>");
+    		else if(this.youtube==4) this.div2=createDiv("<style> iframe{ width: "+(w*.9)+"px; height: "+(h*.8)+"px; } </style>");
+  			else this.div2=createDiv("<style> iframe{ width: "+(w*.7)+"px; height: "+(h*.5)+"px; } </style>");
+  			
+  			
+  			if(this.youtube==4){
+  				if(menu==this.ourmenu)
+  					this.div.position((.05+trans)*w,0);
+  				else
+  					this.div.position((.05+(trans-1))*w,0);
+  			
+  			}else if(this.youtube==3){
+  				if(menu==this.ourmenu)
+  					this.div.position((.025+trans)*w,.2*h);
+  				else
+  					this.div.position((.025+(trans-1))*w,.2*h);
+  			}else{
+  				if(menu==this.ourmenu)
+  					this.div.position((.15+trans)*w,.2*h);
+  				else
+  					this.div.position((.15+(trans-1))*w,.2*h);
+  			}
   		}
 	
 	};
@@ -423,7 +451,8 @@ function Vid(youtube,ss){
 	this.close = function(){
 		if(this.running==true){
 			this.running=false;
-			div.remove();
+			this.div.remove();
+			this.div2.remove();
 		}
 	};
 }
@@ -471,7 +500,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<23;i++) menus[i]=new Menu();
+	for(var i=0;i<25;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone's portfolio",.5,.35,.3));
@@ -483,7 +512,7 @@ function populatemenus(){
 	menus[0].add(new Button(true,3,.625,.1,.23,.15,false,"interactive"));
 	menus[0].add(new Button(true,4,.875,.1,.23,.15,false,"music"));
 	menus[0].add(new Button(true,5,.25,.87,.12,.12,false,"contact"));
-	menus[0].add(new Button(false,"http://hrfart.github.io/home.html",.5,.87,.12,.12,false,"mathart"));
+	menus[0].add(new Button(true,22,.5,.87,.12,.12,false,"mathart"));
 	menus[0].add(new Button(true,0,.75,.87,.12,.12,true,"mute"));
 	menus[0].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.125,.92,.12,.12,false,"youtube"));
 	menus[0].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.92,.12,.12,false,"bandcamp"));
@@ -511,9 +540,9 @@ function populatemenus(){
 	menus[2].add(new Button(true,18,.85,.73,asizeb,asizeb,false,"hello"));
 	
 	//interactive
-	menus[3].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.5,.4,.3,.3,false,"stardrawer"));
+	menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
 	menus[3].add(new Button(false,"http://hrfart.github.io/SomeSchlubScalesCity.zip",.75,.6,.3,.3,false,"schlub"));
-	menus[3].add(new Button(false,"http://hrfart.github.io/app/index.html",.25,.6,.3,.3,false,"staycation"));
+	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
 	
 	//music
 	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.25,.18));
@@ -543,32 +572,39 @@ function populatemenus(){
 	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",.5,.6,.3,.3,false,"bridges"));
 	
 	//videos
-	menus[7].add(new Vid(true,"oBvd2DjFr60"));
-	menus[8].add(new Vid(true,"1Mih9U_q-lY"));
-	menus[9].add(new Vid(true,"xE3bz0Vx6dc"));
-	menus[10].add(new Vid(true,"C-Bp3IprUw4"));
+	menus[7].add(new Vid(1,"oBvd2DjFr60",7));
+	menus[8].add(new Vid(1,"1Mih9U_q-lY",8));
+	menus[9].add(new Vid(1,"xE3bz0Vx6dc",9));
+	menus[10].add(new Vid(1,"C-Bp3IprUw4",10));
 	
-	menus[11].add(new Vid(true,"pAygnhump5s"));
-	menus[12].add(new Vid(true,"qBegtnZOXCg"));
-	menus[13].add(new Vid(true,"LYrup9h3goo"));
+	menus[11].add(new Vid(1,"pAygnhump5s",11));
+	menus[12].add(new Vid(1,"qBegtnZOXCg",12));
+	menus[13].add(new Vid(1,"LYrup9h3goo",13));
 	
-	menus[14].add(new Vid(true,"TnrMlbZKZLQ"));
-	menus[15].add(new Vid(true,"0cEVwoQqgG4"));
-	menus[16].add(new Vid(true,"qXU2-0r18Sg"));
-	menus[17].add(new Vid(true,"AEZ6qmHFGYk"));
-	menus[18].add(new Vid(true,"nHd89kA6Utc"));
+	menus[14].add(new Vid(1,"TnrMlbZKZLQ",14));
+	menus[15].add(new Vid(1,"0cEVwoQqgG4",15));
+	menus[16].add(new Vid(1,"qXU2-0r18Sg",16));
+	menus[17].add(new Vid(1,"AEZ6qmHFGYk",17));
+	menus[18].add(new Vid(1,"nHd89kA6Utc",18));
 	
 	//albums
-	menus[19].add(new Vid(false,"1696192640"));
-	menus[20].add(new Vid(false,"387913001"));
-	menus[21].add(new Vid(false,"3372271177"));
+	menus[19].add(new Vid(0,"1696192640",19));
+	menus[20].add(new Vid(0,"387913001",20));
+	menus[21].add(new Vid(0,"3372271177",21));
 
-
-	menus[22].add(new Vid(false,"1696192640"));
+	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
+	menus[23].add(new Vid(4,"http://hrfart.github.io/app/index.html",23));
+	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer/index.html",24));
+	
+	menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
+	menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
+	menus[23].add(new Button(true,3,.97,.65,.1,.1,false,"back"));
+	menus[24].add(new Button(true,3,.97,.65,.1,.1,false,"back"));
+	//menus[22].add(new Vid(false,"1696192640"));
 	//add back buttons
 	for(var i=7;i<19;i++)menus[i].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	for(var i=19;i<22;i++)menus[i].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
-	menus[22].add(new Button(true,2,.5,.8,.2,.1,false,"back"));
+	//menus[22].add(new Button(true,2,.5,.8,.2,.1,false,"back"));
 }
 
 
