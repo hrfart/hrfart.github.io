@@ -662,7 +662,7 @@ function Windleaf(){
     //update position
    this.x-=3*(this.speed+random(this.speed*2))*30/fr+.05*(.5-abs(.5-trans));;  
      //this.y+=3*(this.speed*4.5-random(this.speed*8))*1.2;
-     this.yv+=random(this.speed)*this.ya*.5*30/fr;
+     this.yv+=random(this.speed)*this.ya*.5;
      if(abs(this.yv)>.005){
      	this.ya=-this.ya;
      	this.yv=.0049*this.yv/abs(this.yv)*30/fr;
