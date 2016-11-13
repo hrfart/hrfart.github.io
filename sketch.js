@@ -5,7 +5,6 @@
 //custom loading page
 //brief loud volume after vis
 //external links 
-//add readme to schlub
 
 //occasional loud swelling?? not a huge deal.
 //music only starts after click on mobile. also w/e
@@ -602,8 +601,8 @@ function populatemenus(){
 	menus[21].add(new Vid(0,"3372271177",21));
 
 	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
-	menus[23].add(new Vid(4,"http://hrfart.github.io/app/index.html",23));
-	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer/index.html",24));
+	menus[23].add(new Vid(4,"http://hrfart.github.io/app",23));
+	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
 	
 	menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
 	menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
@@ -733,7 +732,7 @@ function Star(){
 	text(""+this.x,w/2,h/2);
     noStroke();
     var ww=max(w,h*1280/720);
-    var twop;
+    var twop=30;
     for(var k=30;k>=1;k--)
     	if(fr<k)
     		twop=k;
@@ -742,10 +741,13 @@ function Star(){
     this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
     fill(255,0);
     text(twop,w/2,h/2);
+  
+
     if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
       fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
-    if(menu<22||trans>0)  ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
+    if(menu<22||trans>0)  
+  ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
     }
   //  return 0;
     };
