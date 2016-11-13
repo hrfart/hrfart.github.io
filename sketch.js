@@ -4,7 +4,7 @@
 //custom loading page
 //speed up stars on mobile
 
-//reset click on mobile
+
 //music starts on mobile
 
 //occasional loud swelling??
@@ -52,7 +52,7 @@ var gosounds;
 var evol=.06;
 var wvol=.21;
 
-var mobile=true;
+var omobile=false;
 var lasttouchX=999999;
 var lasttouchY=999999;
 
@@ -90,7 +90,9 @@ function setup(){
 	fullscreen();
   	 frameRate(fr);
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
-
+	
+	if(deviceOrientation=="undefined") omobile=false;
+	else omobile=true;
 }
 
 
@@ -98,11 +100,13 @@ function setup(){
 
 
 function draw(){
-	
+
+
 	if(touchX != 0)evol=0;
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
 	h= windowHeight;
+	
 	
 
   	fr=getFrameRate();
@@ -110,6 +114,10 @@ function draw(){
   	
   	sitebackground();
  
+ 
+ 	
+	
+	
  	cursor(ARROW);
  	var k=menus[0].domenu();
    if( k>0){
@@ -269,14 +277,10 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.mouseover = function(){
 		
-		
-		if(touchX==lasttouchX && touchY==lasttouchY){
-			if(mobile==false){
-				mobile=true;
-				return true;
-			}
+		if(touchX==lasttouchX && touchY==lasttouchY && omobile){
+
 			 return false;
-			}
+		}
 		
 		if(abs(this.x-mouseX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-mouseY/h)<this.hi/2*this.mm/h*sm) return true;
 		else if(abs(this.x-touchX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-touchY/h)<this.hi/2*this.mm/h*sm) return true;
@@ -285,10 +289,10 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	};
 	
 	this.click = function(){
-
+		if(touchX){
 			lasttouchX=touchX;
 			lasttouchY=touchY;
-		
+		}
 		
 		if(this.sound) this.dosound();
 		else{
@@ -333,7 +337,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 					}
 					this.swell+=.03;
 				}
-				if(mouseIsPressed||touchIsDown||mobile==true && ok2click==0){
+				if(mouseIsPressed||touchIsDown||omobile==true && ok2click==0){
 					
 					
 					if( this.internal==true && this.sound == false){
@@ -662,12 +666,12 @@ function Windleaf(){
     //update position
    this.x-=3*(this.speed+random(this.speed*2))*30/fr+.05*(.5-abs(.5-trans));;  
      //this.y+=3*(this.speed*4.5-random(this.speed*8))*1.2;
-     this.yv+=random(this.speed)*this.ya*.5;
+     this.yv+=random(this.speed)*this.ya*.5*30/fr;
      if(abs(this.yv)>.005){
      	this.ya=-this.ya;
-     	this.yv=.0049*this.yv/abs(this.yv)*30/fr;
+     	this.yv=.0049*this.yv/abs(this.yv);
      }
-     this.y+=this.yv+.001;
+     this.y+=this.yv*30/fr+.001;
      this.angle+=.5*(this.speed/15.0+random(this.speed)/10.0+.1)*30/fr;
      
    
