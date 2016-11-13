@@ -2,7 +2,6 @@
 
 //height can't decrease
 //custom loading page
-//speed up stars on mobile
 
 
 
@@ -43,7 +42,7 @@ var songmute=1;
 var musicplaying=false;
 var mute2;
 var ok2click=0;
-
+var musicloaded=false
 var fade=0;
 
 var leaves=[];
@@ -93,8 +92,8 @@ function setup(){
   	 frameRate(30);
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	
-	if(deviceOrientation=="undefined") omobile=false;
-	else omobile=true;
+	//if(deviceOrientation=='undefined') omobile=false;
+	if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
 }
 
 
@@ -117,7 +116,8 @@ function draw(){
   	
   	sitebackground();
  
- 
+ 	fill(255);
+ 	text(""+omobile,w/2,h/2);
  	
 	
 	
@@ -178,7 +178,9 @@ function draw(){
     
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
-    if(!drewleaves)frontleaves()	
+    if(!drewleaves)frontleaves()
+    
+
 }
 
 
@@ -362,6 +364,8 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 					music[currentsong].loop();
 				}else{
+					
+
 					music[currentsong].stop();
 					currentsong=this.ourmenu;
 					music[currentsong].play();
