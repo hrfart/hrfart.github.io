@@ -99,6 +99,7 @@ function setup(){
 
 function draw(){
 	
+	if(touchX != 0)evol=0;
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
 	h= windowHeight;
