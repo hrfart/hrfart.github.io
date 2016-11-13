@@ -10072,9 +10072,10 @@ function getWindowWidth() {
      window.innerWidth || 0);
  }
  function getWindowHeight() {
-   return Math.max(
-     document.documentElement.clientHeight,
-     window.innerHeight || 0);
+   return window.innerHeight;
+   //return Math.max(
+   //  document.documentElement.clientHeight,
+   //  window.innerHeight || 0);
  }
  
 /**
