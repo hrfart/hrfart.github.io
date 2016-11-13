@@ -1,8 +1,11 @@
 //to do:
 
+
+//get stars to stick around at right time/be reducable(?)
 //custom loading page
 //brief loud volume after vis
 //external links 
+//add readme to schlub
 
 //occasional loud swelling?? not a huge deal.
 //music only starts after click on mobile. also w/e
@@ -10,7 +13,7 @@
 
 
 //background variables
-var numstars=400;
+var numstars=300;
 var stars=[];
 
 
@@ -90,10 +93,16 @@ function setup(){
 	imageMode(CENTER);
 	fullscreen();
   	 frameRate(30);
-	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	
 	//if(deviceOrientation=='undefined') omobile=false;
 	if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
+	
+	if(omobile){
+		evol=0;
+		numstars=150;
+	}
+	for(var i=0;i<numstars;i++)stars[i]=new Star();
+
 }
 
 
@@ -103,7 +112,7 @@ function setup(){
 function draw(){
 
 
-	if(omobile)evol=0;
+	
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
 	h=windowHeight;
@@ -116,8 +125,8 @@ function draw(){
   	
   	sitebackground();
  
- //	fill(255);
- //	text(""+omobile,w/2,h/2);
+ 	//fill(255);
+ 	//text(""+numstars,w/2,h/2);
  	
 	silentm=false;
 	silentpm=false;
@@ -423,7 +432,7 @@ function Vid(youtubes,ss,mmm){
   		if(this.running==true){
 			if(this.youtube==0)this.div2=createDiv("<style> iframe{ width: "+min(w*.7,700)+"px; height: "+(h*.5)+"px; } </style>");
   			else if(this.youtube==3) this.div2=createDiv("<style> iframe{ width: "+(w*.95)+"px; height: "+(h*.6)+"px; } </style>");
-    		else if(this.youtube==4) this.div2=createDiv("<style> iframe{ width: "+(w*.9)+"px; height: "+(h*.8)+"px; } </style>");
+    		else if(this.youtube==4) this.div2=createDiv("<style> iframe{ width: "+(w*.9)+"px; height: "+(h)+"px; } </style>");
   			else this.div2=createDiv("<style> iframe{ width: "+(w*.7)+"px; height: "+(h*.5)+"px; } </style>");
   			
   			
@@ -711,6 +720,7 @@ function sitebackground(){
 //stars
 var srin=5;
 function Star(){
+
 	this.x=random(1.2); 
     this.y=random(1); 
     this.s=.002+random(.002);
@@ -719,6 +729,8 @@ function Star(){
     this.b=150+random(55); 
 
     this.updatedraw = function(){
+    	fill(255,0);
+	text(""+this.x,w/2,h/2);
     noStroke();
     var ww=max(w,h*1280/720);
     var twop;
@@ -733,7 +745,7 @@ function Star(){
     if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
       fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
-      ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
+    if(menu<22||trans>0)  ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
     }
   //  return 0;
     };
