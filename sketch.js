@@ -116,8 +116,8 @@ function draw(){
   	
   	sitebackground();
  
- 	fill(255);
- 	text(""+omobile,w/2,h/2);
+ //	fill(255);
+ //	text(""+omobile,w/2,h/2);
  	
 	
 	
