@@ -1,7 +1,6 @@
 //to do:
 
 
-
 //custom loading page
 //brief loud volume after vids
 //external links 
@@ -178,16 +177,19 @@ function draw(){
     	translate(-trans*w,0);
     	//popMatrix();
     }else{
-    	if(menus[menu].domenu()==1){
-    	 trans=1;
-    	ok2click=clickwait;
-    	if(gosounds||(mute==1 && (prevmenu>6||currentsong>0) )){
-   		//	swells.stop();
+    	k=menus[menu].domenu();
+   if( k>0){
+    ok2click=clickwait;
+   	if(k==1){
+   		trans=1;
+   		if(gosounds||(mute==1 && (prevmenu>6||currentsong>0) )){
+   			//swells.stop();
 			wind.play();
 			wind.setVolume(wvol);
    		}
-		
-		}
+   	}
+  
+   }
     }
     
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
@@ -274,10 +276,10 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		else{
 			if(!this.internal){
 			//addTab(this.link);
-			 link(this.link,"m");
+			 //link(this.link);
 			// var links=window.open('',"_blank");
 			 //links.location.href = this.link;
-			// location = this.link+" target='_blank'";
+			 location = this.link;
 			 }else {
 				
 					mouseIsPressed=false;
@@ -315,7 +317,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 					}
 					this.swell+=.03;
 				}
-				if(mouseIsPressed||touchIsDown||omobile==true && ok2click==0){
+				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
 					
 					
 					if( this.internal==true && this.sound == false && !(this.ourmenu==22 && menu==22)){
@@ -420,8 +422,12 @@ function Vid(youtubes,ss,mmm){
 	this.div;
 	this.div2;
 	this.ourmenu=mmm;
-	this.updateanddraw = function(){
+	
 	this.youtube=youtubes;	
+	
+	
+	this.updateanddraw = function(){
+	
 		if(this.running==false&&this.ourmenu>6){
 			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen></iframe>");
   			else if(this.youtube>1) this.div= createDiv("<iframe src='"+this.t+"' frameborder='0'></iframe>");
@@ -655,9 +661,7 @@ function frontleaves(){
    }
 }
 
-function link(url, winName, options) {
-  winName && open(url, winName, options) || (location = url);
-}
+
 
 function Windleaf(){
 
@@ -719,7 +723,7 @@ function sitebackground(){
  
 
 //stars
-var srin=5;
+var srin=4;
 function Star(){
 
 	this.x=random(1.2); 
@@ -730,8 +734,8 @@ function Star(){
     this.b=150+random(55); 
 
     this.updatedraw = function(){
-    	fill(255,0);
-	text(""+this.x,w/2,h/2);
+   // 	fill(255,0);
+	//text(""+this.x,w/2,h/2);
     noStroke();
     var ww=max(w,h*1280/720);
     var twop=30;
@@ -741,9 +745,10 @@ function Star(){
     twop=1/twop;
     this.p = (this.p+this.os*1.2*twop)%TWO_PI;
     this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
-    fill(255,0);
-    text(twop,w/2,h/2);
-  
+   // fill(255,255);
+    //text(twop,w/2,h/2);
+   // if(twop=="NaN")
+	 //   text(twop,w*.6,h/2);
 
     if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
