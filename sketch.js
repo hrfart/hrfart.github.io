@@ -2,11 +2,10 @@
 
 
 //custom loading page
-//brief loud volume after vids
 //external links 
 
-//occasional loud swelling?? not a huge deal.
-//music only starts after click on mobile. also w/e
+
+//music only starts after click on mobile. w/e
 //galaxies??? probably not
 
 
@@ -48,8 +47,8 @@ var fade=0;
 var leaves=[];
 
 var gosounds;
-var evol=.05;
-var wvol=.21;
+var evol=1;//.05;
+var wvol=.5;
 
 var omobile=false;
 var lasttouchX=999999;
@@ -201,7 +200,13 @@ function draw(){
 
 
 function domusic(){
-	var hush=.3;
+	var hush=.8;
+	
+	
+	silentm=false;
+	silentpm=false;
+	if(menu>6 && menu!=22 && menu!=23)silentm=true;
+	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23)silentpm=true;
 	
 	if(musicplaying==false){
 			currentsong=0;
@@ -215,9 +220,10 @@ function domusic(){
 		music[currentsong].loop();
 	}
 	
-	if(currentsong!=0)music[currentsong].setVolume(1);
+	if(currentsong!=0)music[currentsong].setVolume(5);
 	else if(silentm)music[currentsong].setVolume(trans*mute*hush);
-	else if(silentpm&&trans>0&&trans!=1)music[currentsong].setVolume((1-trans)*mute*hush);
+//	else if(silentpm&&trans==0)music[currentsong].setVolume(trans*mute*hush);
+	else if(silentpm&&trans>0)music[currentsong].setVolume((1-trans)*mute*hush);
 	else music[currentsong].setVolume(mute*hush);
 	
 	gosounds=true;
@@ -312,6 +318,8 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 				if(this.swell<1.3){
 					if(this.swell<=1 && gosounds){
 						swells.stop();
+						swells.stop();
+						swells.setVolume(evol);
 						swells.play();
 						swells.setVolume(evol);
 					}
@@ -341,6 +349,8 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 				if(this.swell>1){
 					if(this.swell>=1.3 && gosounds){
 						shrink.stop();
+						shrink.stop();
+						shrink.setVolume(evol);
 						shrink.play();
 						shrink.setVolume(evol);
 					}
