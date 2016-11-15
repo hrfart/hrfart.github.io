@@ -46,7 +46,7 @@ var fade=0;
 
 var leaves=[];
 
-var gosounds;
+var gosounds=true;
 var evol=1;//.05;
 var wvol=.5;
 
@@ -56,6 +56,7 @@ var lasttouchY=999999;
 
 var silentm;
 var silentpm;
+var justremoved=false;
 
 function preload(){
 mute2=loadImage(basepath+"mute2.png");
@@ -167,6 +168,7 @@ function draw(){
     	//pushMatrix();
     	translate((trans-1)*w,0);
     	
+    	if(justremoved==true)justremoved=false;
     	if(prevmenu>6&&(trans<.1||menu==22)) menus[prevmenu].close();
     	else menus[prevmenu].domenu();
     	
@@ -233,9 +235,14 @@ function domusic(){
 
 
 
+//var thelink;
 
-
-
+	
+//function butt(){
+//	window.open(thelink,"_hrf")
+//}
+	
+	
 //////////////////BUTTON/////////////////////
 
 function Button(inter,i,xx,yy,wii,hii,soundt,picc){
@@ -248,7 +255,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	this.y=yy;
 	this.wi=wii;
 	this.hi=hii;
-	
+	this.picis=picc;
 	this.swell=1;
 	this.issoundok=true;
 	this.dsoundok=true;
@@ -256,8 +263,11 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 
 	this.transs=0;
 	this.t=1;
-	this.pm;
-	this.mm;
+	this.pm=1;
+	this.mm=1;
+	this.kool=0;
+	this.linkup=false;
+	
 	
 	this.mouseover = function(){
 		
@@ -280,13 +290,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		
 		if(this.sound) this.dosound();
 		else{
-			if(!this.internal){
-			//addTab(this.link);
-			 //link(this.link);
-			// var links=window.open('',"_blank");
-			 //links.location.href = this.link;
-			 location = this.link;
-			 }else {
+			if(this.internal){
 				
 					mouseIsPressed=false;
 					touchIsDown=false;
@@ -294,9 +298,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						prevmenu=menu;
 						menu=this.ourmenu;
 					}
-				//	this.transs=1;
-					
-					//PLAYSWAPSOUND
+
 				
 			}
 		
@@ -310,18 +312,21 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		//this.transs=0;
 		if(trans==0){
 			if(this.mouseover()==true){
-				cursor(HAND);
-				if(this.issoundok){
-					//PLAYISOUND
-					this.issoundok=false;
+				if((!this.linkup || justremoved)&& !this.internal){
+						this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>","_"+this.link);
+						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
+						this.linkup=true;
 				}
+				cursor(HAND);
 				if(this.swell<1.3){
-					if(this.swell<=1 && gosounds){
+					
+					if(this.swell<=1 && gosounds==true){
+					
 						swells.stop();
-						swells.stop();
-						swells.setVolume(evol);
+						
 						swells.play();
 						swells.setVolume(evol);
+						
 					}
 					this.swell+=.03;
 				}
@@ -341,32 +346,21 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						
 				this.dsoundok=true;
 			}else{
-				this.isoundok=true;
-				if(this.dsoundok){
-					//PLAYDSOUND
-					this.dsoundok=false;
-				}
+				if(this.internal &&this.linkup)this.linkup=false;
 				if(this.swell>1){
 					if(this.swell>=1.3 && gosounds){
 						shrink.stop();
-						shrink.stop();
-						shrink.setVolume(evol);
+						
 						shrink.play();
 						shrink.setVolume(evol);
 					}
 					this.swell-=.03;
-					
 				}
 			}
 		
-		}else if(this.swell>1){
-			if(this.swell>=1.3 && gosounds){
-						//shrink.stop();
-						//shrink.play();
-						//shrink.setVolume(evol);
-			}
-			this.swell-=.03;
-		}
+		}else if(this.swell>1) this.swell-=.03;
+			
+		
 		
 		
 		image(this.pic,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
@@ -477,6 +471,8 @@ function Vid(youtubes,ss,mmm){
 			this.running=false;
 			this.div.remove();
 			this.div2.remove();
+			 removeElements();
+			 justremoved=true;
 		}
 	};
 }
@@ -535,8 +531,9 @@ function populatemenus(){
 	menus[0].add(new Button(true,2,.375,.1,.23,.15,false,"animation"));
 	menus[0].add(new Button(true,3,.625,.1,.23,.15,false,"interactive"));
 	menus[0].add(new Button(true,4,.875,.1,.23,.15,false,"music"));
-	menus[0].add(new Button(true,5,.25,.87,.12,.12,false,"contact"));
+	
 	menus[0].add(new Button(true,22,.5,.87,.12,.12,false,"mathart"));
+	menus[0].add(new Button(true,5,.25,.87,.12,.12,false,"contact"));
 	menus[0].add(new Button(true,0,.75,.87,.12,.12,true,"mute"));
 	menus[0].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.125,.92,.12,.12,false,"youtube"));
 	menus[0].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.92,.12,.12,false,"bandcamp"));
