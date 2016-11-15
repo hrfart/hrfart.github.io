@@ -57,12 +57,18 @@ var silentpm;
 var justremoved=false;
 
 var opening;
+//var opening2;
 function preload(){
 
 
 var ds=min(windowWidth,windowHeight);
 opening=createDiv("<img src='loadingscreen.png'  width = '"+windowWidth+"' height = '"+windowHeight+"'>");
 opening.position(0,0);
+//opening2=createDiv("<iframe src='sitepre/index.html'  width = '"+windowWidth+"' height = '"+windowHeight+"'  frameborder='0'></iframe>");
+//opening2.position(0,0);
+
+//"<iframe src='"+this.t+"' frameborder='0'></iframe>
+
 mute2=loadImage(basepath+"mute2.png");
 //image(mute2,0,0,w,h);
 //  wind=loadSound("http://hrfart.github.io/wind.mp3");
@@ -87,7 +93,7 @@ populatemenus();
 
 function setup(){
 	opening.remove();
-
+	//opening2.remove();
 
 	trans=0;
 	menu=1;
@@ -127,8 +133,7 @@ function draw(){
   	
   	sitebackground();
  
- 	//fill(255);
- 	//text(""+numstars,w/2,h/2);
+   
  	
 	silentm=false;
 	silentpm=false;
@@ -176,6 +181,8 @@ function draw(){
     	if(prevmenu>6&&(trans<.1||menu==22)) menus[prevmenu].close();
     	else menus[prevmenu].domenu();
     	
+    	
+    	
     	translate(w,0);
     	menus[menu].domenu();
     	if(trans<=.005)trans=0;
@@ -197,6 +204,10 @@ function draw(){
    }
     }
     
+    
+  
+    	
+    	
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
@@ -316,6 +327,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		//this.transs=0;
 		if(trans==0){
 			if(this.mouseover()==true){
+
 				if((!this.linkup || justremoved)&& !this.internal){
 						this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>","_"+this.link);
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
@@ -350,7 +362,10 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						
 				this.dsoundok=true;
 			}else{
-				if(this.internal &&this.linkup)this.linkup=false;
+				if(!this.internal &&this.linkup){
+					this.linkup=false;
+					this.kool.remove();
+				}
 				if(this.swell>1){
 					if(this.swell>=1.3 && gosounds){
 						shrink.stop();
@@ -362,8 +377,13 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 				}
 			}
 		
-		}else if(this.swell>1) this.swell-=.03;
-			
+		}else{
+		 if(this.swell>1) this.swell-=.03;
+			if(!this.internal &&this.linkup){
+					this.linkup=false;
+					this.kool.remove();
+				}
+		 }	
 		
 		
 		
