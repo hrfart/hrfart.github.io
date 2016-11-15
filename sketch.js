@@ -1,8 +1,6 @@
 //to do:
 
 
-//custom loading page
-//external links 
 
 
 //music only starts after click on mobile. w/e
@@ -58,7 +56,13 @@ var silentm;
 var silentpm;
 var justremoved=false;
 
+var opening;
 function preload(){
+
+
+var ds=min(windowWidth,windowHeight);
+opening=createDiv("<img src='loadingscreen.png'  width = '"+windowWidth+"' height = '"+windowHeight+"'>");
+opening.position(0,0);
 mute2=loadImage(basepath+"mute2.png");
 //image(mute2,0,0,w,h);
 //  wind=loadSound("http://hrfart.github.io/wind.mp3");
@@ -82,7 +86,7 @@ populatemenus();
 
 
 function setup(){
-
+	opening.remove();
 
 
 	trans=0;
