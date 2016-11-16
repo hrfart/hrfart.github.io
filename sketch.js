@@ -51,6 +51,8 @@ var wvol=.5;
 var omobile=false;
 var lasttouchX=999999;
 var lasttouchY=999999;
+var lasttouchX2=999999;
+var lasttouchY2=999999;
 
 var silentm;
 var silentpm;
@@ -286,7 +288,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.mouseover = function(){
 		
-		if(touchX==lasttouchX && touchY==lasttouchY && omobile){
+		if(touchX==lasttouchX2 && touchY==lasttouchY2 && omobile){
 
 			 return false;
 		}
@@ -299,6 +301,8 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.click = function(){
 		if(touchX){
+			lasttouchX2=lasttouchX;
+			lasttouchY2=lasttouchY;
 			lasttouchX=touchX;
 			lasttouchY=touchY;
 		}
