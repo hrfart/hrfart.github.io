@@ -325,11 +325,18 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.transs=0;
 		//this.transs=0;
 		if(omobile&&!this.internal){
-			if(!this.linkup || justremoved){
+			if(trans==0){
+				if(!this.linkup || justremoved){
 						this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w+"' height='"+this.hi*h+"'>","_"+this.link);
 						this.kool.position(this.x*w-this.wi*w/2,this.y*h-this.hi*h/2);
 						this.linkup=true;
 				}
+			}else{
+				if(this.linkup){
+					this.linkup=false;
+					this.kool.remove();
+				}
+			}
 		}else {
 		if(trans==0){
 			if(this.mouseover()==true){
