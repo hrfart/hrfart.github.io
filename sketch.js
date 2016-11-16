@@ -51,8 +51,6 @@ var wvol=.5;
 var omobile=false;
 var lasttouchX=999999;
 var lasttouchY=999999;
-var lasttouchX2=999999;
-var lasttouchY2=999999;
 
 var silentm;
 var silentpm;
@@ -288,8 +286,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.mouseover = function(){
 		
-		if(touchX==lasttouchX2 && touchY==lasttouchY2 && omobile){
-
+		if(touchX==lasttouchX && touchY==lasttouchY && omobile){
 			 return false;
 		}
 		
@@ -301,8 +298,6 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.click = function(){
 		if(touchX){
-			lasttouchX2=lasttouchX;
-			lasttouchY2=lasttouchY;
 			lasttouchX=touchX;
 			lasttouchY=touchY;
 		}
@@ -329,6 +324,13 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.mm=min(h,w);
 		this.transs=0;
 		//this.transs=0;
+		if(omobile&&!this.internal){
+			if(!this.linkup || justremoved){
+						this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w+"' height='"+this.hi*h+"'>","_"+this.link);
+						this.kool.position(this.x*w-this.wi*w/2,this.y*h-this.hi*h/2);
+						this.linkup=true;
+				}
+		}else {
 		if(trans==0){
 			if(this.mouseover()==true){
 
@@ -390,7 +392,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		 }	
 		
 		
-		
+		}
 		image(this.pic,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
 		if(this.sound==1 && currentsong==this.ourmenu && this.ourmenu!=0)image(mute2,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
 		if(this.ourmenu==0 && mute==1)image(mute2,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
