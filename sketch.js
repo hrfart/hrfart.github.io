@@ -623,11 +623,24 @@ function populatemenus(){
 	menus[5].add(new Button(false,"mailto:harryrubinfalcone@gmail.com",.5,.6,.25,.25,false,"contact2"));
 	
 	
+	var fl2y=.72;
+	
 	//festivals
-	menus[6].add(new Button(false,"http://airport-anifes.jp/en/competition/awards/",.3,.4,.3,.3,false,"chiose"));
-	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.7,.4,.3,.3,false,"darte"));
+	menus[6].add(new Disptext("three dancers",.5,.28,.4));
+	menus[6].add(new Button(false,"http://airport-anifes.jp/en/competition/awards/",.35,.4,.25,.25,false,"chiose"));
+	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.65,.4,.25,.25,false,"darte"));
 
-	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",.5,.6,.3,.3,false,"bridges"));
+	menus[6].add(new Disptext("me and the machine in space",1/6,fl2y-.07,.2));
+	menus[6].add(new Button(false,"http://www.eafit.edu.co/fismed/homeen.html#guest",1/6,fl2y,.1,.1,false,"fismed"));
+	
+	menus[6].add(new Disptext("the ship we built",.5,fl2y-.07,.2));
+	menus[6].add(new Button(false,"http://www.locomocionfest.com/festival/",.5,fl2y,.1,.1,false,"loco"));
+
+	menus[6].add(new Disptext("math art",5/6,fl2y-.07,.2));
+	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",5/6,fl2y,.15,.15,false,"bridges"));
+
+	
+	
 	
 	//videos
 	menus[7].add(new Vid(1,"oBvd2DjFr60",7));
