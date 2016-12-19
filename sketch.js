@@ -141,7 +141,8 @@ function draw(){
 	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23)silentpm=true;
 	
  	cursor(ARROW);
- 	var k=menus[0].domenu();
+ 	var k=5;
+	k=menus[0].domenu();
    if( k>0){
     ok2click=clickwait;
    	if(k==1){
@@ -162,7 +163,7 @@ function draw(){
    
    var drewleaves=false;
 	if(menu>6||(prevmenu>6&&trans>0)){
-		frontleaves()	
+		if(!(menu>22&&trans==0))frontleaves()	
 		drewleaves=true;
 	}
 
@@ -210,8 +211,12 @@ function draw(){
     	
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
-    if(!drewleaves)frontleaves()
-    domusic();
+    if(!drewleaves&&!(menu>22&&trans==0))frontleaves()
+    if(!(menu>23&&trans==0))domusic();
+    else if(musicplaying==true){
+    	music[currentsong].stop();
+    		musicplaying=false;
+    }
 
 }
 
@@ -557,7 +562,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<25;i++) menus[i]=new Menu();
+	for(var i=0;i<26;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone's portfolio",.5,.35,.3));
@@ -605,20 +610,25 @@ function populatemenus(){
 	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
 	
 	//music
-	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.25,.18));
-	menus[4].add(new Disptext("in jazz, funk, fusion, rock, and classical music. he also plays guitar and composes. ",.5,.28,.18));
-	menus[4].add(new Disptext("soundtrack",.1,.45,.2));
-	menus[4].add(new Disptext("compositions",.1,.48,.2));
-	menus[4].add(new Disptext("bass",.2,.65,.2));
+	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.24,.18));
+	menus[4].add(new Disptext("in jazz, funk, fusion, rock, and classical music. he also plays guitar and composes. ",.5,.27,.18));
+	menus[4].add(new Disptext("soundtrack",.1,.35,.2));
+	menus[4].add(new Disptext("compositions",.1,.38,.2));
+	menus[4].add(new Disptext("bass",.2,.55,.2));
+	menus[4].add(new Disptext("math \"music\"",.1,.72,.2));
 
-	var mussize=.2
-	menus[4].add(new Button(true,20,.5,.45,mussize,mussize,false,"dancersst"));
-	menus[4].add(new Button(true,19,.3,.45,mussize,mussize,false,"mmsst"));
-	menus[4].add(new Button(true,21,.7,.45,mussize,mussize,false,"schlubst"));
 
-	menus[4].add(new Button(true,1,.4,.65,mussize,mussize,true,"tric"));
-	menus[4].add(new Button(true,2,.6,.65,mussize,mussize,true,"aut"));
-	menus[4].add(new Button(true,3,.8,.65,mussize,mussize,true,"mys"));
+	var mussize=.15
+	menus[4].add(new Button(true,20,.5,.37,mussize,mussize,false,"dancersst"));
+	menus[4].add(new Button(true,19,.3,.37,mussize,mussize,false,"mmsst"));
+	menus[4].add(new Button(true,21,.7,.37,mussize,mussize,false,"schlubst"));
+
+	menus[4].add(new Button(true,1,.4,.55,mussize,mussize,true,"tric"));
+	menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
+	menus[4].add(new Button(true,3,.8,.55,mussize,mussize,true,"mys"));
+	
+	menus[4].add(new Button(true,25,.3,.72,mussize,mussize,false,"recsong"));
+
 	
 	//contact
 	menus[5].add(new Disptext("harry rubin-falcone: animation, bass, composition",.5,.35,.2));
@@ -629,8 +639,11 @@ function populatemenus(){
 	
 	//festivals
 	menus[6].add(new Disptext("three dancers",.5,.28,.4));
-	menus[6].add(new Button(false,"http://airport-anifes.jp/en/competition/awards/",.35,.4,.25,.25,false,"chiose"));
-	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.65,.4,.25,.25,false,"darte"));
+	var dansi=.22;
+	menus[6].add(new Button(false,"http://airport-anifes.jp/en/competition/awards/",.26,.4,dansi,dansi,false,"chiose"));
+	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.75,.4,dansi,dansi,false,"darte"));
+	menus[6].add(new Button(false,"http://largofilmawards.com/november-2016/",.5,.4,dansi,dansi,false,"largo"));
+
 
 	menus[6].add(new Disptext("me and the machine in space",1/6,fl2y-.07,.2));
 	menus[6].add(new Button(false,"http://www.eafit.edu.co/fismed/homeen.html#guest",1/6,fl2y,.1,.1,false,"fismed"));
@@ -668,6 +681,7 @@ function populatemenus(){
 	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
 	menus[23].add(new Vid(4,"http://hrfart.github.io/app",23));
 	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
+	menus[21].add(new Vid(0,"3372271177",21));
 	
 	menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
 	menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
@@ -675,12 +689,14 @@ function populatemenus(){
 	menus[24].add(new Button(true,3,.97,.65,.1,.1,false,"back2"));
 	
 		menus[23].add(new Button(true,3,.97,.35,.1,.1,false,"newtab"));
-	menus[24].add(new Button(true,3,.97,.35,.1,.1,false,"newtab"));
+	menus[25].add(new Vid(4,"recursive_song.html",25));
+	menus[25].add(new Button(true,4,.97,.65,.1,.1,false,"back2"));
 	
 	//menus[22].add(new Vid(false,"1696192640"));
 	//add back buttons
 	for(var i=7;i<19;i++)menus[i].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	for(var i=19;i<22;i++)menus[i].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
+	//menus[25].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	//menus[22].add(new Button(true,2,.5,.8,.2,.1,false,"back"));
 }
 
@@ -775,7 +791,7 @@ function Windleaf(){
 function sitebackground(){
 	background(0); 
 
- 	for(var i=0;i<numstars;i++)stars[i].updatedraw();
+ 	if(!(menu>22&&trans==0))for(var i=0;i<numstars;i++)stars[i].updatedraw();
  	
  }
  
