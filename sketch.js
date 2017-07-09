@@ -640,13 +640,13 @@ function populatemenus(){
 	//festivals
 	menus[6].add(new Disptext("three dancers",.5,.28,.4));
 	var dansi=.22;
-	menus[6].add(new Button(false,"http://airport-anifes.jp/en/competition/awards/",.26,.4,dansi,dansi,false,"chiose"));
+	menus[6].add(new Button(false,"http://airport-anifes.jp/en/",.26,.4,dansi,dansi,false,"chiose"));
 	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.75,.4,dansi,dansi,false,"darte"));
 	menus[6].add(new Button(false,"http://largofilmawards.com/november-2016/",.5,.4,dansi,dansi,false,"largo"));
 
 
 	menus[6].add(new Disptext("me and the machine in space",1/6,fl2y-.07,.2));
-	menus[6].add(new Button(false,"http://www.eafit.edu.co/fismed/homeen.html#guest",1/6,fl2y,.1,.1,false,"fismed"));
+	menus[6].add(new Button(false,"http://www.eafit.edu.co/fismed/",1/6,fl2y,.1,.1,false,"fismed"));
 	
 	menus[6].add(new Disptext("the ship we built",.5,fl2y-.07,.2));
 	menus[6].add(new Button(false,"http://www.locomocionfest.com/festival/",.5,fl2y,.1,.1,false,"loco"));
