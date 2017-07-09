@@ -683,12 +683,12 @@ function populatemenus(){
 	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
 	menus[21].add(new Vid(0,"3372271177",21));
 	
-	menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
-	menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
+	//menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
+	//menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
 	menus[23].add(new Button(true,3,.97,.65,.1,.1,false,"back2"));
 	menus[24].add(new Button(true,3,.97,.65,.1,.1,false,"back2"));
 	
-		menus[23].add(new Button(true,3,.97,.35,.1,.1,false,"newtab"));
+	//menus[23].add(new Button(true,3,.97,.35,.1,.1,false,"newtab"));
 	menus[25].add(new Vid(4,"recursive_song.html",25));
 	menus[25].add(new Button(true,4,.97,.65,.1,.1,false,"back2"));
 	
