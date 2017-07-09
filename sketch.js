@@ -330,7 +330,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.transs=0;
 		//this.transs=0;
 		if(omobile&&!this.internal){
-			if(trans==0){
+			if(trans==0&&menu!=23&menu!=24&&menu!=25){
 				if(!this.linkup || justremoved){
 						this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w+"' height='"+this.hi*h+"'>","_"+this.link);
 						this.kool.position(this.x*w-this.wi*w/2,this.y*h-this.hi*h/2);
