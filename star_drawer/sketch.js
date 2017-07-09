@@ -36,16 +36,16 @@ var music
 
 function preload(){
   noCursor();
-  wind=loadSound("http://hrfart.github.io/wind2.mp3");
-    tinkle=loadSound("http://hrfart.github.io/tinkle.m4a");
-music=loadSound("http://hrfart.github.io/music.m4a");
+  wind=loadSound("http://harryrubinfalcone.com/wind2.mp3");
+    tinkle=loadSound("http://harryrubinfalcone.com/tinkle.m4a");
+music=loadSound("http://harryrubinfalcone.com/music.m4a");
 
 
- hand=loadImage("http://hrfart.github.io/hand.png");
-  brush=loadImage("http://hrfart.github.io/brrush.png");
-  blink=loadImage("http://hrfart.github.io/blink.png");
-  moon=loadImage("http://hrfart.github.io/moon.png");
-	for(var i=0;i<3;i++)leaves[i]=loadImage("http://hrfart.github.io/leaf"+(i+1)+"s.png");
+ hand=loadImage("http://harryrubinfalcone.com/hand.png");
+  brush=loadImage("http://harryrubinfalcone.com/brrush.png");
+  blink=loadImage("http://harryrubinfalcone.com/blink.png");
+  moon=loadImage("http://harryrubinfalcone.com/moon.png");
+	for(var i=0;i<3;i++)leaves[i]=loadImage("http://harryrubinfalcone.com/leaf"+(i+1)+"s.png");
 
 
 }
