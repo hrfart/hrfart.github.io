@@ -660,7 +660,7 @@ function populatemenus(){
 	menus[6].add(new Button(false,"http://www.locomocionfest.com/festival/",.5,fl2y,.15,.13,false,"loco"));
 
 	menus[6].add(new Disptext("math art",5/6,fl2y-.07,.2));
-	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",5/6,fl2y+.03,.15,.15,false,"bridges"));
+	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",5/6,fl2y+.01,.15,.15,false,"bridges"));
 
 	
 	
