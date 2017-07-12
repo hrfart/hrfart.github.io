@@ -21,7 +21,7 @@ var basepath="";//"http://hrfart.github.io/";
 
 //management of buttons and menus
 var trans;
-var menu=1;
+var menu=4;
 var prevmenu=1;
 var currentsong=0;
 var menus=new Array();
@@ -97,7 +97,7 @@ function setup(){
 	//opening2.remove();
 
 	trans=0;
-	menu=1;
+	menu=4;
 	prevmenu=2;
 	imageMode(CENTER);
 	fullscreen();
