@@ -313,7 +313,7 @@ function Moon(){
  	this.drawmoon = function(my,h){
  	imageMode(CENTER);
 	push();
-	if(mouseIsPressed||touchIsdowna) handang+=PI/15;
+	if(mouseIsPressed||touchIsdown) handang+=PI/15;
  	else if(abs(sin(handang))>.3)handang+=PI/7.5;
 /*
  this.approachang=min(h*.1,max((-my+oldyy),-h*.1))/h/.1*1.5;
