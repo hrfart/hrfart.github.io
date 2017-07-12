@@ -356,4 +356,8 @@ var ww=min(w,h*1280/720);
 
 }
 
+function touchMoved() {
+  // do some stuff
+  return false;
+}
 
