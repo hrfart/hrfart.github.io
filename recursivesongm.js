@@ -90,9 +90,9 @@ function draw(){
     text("pick any four numbers-",0.05*w,.1*h);
     text("these will be the base of your recursive melody:",.05*w,.15*h);
     
-    text("warning!:   this doesn't work well in all browsers.",.05*w,.85*h);
-    text("also!: it can produce incredibly irritating sounds.",.05*w,.9*h);
-	text("sorry!:            good luck and god speed.",.05*w,.95*h);
+    text("warning!: 									 ",.05*w,.85*h);
+    text("	 this can produce incredibly irritating sounds.",.05*w,.9*h);
+	text("sorry!:         	   good luck and god speed.",.05*w,.95*h);
 
 
     for(var i=0;i<4;i++) melody[i]=slider("note "+(i+1),w*.05,h*.2+h*.15*i,.75,3,melody[i]);
