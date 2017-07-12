@@ -300,3 +300,8 @@ function mouseover(x,y,wi,he){
 }
 
  
+function touchMoved() {
+  // do some stuff
+  return false;
+}
+
