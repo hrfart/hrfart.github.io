@@ -1,3 +1,4 @@
+var menu=3;
 //to do:
 
 
@@ -21,7 +22,7 @@ var basepath="";//"http://hrfart.github.io/";
 
 //management of buttons and menus
 var trans;
-var menu=3;
+
 var prevmenu=1;
 var currentsong=0;
 var menus=new Array();
@@ -97,7 +98,7 @@ function setup(){
 	//opening2.remove();
 
 	trans=0;
-	menu=3;
+
 	prevmenu=2;
 	imageMode(CENTER);
 	fullscreen();
@@ -565,7 +566,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<28;i++) menus[i]=new Menu();
+	for(var i=0;i<29;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone's portfolio",.5,.35,.3));
@@ -607,13 +608,24 @@ function populatemenus(){
 	menus[2].add(new Button(true,17,.75,.73,asizeb,asizeb,false,"train"));
 	menus[2].add(new Button(true,18,.85,.73,asizeb,asizeb,false,"hello"));
 	
-	//interactive
-	menus[3].add(new Button(false,"http://hrfart.github.io/SomeSchlubScalesCity.zip",.75,.6,.3,.3,false,"schlub"));
+	//interactive 
+	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
 	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
 	if(omobile||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
 	else 		menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
 	//http://hrfart.github.io/
-
+	
+	
+	
+	//schlub
+	menus[27].add(new Button(false,"http://hrfart.github.io/SomeSchlubScalesCity.zip",.25,.75,.125,.125,false,"schlubdownload"));
+	menus[27].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/album/some-schlub-scales-sad-city",.75,.75,.125,.125,false,"schlubtrack"));
+	menus[27].add(new Vid(1,"oBvd2DjFr60",27));
+	menus[27].add(new Button(true,3,.5,.75,.1,.1,false,"back"));
+	
+	
+	
+	
 	//music
 	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.24,.18));
 	menus[4].add(new Disptext("in jazz, funk, fusion, rock, and classical music. he also plays guitar and composes. ",.5,.27,.18));
