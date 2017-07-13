@@ -154,27 +154,34 @@ function draw(){
 			wind.setVolume(wvol);
    		}
    	}
+   	
+   	
   
    }
-   
+
+	
+	
    if(menu>6 && prevmenu>6) fade=1;
    else if(prevmenu>6)fade=trans;
    else if (menu>6)fade=(1-trans);
    else fade=0;
-   
+ 
    var drewleaves=false;
 	if(menu>6||(prevmenu>6&&trans>0)){
 		if(!(menu>22&&trans==0))frontleaves()	
 		drewleaves=true;
 	}
-
+	
+	 
+	
    fill(0,180*fade);
    rect(0,0,w,h);
    // trans.setit();
   //  var oldm=menu;
   	fill(155);
     if(trans>0){
-    	
+    	 
+	
     	trans=trans-.008*(5-9*abs(trans-.5))*30/fr;
     	//pushMatrix();
     	translate((trans-1)*w,0);
@@ -183,7 +190,9 @@ function draw(){
     	if(prevmenu>6&&(trans<.1||menu==22)) menus[prevmenu].close();
     	else menus[prevmenu].domenu();
     	
-    	
+    	 
+
+	
     	
     	translate(w,0);
     	menus[menu].domenu();
@@ -208,7 +217,7 @@ function draw(){
     
     
   
-    	
+	
     	
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
@@ -566,7 +575,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<30;i++) menus[i]=new Menu();
+	for(var i=0;i<29;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone's portfolio",.5,.35,.3));
@@ -618,9 +627,9 @@ function populatemenus(){
 	
 	
 	//schlub
-	menus[27].add(new Button(false,"http://hrfart.github.io/SomeSchlubScalesCity.zip",.25,.75,.125,.125,false,"schlubdownload"));
-	menus[27].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/album/some-schlub-scales-sad-city",.75,.75,.125,.125,false,"schlubtrack"));
-	menus[27].add(new Vid(1,"oBvd2DjFr60",27));
+	menus[27].add(new Vid(1,"XY8F_tS6JKU",27));
+	menus[27].add(new Button(false,"http://hrfart.github.io/SomeSchlubScalesCity.zip",.35,.75,.125,.125,false,"schlubdownload"));
+	menus[27].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/album/some-schlub-scales-sad-city",.65,.75,.125,.125,false,"schlubtrack"));
 	menus[27].add(new Button(true,3,.5,.75,.1,.1,false,"back"));
 	
 	
