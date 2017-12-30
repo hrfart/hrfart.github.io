@@ -582,7 +582,7 @@ function populatemenus(){
 	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.25,.2));
 	menus[1].add(new Button(true,32,.5,.4,.24,.24,false,"hawk1"));
 	menus[1].add(new Disptext("my mother and the hawk: a moving painting with fractal and hand drawn art.",.5,.6,.2));
-	menus[1].add(new Disptext("a mother and daughter discuss life on terrace overlooking the city.",.5,.65,.2));
+	menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	menus[1].add(new Disptext("original soundtrack. coming 2018.",.5,.7,.2));
 
 	
