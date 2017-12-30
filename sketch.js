@@ -1,5 +1,5 @@
 var menu=1;
-var hawkurl="oBvd2DjFr60";
+var hawkurl="EMJP3AHmMx4";
 //to do:
 
 
@@ -468,7 +468,7 @@ function Disptext(ss,xx,yy,si){
 	
 	this.updateanddraw = function(){
 		textAlign(CENTER);
-		textFont("Times",this.size*w*.1);
+		textFont("Times",this.size*(w*.1));
 		text(this.t,this.x*w,this.y*h);
 		return 0;
 	};
@@ -579,8 +579,11 @@ function populatemenus(){
 	for(var i=0;i<33;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone's portfolio",.5,.35,.3));
-	menus[1].add(new Button(true,32,.5,.55,.24,.24,false,"hawk1"));
+	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.25,.2));
+	menus[1].add(new Button(true,32,.5,.4,.24,.24,false,"hawk1"));
+	menus[1].add(new Disptext("my mother and the hawk: a moving painting with fractal and hand drawn art.",.5,.6,.2));
+	menus[1].add(new Disptext("a mother and daughter discuss life on terrace overlooking the city.",.5,.65,.2));
+	menus[1].add(new Disptext("original soundtrack. coming 2018.",.5,.7,.2));
 
 	
 	var mms=.18
@@ -643,7 +646,7 @@ function populatemenus(){
 	
 	
 	//music
-	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.24,.18));
+	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.27,.18));
 	menus[4].add(new Disptext("in jazz, funk, fusion, classical and new music. he also plays guitar, sings, and composes. ",.5,.31,.18));
 	menus[4].add(new Disptext("soundtrack",.1,.4,.2));
 	menus[4].add(new Disptext("compositions",.1,.44,.2));
@@ -678,14 +681,14 @@ function populatemenus(){
 	menus[6].add(new Disptext("three dancers",.25,fl2y-.1,.2));
 	var dansi=.19;
 	var fly2=.16;
-	menus[6].add(new Button(false,"http://airport-anifes.jp/en/",.1,.72,dansi,fly2,false,"chiose"));
+	menus[6].add(new Button(false,"http://airport-anifes.jp/en/",.08,.72,dansi,fly2,false,"chiose"));
 	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.2,.72,dansi,fly2,false,"darte"));
-	menus[6].add(new Button(false,"http://largofilmawards.com/november-2016/",.3,.72,dansi,fly2,false,"largo"));
-	menus[6].add(new Button(false,"https://sites.google.com/view/hope-film-awards/home",.4,.72,dansi,fly2,false,"hope"));
+	menus[6].add(new Button(false,"http://largofilmawards.com/november-2016/",.32,.72,.1,fly2,false,"largo"));
+	menus[6].add(new Button(false,"https://sites.google.com/view/hope-film-awards/home",.42,.72,.1,fly2,false,"hope"));
 
 
 	menus[6].add(new Disptext("me and the machine ",.6,fl2y-.1,.2));
-menus[6].add(new Disptext("in space",.6,fl2y-.07,.2));
+	menus[6].add(new Disptext("in space",.6,fl2y-.07,.2));
 
 	menus[6].add(new Button(false,"http://www.eafit.edu.co/fismed/",.6,fl2y+.03,.15,.13,false,"fismed"));
 	
