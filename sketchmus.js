@@ -1,12 +1,8 @@
 var menu=4;
+
+
 var hawkurl="EMJP3AHmMx4";
-//to do:
-
-
-
-
-//music only starts after click on mobile. w/e
-//galaxies??? probably not
+var hoourl="0cEVwoQqgG4";
 
 
 //background variables
@@ -36,8 +32,8 @@ var music=[];
 var wind;
 var swells;
 var shrink;
-var mute=1;
-var songmute=1;
+var mute=0;
+var songmute=0;
 var musicplaying=false;
 var mute2;
 var ok2click=0;
@@ -72,6 +68,7 @@ opening.position(0,0);
 //"<iframe src='"+this.t+"' frameborder='0'></iframe>
 
 mute2=loadImage(basepath+"mute2.png");
+mute3=loadImage(basepath+"mute3.png");
 //image(mute2,0,0,w,h);
 //  wind=loadSound("http://hrfart.github.io/wind.mp3");
 // hand=loadImage("http://hrfart.github.io/hand.png"); 
@@ -129,18 +126,23 @@ function draw(){
 	
 	
 
-  	fr=getFrameRate();
+  	
 
   	
   	
-  	sitebackground();
+  	
  
    
  	
 	silentm=false;
 	silentpm=false;
-	if(menu>6 && menu!=22 && menu!=23)silentm=true;
-	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23)silentpm=true;
+	if(menu>6 && menu!=22 && menu!=23 && menu!=33 && menu!=34 && menu!=35 )silentm=true;
+	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23  && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)silentpm=true;
+	
+	
+	fr=getFrameRate();
+	sitebackground();
+	
 	
  	cursor(ARROW);
  	var k=5;
@@ -162,14 +164,14 @@ function draw(){
 
 	
 	
-   if(menu>6 && prevmenu>6) fade=1;
-   else if(prevmenu>6)fade=trans;
-   else if (menu>6)fade=(1-trans);
+   if(menu>6 && prevmenu>6 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35 && menu!=33 && menu!=34 && menu!=35) fade=1;
+   else if(prevmenu>6 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)fade=trans;
+   else if (menu>6 && menu!=33 && menu!=34 && menu!=35)fade=(1-trans);
    else fade=0;
  
    var drewleaves=false;
-	if(menu>6||(prevmenu>6&&trans>0)){
-		if(!(menu>22&&trans==0))frontleaves()	
+	if((prevmenu>6&&trans>0&& prevmenu!=33 && prevmenu!=34 && prevmenu!=35) ||(menu>6 && menu!=33 && menu!=34 && menu!=35)){
+		if(!(menu==22&&trans==0))frontleaves()	
 		drewleaves=true;
 	}
 	
@@ -188,7 +190,7 @@ function draw(){
     	translate((trans-1)*w,0);
     	
     	if(justremoved==true)justremoved=false;
-    	if(prevmenu>6&&(trans<.1||menu==22)) menus[prevmenu].close();
+    	if(prevmenu>6&&(trans<.1||menu==22) && prevmenu!=33 && prevmenu!=34 && prevmenu!=35) menus[prevmenu].close();
     	else menus[prevmenu].domenu();
     	
     	 
@@ -222,8 +224,8 @@ function draw(){
     	
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
-    if(!drewleaves&&!(menu>22&&trans==0))frontleaves()
-    if(!(menu>23&&trans==0))domusic();
+    if(!drewleaves&&!(menu==22&&trans==0))frontleaves()
+    if(!(menu>23&&trans==0)|| menu==33 || menu==34 || menu==35)domusic();
     else if(musicplaying==true){
     	music[currentsong].stop();
     		musicplaying=false;
@@ -238,8 +240,8 @@ function domusic(){
 	
 	silentm=false;
 	silentpm=false;
-	if(menu>6 && menu!=22 && menu!=23)silentm=true;
-	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23)silentpm=true;
+	if(menu>6 && menu!=22 && menu!=23 && menu!=33 && menu!=34 && menu!=35)silentm=true;
+	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)silentpm=true;
 	
 	if(musicplaying==false){
 			currentsong=0;
@@ -420,8 +422,11 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		
 		}
 		image(this.pic,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
-		if(this.sound==1 && currentsong==this.ourmenu && this.ourmenu!=0)image(mute2,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
+		//if(this.sound==1 && currentsong==this.ourmenu && this.ourmenu!=0)image(mute2,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
+		//else if(this.sound==1)image(mute3,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
+		//if(this.sound==1)
 		if(this.ourmenu==0 && mute==1)image(mute2,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
+		else if(this.sound==1)image(mute3,this.x*w,this.y*h,this.wi*this.mm*this.swell,this.hi*this.mm*this.swell);
 		return this.transs;
 	};
 	
@@ -576,14 +581,14 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<33;i++) menus[i]=new Menu();
+	for(var i=0;i<37;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.25,.2));
-	menus[1].add(new Button(true,32,.5,.4,.24,.24,false,"hawk1"));
-	menus[1].add(new Disptext("my mother and the hawk: a moving painting with fractal and hand drawn art.",.5,.6,.2));
-	menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
-	menus[1].add(new Disptext("original soundtrack. coming 2018.",.5,.7,.2));
+	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.35,.4));
+	menus[1].add(new Button(true,32,.5,.53,.24,.24,false,"hawk1"));
+	//menus[1].add(new Disptext("",.5,.65,.2));
+	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
+	menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 
 	
 	var mms=.18
@@ -610,22 +615,31 @@ function populatemenus(){
 //	menus[2].add(new Button(true,8,.275,.3,asize,asize,false,"ld"));
 //	menus[2].add(new Button(true,9,.45,.3,asize,asize,false,"rdort"));
 
-	menus[2].add(new Button(true,10,.52,.4,asize*1.5,asize*1.5,false,"three"));
 	
-	menus[2].add(new Button(true,11,.81125,.32,asize,asize,false,"ep1"));
-	menus[2].add(new Button(true,12,.725,.47,asize,asize,false,"ep2"));
-	menus[2].add(new Button(true,13,.9,.47,asize,asize,false,"ep3"));
-	//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
+		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
+	menus[33].add(new Button(true,10,.52,.4,asize*1.5,asize*1.5,false,"three"));
+	menus[33].add(new Button(true,14,.25,.65,asize,asize,false,"kite"));
+	menus[33].add(new Button(true,16,.7,.68,asizeb,asizeb,false,"cows"));
+	menus[33].add(new Button(true,17,.8,.68,asizeb,asizeb,false,"train"));
+	menus[33].add(new Button(true,18,.9,.68,asizeb,asizeb,false,"hello"));
 	
-	menus[2].add(new Button(true,14,.125,.7,asize,asize,false,"kite"));
-	menus[2].add(new Button(true,15,.4,.7,asize,asize,false,"ship"));
-	menus[2].add(new Button(true,16,.7,.73,asizeb,asizeb,false,"cows"));
-	menus[2].add(new Button(true,17,.8,.73,asizeb,asizeb,false,"train"));
-	menus[2].add(new Button(true,18,.9,.73,asizeb,asizeb,false,"hello"));
-	
-	
-	menus[2].add(new Button(true,31,.25,.4,asize*2,asize*2,false,"hawk1"));
+	menus[34].add(new Button(true,11,.5,.35,asize*1.5,asize*1.5,false,"ep1"));
+	menus[34].add(new Button(true,12,.25,.55,asize*1.5,asize*1.5,false,"ep2"));
+	menus[34].add(new Button(true,13,.74,.55,asize*1.5,asize*1.5,false,"ep3"));
 
+
+	menus[35].add(new Button(true,15,.75,.5,asize*1.5,asize*1.5,false,"ship"));
+	//menus[35].add(new Button(true,36,.25,.5,asize*1.5,asize*1.5,false,"hoodoos"));
+	
+	menus[33].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
+	menus[34].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
+	menus[35].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
+	
+	
+	menus[2].add(new Button(true,31,.35,.35,asize*1.5,asize*1.5,false,"hawk1"));
+	menus[2].add(new Button(true,33,.8,.35,asize*1.5,asize*1.5,false,"shorts"));
+	menus[2].add(new Button(true,35,.2,.65,asize*1.5,asize*1.5,false,"collabs"));
+	menus[2].add(new Button(true,34,.65,.65,asize*1.5,asize*1.5,false,"mms"));
 
 	//interactive 
 	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
@@ -714,9 +728,27 @@ function populatemenus(){
 	
 	menus[14].add(new Vid(1,"TnrMlbZKZLQ",14));
 	menus[15].add(new Vid(1,"0cEVwoQqgG4",15));
+	menus[36].add(new Vid(1,hoourl,36));
 	menus[16].add(new Vid(1,"qXU2-0r18Sg",16));
 	menus[17].add(new Vid(1,"AEZ6qmHFGYk",17));
 	menus[18].add(new Vid(1,"nHd89kA6Utc",18));
+	
+	
+	//back button for machine
+	menus[11].add(new Button(true,34,.5,.75,.1,.1,false,"back"));
+	menus[12].add(new Button(true,34,.5,.75,.1,.1,false,"back"));
+	menus[13].add(new Button(true,34,.5,.75,.1,.1,false,"back"));
+	
+	//back button for collabs
+	menus[15].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
+	menus[36].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
+	
+	//back buttons for shorts
+	menus[10].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+	menus[14].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+	menus[16].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+	menus[17].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+	menus[18].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
 	menus[31].add(new Vid(1,hawkurl,31));
 	menus[32].add(new Vid(1,hawkurl,32));
@@ -744,7 +776,7 @@ function populatemenus(){
 	
 	//menus[22].add(new Vid(false,"1696192640"));
 	//add back buttons
-	for(var i=7;i<19;i++)menus[i].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
+	//for(var i=7;i<19;i++)menus[i].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	for(var i=19;i<22;i++)menus[i].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	
 	menus[26].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
@@ -754,6 +786,7 @@ function populatemenus(){
 	menus[32].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	//menus[25].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	//menus[22].add(new Button(true,2,.5,.8,.2,.1,false,"back"));
+	
 }
 
 
@@ -847,7 +880,7 @@ function Windleaf(){
 function sitebackground(){
 	background(0); 
 
- 	if(!(menu>22&&trans==0))for(var i=0;i<numstars;i++)stars[i].updatedraw();
+ 	if(!(menu==22&&trans==0))for(var i=0;i<numstars;i++)stars[i].updatedraw();
  	
  }
  
@@ -865,8 +898,9 @@ function Star(){
     this.b=150+random(55); 
 
     this.updatedraw = function(){
+    //text(""+srin,w/2,h/2);
    // 	fill(255,0);
-	//text(""+this.x,w/2,h/2);
+	
     noStroke();
     var ww=max(w,h*1280/720);
     var twop=30;
@@ -884,9 +918,10 @@ function Star(){
     if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
       fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
-    if(menu<22||trans>0)  
+    if(menu!=22||trans>0)  
   ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
     }
+   // text(""+twop,w/2,h/2);
   //  return 0;
     };
     
