@@ -2,7 +2,8 @@ var menu=4;
 
 
 var hawkurl="EMJP3AHmMx4";
-var hoourl="0cEVwoQqgG4";
+var hoourl="f5YsAUwXSHQ";
+var pimurl="15p5iMZQsp0";
 
 
 //background variables
@@ -581,7 +582,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<37;i++) menus[i]=new Menu();
+	for(var i=0;i<38;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.35,.4));
@@ -629,7 +630,8 @@ function populatemenus(){
 
 
 	menus[35].add(new Button(true,15,.75,.5,asize*1.5,asize*1.5,false,"ship"));
-	//menus[35].add(new Button(true,36,.25,.5,asize*1.5,asize*1.5,false,"hoodoos"));
+	menus[35].add(new Button(true,36,.25,.5,asize*1.5,asize*1.5,false,"hoodoos"));
+	menus[35].add(new Button(true,37,.5,.5,asize*1.5,asize*1.5,false,"pimba"));
 	
 	menus[33].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	menus[34].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
@@ -729,6 +731,7 @@ function populatemenus(){
 	menus[14].add(new Vid(1,"TnrMlbZKZLQ",14));
 	menus[15].add(new Vid(1,"0cEVwoQqgG4",15));
 	menus[36].add(new Vid(1,hoourl,36));
+	menus[37].add(new Vid(1,pimurl,37));
 	menus[16].add(new Vid(1,"qXU2-0r18Sg",16));
 	menus[17].add(new Vid(1,"AEZ6qmHFGYk",17));
 	menus[18].add(new Vid(1,"nHd89kA6Utc",18));
@@ -742,7 +745,8 @@ function populatemenus(){
 	//back button for collabs
 	menus[15].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
 	menus[36].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
-	
+	menus[37].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
+		
 	//back buttons for shorts
 	menus[10].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[14].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
