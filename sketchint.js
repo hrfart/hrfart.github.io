@@ -379,7 +379,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						swells.setVolume(evol);
 						
 					}
-					this.swell+=.09*30/fr;
+					this.swell+=.06*30/fr;
 				}
 				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
 					
@@ -408,12 +408,12 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						shrink.play();
 						shrink.setVolume(evol);
 					}
-					this.swell-=.09*30/fr;
+					this.swell-=.06*30/fr;
 				}
 			}
 		
 		}else{
-		 if(this.swell>1) this.swell-=.09*30/fr;
+		 if(this.swell>1) this.swell-=.06*30/fr;
 			if(!this.internal &&this.linkup){
 					this.linkup=false;
 					this.kool.remove();
