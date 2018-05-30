@@ -917,8 +917,8 @@ function Star(){
     	if(fr<k)
     		twop=k;
     twop=1/twop;
-    this.p = (this.p+this.os*1.2*twop*30/fr)%TWO_PI;
-    this.x-=this.s*.3*twop*30*30/fr+.075*(.5-abs(.5-trans))*30/fr;
+    this.p = (this.p+this.os*1.2*twop)%TWO_PI;
+    this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
    // fill(255,255);
     //text(twop,w/2,h/2);
    // if(twop=="NaN")
