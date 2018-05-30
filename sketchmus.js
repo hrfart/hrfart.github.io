@@ -413,7 +413,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 			}
 		
 		}else{
-		 if(this.swell>1) this.swell-=.03;
+		 if(this.swell>1) this.swell-=.09*30/fr;
 			if(!this.internal &&this.linkup){
 					this.linkup=false;
 					this.kool.remove();
