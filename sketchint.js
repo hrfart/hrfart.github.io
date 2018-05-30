@@ -7,7 +7,7 @@ var pimurl="15p5iMZQsp0";
 
 
 //background variables
-var numstars=150;
+var numstars=100;
 var stars=[];
 
 
@@ -379,7 +379,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						swells.setVolume(evol);
 						
 					}
-					this.swell+=.03;
+					this.swell+=.03*30/fr;
 				}
 				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
 					
@@ -408,7 +408,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						shrink.play();
 						shrink.setVolume(evol);
 					}
-					this.swell-=.03;
+					this.swell-=.03*30/fr;
 				}
 			}
 		
@@ -912,8 +912,8 @@ function Star(){
     	if(fr<k)
     		twop=k;
     twop=1/twop;
-    this.p = (this.p+this.os*1.2*twop)%TWO_PI;
-    this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
+    this.p = (this.p+this.os*1.2*twop*30/fr)%TWO_PI;
+    this.x-=this.s*.3*twop*30*30/fr+.075*(.5-abs(.5-trans))*30/fr;
    // fill(255,255);
     //text(twop,w/2,h/2);
    // if(twop=="NaN")
