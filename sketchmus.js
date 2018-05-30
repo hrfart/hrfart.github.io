@@ -107,7 +107,7 @@ function setup(){
 	
 	if(omobile){
 		evol=0;
-		numstars=75;
+		numstars=50;
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 
@@ -379,7 +379,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						swells.setVolume(evol);
 						
 					}
-					this.swell+=.03*30/fr;
+					this.swell+=.09*30/fr;
 				}
 				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
 					
@@ -408,7 +408,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						shrink.play();
 						shrink.setVolume(evol);
 					}
-					this.swell-=.03*30/fr;
+					this.swell-=.09*30/fr;
 				}
 			}
 		
