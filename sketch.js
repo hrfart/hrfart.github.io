@@ -7,7 +7,7 @@ var pimurl="15p5iMZQsp0";
 
 
 //background variables
-var numstars=300;
+var numstars=100;
 var stars=[];
 
 
@@ -107,7 +107,7 @@ function setup(){
 	
 	if(omobile){
 		evol=0;
-		numstars=150;
+		numstars=75;
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 
