@@ -380,6 +380,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						
 					}
 					this.swell+=.06*30/fr;
+					swell=min(swewll,1.3);
 				}
 				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
 					
@@ -409,11 +410,15 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						shrink.setVolume(evol);
 					}
 					this.swell-=.06*30/fr;
+					swell=max(1,swell);
 				}
 			}
 		
 		}else{
-		 if(this.swell>1) this.swell-=.06*30/fr;
+		 if(this.swell>1){
+		  this.swell-=.06*30/fr;
+		  swell=max(1,swell);
+		  }
 			if(!this.internal &&this.linkup){
 					this.linkup=false;
 					this.kool.remove();
