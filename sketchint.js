@@ -145,9 +145,13 @@ function draw(){
 	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38);
 	
 	//22 and 23 are math art and staycation which should be like videos by not silent.
-	if(!normmenu&&menu!=22&&menu!=23)silentm=true;
-	if(!normprev&&prevmenu!=22&&prevmenu!=23)silentpm=true;
+	if(!normmenu)silentm=true;
+	if(menu==22 || menu==23)silentm=false;
+	if(!normprev)silentpm=true;
+	if(prevmenu==22 || prevmenu==23)silentpm=false;
 	
+	gosounds=true;
+	if(mute==0 || currentsong>0 || silentm)gosounds=false;
 	
 	fr=getFrameRate();
 	sitebackground();
@@ -188,7 +192,7 @@ function draw(){
 		drewleaves=true;
 	}
 	
-	     if(!silentm)domusic();
+	     domusic();
 	
    fill(0,180*fade);
    rect(0,0,w,h);
@@ -274,8 +278,7 @@ function domusic(){
 	else if(silentpm&&trans>0)music[currentsong].setVolume((1-trans)*mute*hush);
 	else music[currentsong].setVolume(mute*hush);
 	
-	gosounds=true;
-	if(mute==0 || currentsong>0 || silentm)gosounds=false;
+
 }
 
 
