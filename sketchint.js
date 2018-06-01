@@ -188,7 +188,7 @@ function draw(){
 		drewleaves=true;
 	}
 	
-	     if(!slientm)domusic();
+	     if(!silentm)domusic();
 	
    fill(0,180*fade);
    rect(0,0,w,h);
