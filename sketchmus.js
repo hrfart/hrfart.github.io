@@ -156,7 +156,7 @@ function draw(){
 	fr=getFrameRate();
 	sitebackground();
 	
-	
+	 domusic();
 	
 	   if(!normmenu && !normprev) fade=1;
    else if(!normprev)fade=trans;
@@ -243,7 +243,7 @@ function draw(){
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
 
-   domusic();
+  
 
 }
 
