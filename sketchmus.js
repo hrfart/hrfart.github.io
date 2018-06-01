@@ -192,7 +192,7 @@ function draw(){
 		drewleaves=true;
 	}
 	
-	     domusic();
+	     
 	
    fill(0,180*fade);
    rect(0,0,w,h);
@@ -243,7 +243,7 @@ function draw(){
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
 
-   
+   domusic();
 
 }
 
