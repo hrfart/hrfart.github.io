@@ -243,10 +243,7 @@ function draw(){
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
 
-    else if(musicplaying==true){
-    	music[currentsong].stop();
-    		musicplaying=false;
-    }
+   
 
 }
 
