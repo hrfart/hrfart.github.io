@@ -56,6 +56,8 @@ var silentpm;
 var justremoved=false;
 
 var opening;
+var normmenu;
+var normprev;
 //var opening2;
 function preload(){
 
@@ -137,14 +139,27 @@ function draw(){
  	
 	silentm=false;
 	silentpm=false;
-	if(menu>6 && menu!=22 && menu!=23 && menu!=33 && menu!=34 && menu!=35 )silentm=true;
-	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23  && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)silentpm=true;
+	
+	//up to 6 are standards, 33-35 are animation subcategories, 38 is more page
+	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38);
+	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38);
+	
+	//22 and 23 are math art and staycation which should be like videos by not silent.
+	if(!normmenu&&menu!=22&&menu!=23)silentm=true;
+	if(!normprev&&prevmenu!=22&&prevmenu!=23)silentpm=true;
 	
 	
 	fr=getFrameRate();
 	sitebackground();
 	
 	
+	
+	   if(!normmenu && !normprev) fade=1;
+   else if(!normprev)fade=trans;
+   else if (!normmenu)fade=(1-trans);
+   else fade=0;
+   
+   
  	cursor(ARROW);
  	var k=5;
 	k=menus[0].domenu();
@@ -152,7 +167,7 @@ function draw(){
     ok2click=clickwait;
    	if(k==1){
    		trans=1;
-   		if(gosounds||(mute==1 && (prevmenu>6||currentsong>0) )){
+   		if(gosounds||(mute==1 )){
    			//swells.stop();
 			wind.play();
 			wind.setVolume(wvol);
@@ -165,14 +180,11 @@ function draw(){
 
 	
 	
-   if(menu>6 && prevmenu>6 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35 && menu!=33 && menu!=34 && menu!=35) fade=1;
-   else if(prevmenu>6 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)fade=trans;
-   else if (menu>6 && menu!=33 && menu!=34 && menu!=35)fade=(1-trans);
-   else fade=0;
+
  
    var drewleaves=false;
-	if((prevmenu>6&&trans>0&& prevmenu!=33 && prevmenu!=34 && prevmenu!=35) ||(menu>6 && menu!=33 && menu!=34 && menu!=35)){
-		if(!(menu==22&&trans==0))frontleaves()	
+	if(!normmenu || !normprev){
+		if(!(trans==0))frontleaves()	
 		drewleaves=true;
 	}
 	
@@ -191,7 +203,7 @@ function draw(){
     	translate((trans-1)*w,0);
     	
     	if(justremoved==true)justremoved=false;
-    	if(prevmenu>6&&(trans<.1||menu==22) && prevmenu!=33 && prevmenu!=34 && prevmenu!=35) menus[prevmenu].close();
+    	if(prevmenu>6&&(trans<.1||menu==22) && (!normprev ||prevmenu==23)) menus[prevmenu].close();
     	else menus[prevmenu].domenu();
     	
     	 
@@ -239,11 +251,11 @@ function domusic(){
 	var hush=.8;
 	
 	
-	silentm=false;
-	silentpm=false;
-	if(menu>6 && menu!=22 && menu!=23 && menu!=33 && menu!=34 && menu!=35)silentm=true;
-	if(prevmenu>6 && prevmenu!=22 && prevmenu!=23 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)silentpm=true;
-	
+	//silentm=false;
+	//silentpm=false;
+	//if(menu>6 && menu!=22 && menu!=23 && menu!=33 && menu!=34 && menu!=35)silentm=true;
+	//if(prevmenu>6 && prevmenu!=22 && prevmenu!=23 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)silentpm=true;
+	mute=1;
 	if(musicplaying==false){
 			currentsong=0;
 			music[currentsong].loop();
@@ -587,7 +599,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<38;i++) menus[i]=new Menu();
+	for(var i=0;i<39;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.35,.4));
@@ -604,15 +616,17 @@ function populatemenus(){
 	menus[0].add(new Button(true,2,.375,mmy,mms,mms,false,"animation"));
 	menus[0].add(new Button(true,3,.625,mmy,mms,mms,false,"interactive"));
 	menus[0].add(new Button(true,4,.875,mmy,mms,mms,false,"music"));
+	menus[0].add(new Button(true,38,.75,.92,.12,.12,false,"more"));
+	menus[0].add(new Button(true,5,.25,.92,.12,.12,false,"contact"));
+	menus[0].add(new Button(true,0,.5,.92,.12,.12,true,"mute"));
 	
-	menus[0].add(new Button(true,22,.5,.87,.12,.12,false,"mathart"));
-	menus[0].add(new Button(true,5,.25,.87,.12,.12,false,"contact"));
-	menus[0].add(new Button(true,0,.75,.87,.12,.12,true,"mute"));
-	menus[0].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.125,.92,.12,.12,false,"youtube"));
-	menus[0].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.92,.12,.12,false,"bandcamp"));
-	menus[0].add(new Button(true,6,.625,.92,.12,.12,false,"festivals"));
-	menus[0].add(new Button(false,"https://www.ncbi.nlm.nih.gov/pubmed/?term=harry+rubin-falcone",.875,.92,.12,.12,false,"science"));
 	
+	var nsize=.2;
+	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.625,.4,nsize,nsize,false,"youtube"));
+	menus[38].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
+	menus[38].add(new Button(true,6,.3,.65,nsize,nsize,false,"festivals"));
+	menus[38].add(new Button(false,"https://www.ncbi.nlm.nih.gov/pubmed/?term=harry+rubin-falcone",.7,.65,nsize,nsize,false,"science"));
+	menus[38].add(new Button(true,22,.5,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
 	var asizeb=.12;
@@ -624,7 +638,7 @@ function populatemenus(){
 	
 		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
 	menus[33].add(new Button(true,10,.52,.4,asize*1.5,asize*1.5,false,"three"));
-	menus[33].add(new Button(true,14,.25,.65,asize,asize,false,"kite"));
+	menus[33].add(new Button(true,14,.25,.68,asize,asize,false,"kite"));
 	menus[33].add(new Button(true,16,.7,.68,asizeb,asizeb,false,"cows"));
 	menus[33].add(new Button(true,17,.8,.68,asizeb,asizeb,false,"train"));
 	menus[33].add(new Button(true,18,.9,.68,asizeb,asizeb,false,"hello"));
@@ -699,6 +713,17 @@ function populatemenus(){
 	var fl2y=.72;
 	
 	//festivals
+	var hfs=.15;
+	menus[6].add(new Disptext("my mother and the hawk",.5,.3,.3));
+	menus[6].add(new Button(false,"https://www.facebook.com/FestivalCortometrajesRadioCity/photos/pcb.1894092230625175/1894072910627107/?type=3&theater",.25,.4,hfs,hfs,false,"radio"));
+	menus[6].add(new Button(false,"http://altff.org/onewebmedia/Winners%20AltFF%20Spring%202018%20.pdf",.5,.4,hfs,hfs,false,"altff"));
+	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/",.75,.4,hfs,hfs,false,"oga"));
+
+	
+	
+	
+	
+	
 	menus[6].add(new Disptext("three dancers",.25,fl2y-.1,.2));
 	var dansi=.19;
 	var fly2=.16;
