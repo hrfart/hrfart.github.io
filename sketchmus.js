@@ -184,11 +184,11 @@ function draw(){
  
    var drewleaves=false;
 	if(!normmenu || !normprev){
-		if(!(trans==0))frontleaves()	
+		frontleaves()	
 		drewleaves=true;
 	}
 	
-	 
+	     if(!slientm)domusic();
 	
    fill(0,180*fade);
    rect(0,0,w,h);
@@ -237,8 +237,8 @@ function draw(){
     	
     if(mouseIsPressed==false && touchIsDown==false && ok2click>0)ok2click--;
    // if(oldm!=menu)trans.doit();
-    if(!drewleaves&&!(menu==22&&trans==0))frontleaves()
-    if(!(menu>23&&trans==0)|| menu==33 || menu==34 || menu==35)domusic();
+    if(!drewleaves)frontleaves()
+
     else if(musicplaying==true){
     	music[currentsong].stop();
     		musicplaying=false;
@@ -255,6 +255,7 @@ function domusic(){
 	//silentpm=false;
 	//if(menu>6 && menu!=22 && menu!=23 && menu!=33 && menu!=34 && menu!=35)silentm=true;
 	//if(prevmenu>6 && prevmenu!=22 && prevmenu!=23 && prevmenu!=33 && prevmenu!=34 && prevmenu!=35)silentpm=true;
+	
 	if(musicplaying==false){
 			currentsong=0;
 			music[currentsong].loop();
