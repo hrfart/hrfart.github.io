@@ -4,7 +4,7 @@ var menu=3;
 var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
 var pimurl="15p5iMZQsp0";
-
+var hrfurl="3892272952"
 
 //background variables
 var numstars=100;
@@ -599,14 +599,31 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<39;i++) menus[i]=new Menu();
+	for(var i=0;i<43;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone: animation and composition",.5,.35,.4));
-	menus[1].add(new Button(true,32,.5,.53,.24,.24,false,"hawk1"));
+	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
 	//menus[1].add(new Disptext("",.5,.65,.2));
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
-	menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
+	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
+	menus[1].add(new Disptext("most recent:",.5,.5,.3));
+	menus[1].add(new Button(true,32,.2,.62,.2,.2,false,"hawk1"));
+	menus[1].add(new Button(true,39,.4,.62,.2,.2,false,"pimba"));
+	menus[1].add(new Button(true,40,.6,.62,.2,.2,false,"hoodoos"));
+	menus[1].add(new Button(true,41,.8,.62,.2,.2,false,"hrfep"));
+
+	menus[32].add(new Vid(1,hawkurl,32));
+	menus[39].add(new Vid(1,hoourl,36));
+	menus[40].add(new Vid(1,pimurl,37));
+	menus[41].add(new Vid(0,"hrfurl",26));
+	menus[42].add(new Vid(0,"hrfurl",26));
+	
+	menus[32].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	menus[39].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	menus[40].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	menus[41].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	
+	
 
 	
 	var mms=.18
@@ -637,8 +654,9 @@ function populatemenus(){
 
 	
 		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
-	menus[33].add(new Button(true,10,.52,.4,asize*1.5,asize*1.5,false,"three"));
-	menus[33].add(new Button(true,14,.25,.68,asize,asize,false,"kite"));
+			menus[33].add(new Button(true,31,.366666,.4,asize*1.8,asize*1.8,false,"hawk1"));
+	menus[33].add(new Button(true,10,.63333,.4,asize*1.8,asize*1.8,false,"three"));
+	menus[33].add(new Button(true,14,.2,.68,asize,asize,false,"kite"));
 	menus[33].add(new Button(true,16,.7,.68,asizeb,asizeb,false,"cows"));
 	menus[33].add(new Button(true,17,.8,.68,asizeb,asizeb,false,"train"));
 	menus[33].add(new Button(true,18,.9,.68,asizeb,asizeb,false,"hello"));
@@ -657,10 +675,9 @@ function populatemenus(){
 	menus[35].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	
 	
-	menus[2].add(new Button(true,31,.35,.35,asize*1.5,asize*1.5,false,"hawk1"));
-	menus[2].add(new Button(true,33,.8,.35,asize*1.5,asize*1.5,false,"shorts"));
-	menus[2].add(new Button(true,35,.2,.65,asize*1.5,asize*1.5,false,"collabs"));
-	menus[2].add(new Button(true,34,.65,.65,asize*1.5,asize*1.5,false,"mms"));
+	menus[2].add(new Button(true,33,.5,.4,asize*2,asize*2,false,"shorts"));
+	menus[2].add(new Button(true,35,.25,.65,asize*1.5,asize*1.5,false,"collabs"));
+	menus[2].add(new Button(true,34,.75,.65,asize*1,asize*1,false,"mms"));
 
 	//interactive 
 	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
@@ -683,26 +700,26 @@ function populatemenus(){
 	//music
 	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.27,.18));
 	menus[4].add(new Disptext("in jazz, funk, fusion, classical and new music. he also plays guitar, sings, and composes. ",.5,.31,.18));
-	menus[4].add(new Disptext("soundtrack",.1,.4,.2));
-	menus[4].add(new Disptext("compositions",.1,.44,.2));
+	menus[4].add(new Disptext("soundtrack",.1,.66,.2));
+	menus[4].add(new Disptext("compositions",.1,.7,.2));
 //	menus[4].add(new Disptext("jazz",.2,.55,.2));
 //	menus[4].add(new Disptext("math \"music\"",.1,.72,.2)
 
 
 	var mussize=.15
-	menus[4].add(new Button(true,30,.25,.42,mussize,mussize,false,"hawk2"));
-	menus[4].add(new Button(true,20,.65,.42,mussize,mussize,false,"dancersst"));
-	menus[4].add(new Button(true,19,.45,.42,mussize,mussize,false,"mmsst"));
-	menus[4].add(new Button(true,21,.85,.42,mussize,mussize,false,"schlubst"));
+	menus[4].add(new Button(true,30,.25,.68,mussize,mussize,false,"hawk2"));
+	menus[4].add(new Button(true,20,.65,.68,mussize,mussize,false,"dancersst"));
+	menus[4].add(new Button(true,19,.45,.68,mussize,mussize,false,"mmsst"));
+	menus[4].add(new Button(true,21,.85,.68,mussize,mussize,false,"schlubst"));
 
 	//menus[4].add(new Button(true,1,.4,.55,mussize,mussize,true,"tric"));
 	//menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
 	//menus[4].add(new Button(true,3,.8,.55,mussize,mussize,true,"mys"));
 	
-	menus[4].add(new Button(true,26,.35,.68,mussize,mussize,false,"tric"));
-	
-	if(omobile||true)menus[4].add(new Button(false,"recursive_songm.html",.75,.68,mussize,mussize,false,"recsong"));
-	else menus[4].add(new Button(true,25,.75,.68,mussize,mussize,false,"recsong"));
+	menus[4].add(new Button(true,26,.35,.45,mussize,mussize,false,"tric"));
+	menus[4].add(new Button(true,42,.55,.45,mussize,mussize,false,"hrfep"));
+
+	menus[4].add(new Button(false,"recursive_songm.html",.75,.45,mussize,mussize,false,"recsong"));
 
 	
 	//contact
@@ -727,7 +744,7 @@ function populatemenus(){
 	menus[6].add(new Disptext("three dancers",.25,fl2y-.1,.2));
 	var dansi=.19;
 	var fly2=.16;
-	menus[6].add(new Button(false,"http://airport-anifes.jp/en/",.08,.72,dansi,fly2,false,"chiose"));
+	menus[6].add(new Button(false,"http://site2016.airport-anifes.jp/en/nominate_item/three_dancers/",.08,.72,dansi,fly2,false,"chiose"));
 	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.2,.72,dansi,fly2,false,"darte"));
 	menus[6].add(new Button(false,"http://largofilmawards.com/november-2016/",.32,.72,.1,fly2,false,"largo"));
 	menus[6].add(new Button(false,"https://sites.google.com/view/hope-film-awards/home",.42,.72,.1,fly2,false,"hope"));
@@ -785,7 +802,6 @@ function populatemenus(){
 	menus[18].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
 	menus[31].add(new Vid(1,hawkurl,31));
-	menus[32].add(new Vid(1,hawkurl,32));
 	
 	//albums
 	menus[19].add(new Vid(0,"1696192640",19));
@@ -814,10 +830,10 @@ function populatemenus(){
 	for(var i=19;i<22;i++)menus[i].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	
 	menus[26].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
+	menus[42].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[30].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
-	menus[31].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
+	menus[31].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
-	menus[32].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	//menus[25].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	//menus[22].add(new Button(true,2,.5,.8,.2,.1,false,"back"));
 	
