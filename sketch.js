@@ -607,16 +607,17 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
+	
 	menus[1].add(new Button(true,32,.2,.62,.2,.2,false,"hawk1"));
 	menus[1].add(new Button(true,39,.4,.62,.2,.2,false,"pimba"));
 	menus[1].add(new Button(true,40,.6,.62,.2,.2,false,"hoodoos"));
 	menus[1].add(new Button(true,41,.8,.62,.2,.2,false,"hrfep"));
 
 	menus[32].add(new Vid(1,hawkurl,32));
-	menus[39].add(new Vid(1,hoourl,36));
-	menus[40].add(new Vid(1,pimurl,37));
-	menus[41].add(new Vid(0,"hrfurl",26));
-	menus[42].add(new Vid(0,"hrfurl",26));
+	menus[39].add(new Vid(1,pimurl,39));
+	menus[40].add(new Vid(1,hoourl,40));
+	menus[41].add(new Vid(0,hrfurl,41));
+	menus[42].add(new Vid(0,hrfurl,42));
 	
 	menus[32].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[39].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
