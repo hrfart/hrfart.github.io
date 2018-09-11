@@ -738,12 +738,12 @@ function populatemenus(){
 	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/",.5,.35,hfs,hfs,false,"oga"));
 	menus[6].add(new Button(false,"http://ibestff.com/official-selection-2018/",.6666667,.35,hfs,hfs,false,"ibestff"));
 	menus[6].add(new Button(false,"https://strasburgfilm.com/themed-events/",.83333,.35,hfs,hfs,false,"shen"));
-				menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.57,.5,hfs,hfs,false,"cinemaway"));
+				menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.58,.5,hfs,hfs,false,"cinemaway"));
 				menus[6].add(new Button(false,"http://www.buskopolisfilms.com/OddityFestival.html",.75,.5,hfs,hfs,false,"odd"));
 				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/000_Fesztivalok/2018/",.25,.5,hfs,hfs,false,"tiaf"));
-				menus[6].add(new Button(false,chi2,.43,.5,hfs,hfs,false,"chi2"));
-	
-	
+				menus[6].add(new Button(false,chi2,.42,.5,hfs,hfs,false,"chi2"));
+				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.93,.5,hfs,hfs,false,"orv"));
+
 	
 	menus[6].add(new Disptext("three dancers",.25,fl2y-.1,.2));
 	var dansi=.19;
