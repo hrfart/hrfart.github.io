@@ -738,7 +738,7 @@ function populatemenus(){
 	menus[6].add(new Button(false,"http://altff.org/onewebmedia/Winners%20AltFF%20Spring%202018%20.pdf",.3333,.35,hfs,hfs,false,"altff"));
 	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/",.5,.35,hfs,hfs,false,"oga"));
 	menus[6].add(new Button(false,"http://ibestff.com/official-selection-2018/",.6666667,.35,hfs,hfs,false,"ibestff"));
-	menus[6].add(new Button(false,"https://strasburgfilm.com/themed-events/",.83333,.35,hfs,hfs,false,"shen"));
+	menus[6].add(new Button(false,"https://strasburgfilmfestival.eventive.org/films/5b5a653380886400145c2c85",.83333,.35,hfs,hfs,false,"shen"));
 				menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.58,.5,hfs,hfs,false,"cinemaway"));
 				menus[6].add(new Button(false,"http://www.buskopolisfilms.com/OddityFestival.html",.75,.5,hfs,hfs,false,"odd"));
 				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/000_Fesztivalok/2018/",.25,.5,hfs,hfs,false,"tiaf"));
