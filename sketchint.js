@@ -6,7 +6,6 @@ var hoourl="f5YsAUwXSHQ";
 var pimurl="15p5iMZQsp0";
 var hrfurl="3892272952";
 var chi2="http://airport-anifes.jp/en/";
-
 //background variables
 var numstars=100;
 var stars=[];
@@ -600,7 +599,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<43;i++) menus[i]=new Menu();
+	for(var i=0;i<45;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
@@ -609,21 +608,25 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.2,.62,.2,.2,false,"hawk1"));
-	menus[1].add(new Button(true,39,.4,.62,.2,.2,false,"pimba"));
-	menus[1].add(new Button(true,40,.6,.62,.2,.2,false,"hoodoos"));
-	menus[1].add(new Button(true,41,.8,.62,.2,.2,false,"hrfep"));
+	menus[1].add(new Button(true,32,.1,.62,.2,.2,false,"hawk1"));
+	menus[1].add(new Button(true,39,.3,.62,.2,.2,false,"pimba"));
+	menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
+	menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
+	menus[1].add(new Button(true,44,.9,.62,.2,.2,false,"sugar"));
 
 	menus[32].add(new Vid(1,hawkurl,32));
 	menus[39].add(new Vid(1,pimurl,39));
 	menus[40].add(new Vid(1,hoourl,40));
 	menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
+	menus[43].add(new Vid(1,"WEh_utcEjYU",43));
+	menus[44].add(new Vid(1,"WEh_utcEjYU",44));
 	
 	menus[32].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[39].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[40].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[41].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	menus[44].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	
 	
 
@@ -658,7 +661,9 @@ function populatemenus(){
 		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
 			menus[33].add(new Button(true,31,.366666,.4,asize*1.8,asize*1.8,false,"hawk1"));
 	menus[33].add(new Button(true,10,.63333,.4,asize*1.8,asize*1.8,false,"three"));
-	menus[33].add(new Button(true,14,.2,.68,asize,asize,false,"kite"));
+	menus[33].add(new Button(true,14,.15,.68,asize,asize,false,"kite"));
+	menus[33].add(new Button(true,15,.27,.68,asize,asize,false,"ship"));
+	
 	menus[33].add(new Button(true,16,.7,.68,asizeb,asizeb,false,"cows"));
 	menus[33].add(new Button(true,17,.8,.68,asizeb,asizeb,false,"train"));
 	menus[33].add(new Button(true,18,.9,.68,asizeb,asizeb,false,"hello"));
@@ -668,7 +673,7 @@ function populatemenus(){
 	menus[34].add(new Button(true,13,.74,.55,asize*1.5,asize*1.5,false,"ep3"));
 
 
-	menus[35].add(new Button(true,15,.75,.5,asize*1.5,asize*1.5,false,"ship"));
+	menus[35].add(new Button(true,43,.75,.5,asize*1.5,asize*1.5,false,"sugar"));
 	menus[35].add(new Button(true,36,.25,.5,asize*1.5,asize*1.5,false,"hoodoos"));
 	menus[35].add(new Button(true,37,.5,.5,asize*1.5,asize*1.5,false,"pimba"));
 	
@@ -746,7 +751,6 @@ function populatemenus(){
 				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.93,.5,hfs,hfs,false,"orv"));
 
 	
-	
 	menus[6].add(new Disptext("three dancers",.25,fl2y-.1,.2));
 	var dansi=.19;
 	var fly2=.16;
@@ -795,12 +799,13 @@ function populatemenus(){
 	menus[12].add(new Button(true,34,.5,.75,.1,.1,false,"back"));
 	menus[13].add(new Button(true,34,.5,.75,.1,.1,false,"back"));
 	
-	//back button for collabs
-	menus[15].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
+	//back button for music videos
+	menus[43].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
 	menus[36].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
 	menus[37].add(new Button(true,35,.5,.75,.1,.1,false,"back"));
 		
 	//back buttons for shorts
+	menus[15].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[10].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[14].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[16].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
