@@ -5,7 +5,7 @@ var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
 var pimurl="15p5iMZQsp0";
 var hrfurl="3892272952";
-var chi2="http://airport-anifes.jp/en/";
+var chi2="http://airport-anifes.jp/en/showcase_item/my_mother/";
 //background variables
 var numstars=100;
 var stars=[];
