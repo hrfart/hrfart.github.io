@@ -1,6 +1,6 @@
 var menu=1;
 
-
+var hawkfull="RDIF2s0oFig";
 var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
 var pimurl="15p5iMZQsp0";
@@ -608,7 +608,7 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.1,.62,.2,.2,false,"hawk1"));
+	menus[1].add(new Button(true,32,.1,.62,.2,.2,false,"hawkt"));
 	menus[1].add(new Button(true,39,.3,.62,.2,.2,false,"pimba"));
 	menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
@@ -741,12 +741,12 @@ function populatemenus(){
 		menus[6].add(new Disptext("my mother and the hawk",.5,.25,.3));
 	menus[6].add(new Button(false,"https://www.facebook.com/FestivalCortometrajesRadioCity/photos/pcb.1894092230625175/1894072910627107/?type=3&theater",.16667,.35,hfs,hfs,false,"radio"));
 	menus[6].add(new Button(false,"http://altff.org/onewebmedia/Winners%20AltFF%20Spring%202018%20.pdf",.3333,.35,hfs,hfs,false,"altff"));
-	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/",.5,.35,hfs,hfs,false,"oga"));
+	menus[6].add(new Button(false,"https://www.facebook.com/events/263396451033981/",.5,.35,hfs,hfs,false,"oga"));
 	menus[6].add(new Button(false,"http://ibestff.com/official-selection-2018/",.6666667,.35,hfs,hfs,false,"ibestff"));
 	menus[6].add(new Button(false,"https://strasburgfilmfestival.eventive.org/films/5b5a653380886400145c2c85",.83333,.35,hfs,hfs,false,"shen"));
 				menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.58,.5,hfs,hfs,false,"cinemaway"));
-				menus[6].add(new Button(false,"http://www.buskopolisfilms.com/OddityFestival.html",.75,.5,hfs,hfs,false,"odd"));
-				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/000_Fesztivalok/2018/",.25,.5,hfs,hfs,false,"tiaf"));
+				menus[6].add(new Button(false,"https://indd.adobe.com/view/b41e2b0a-1558-4299-a21e-1223c373542f",.75,.5,hfs,hfs,false,"odd"));
+				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/Documents/2018/VetitesiRend2018.pdf",.25,.5,hfs,hfs,false,"tiaf"));
 				menus[6].add(new Button(false,chi2,.42,.5,hfs,hfs,false,"chi2"));
 				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.93,.5,hfs,hfs,false,"orv"));
 
@@ -812,7 +812,7 @@ function populatemenus(){
 	menus[17].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[18].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
-	menus[31].add(new Vid(1,hawkurl,31));
+	menus[31].add(new Vid(1,hawkfull,31));
 	
 	//albums
 	menus[19].add(new Vid(0,"1696192640",19));
