@@ -599,7 +599,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<45;i++) menus[i]=new Menu();
+	for(var i=0;i<48;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
@@ -608,14 +608,14 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.1,.62,.2,.2,false,"hawkt"));
-	menus[1].add(new Button(true,39,.3,.62,.2,.2,false,"pimba"));
-	menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
-	menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
-	menus[1].add(new Button(true,44,.9,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(true,32,.3,.62,.2,.2,false,"hawkt"));
+	menus[1].add(new Button(true,39,.7,.62,.2,.2,false,"dog"));
+	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
+	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
+	menus[1].add(new Button(true,44,.5,.62,.2,.2,false,"sugar"));
 
 	menus[32].add(new Vid(1,hawkurl,32));
-	menus[39].add(new Vid(1,pimurl,39));
+	menus[39].add(new Vid(1,"ZMsiPa66dsE",39));
 	menus[40].add(new Vid(1,hoourl,40));
 	menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
@@ -660,13 +660,14 @@ function populatemenus(){
 	
 		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
 			menus[33].add(new Button(true,31,.366666,.4,asize*1.8,asize*1.8,false,"hawk1"));
-	menus[33].add(new Button(true,10,.63333,.4,asize*1.8,asize*1.8,false,"three"));
+	menus[33].add(new Button(true,10,.73333,.4,asize*1.8,asize*1.8,false,"three"));
 	menus[33].add(new Button(true,14,.15,.68,asize,asize,false,"kite"));
 	menus[33].add(new Button(true,15,.27,.68,asize,asize,false,"ship"));
 	
 	menus[33].add(new Button(true,16,.7,.68,asizeb,asizeb,false,"cows"));
 	menus[33].add(new Button(true,17,.8,.68,asizeb,asizeb,false,"train"));
 	menus[33].add(new Button(true,18,.9,.68,asizeb,asizeb,false,"hello"));
+	menus[33].add(new Button(true,47,.6,.68,asizeb,asizeb,false,"dog"))
 	
 	menus[34].add(new Button(true,11,.5,.35,asize*1.5,asize*1.5,false,"ep1"));
 	menus[34].add(new Button(true,12,.25,.55,asize*1.5,asize*1.5,false,"ep2"));
@@ -792,6 +793,7 @@ function populatemenus(){
 	menus[16].add(new Vid(1,"qXU2-0r18Sg",16));
 	menus[17].add(new Vid(1,"AEZ6qmHFGYk",17));
 	menus[18].add(new Vid(1,"nHd89kA6Utc",18));
+	menus[47].add(new Vid(1,"ZMsiPa66dsE",47));
 	
 	
 	//back button for machine
@@ -811,6 +813,7 @@ function populatemenus(){
 	menus[16].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[17].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[18].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+	menus[47].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
 	menus[31].add(new Vid(1,hawkfull,31));
 	
