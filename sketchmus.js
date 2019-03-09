@@ -647,7 +647,7 @@ function populatemenus(){
 	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.625,.4,nsize,nsize,false,"youtube"));
 	menus[38].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
 	menus[38].add(new Button(true,6,.3,.65,nsize,nsize,false,"festivals"));
-	menus[38].add(new Button(false,"https://www.ncbi.nlm.nih.gov/pubmed/?term=harry+rubin-falcone",.7,.65,nsize,nsize,false,"science"));
+	menus[38].add(new Button(false,"https://www.ncbi.nlm.nih.gov/pubmed/?term=rubin-falcone",.7,.65,nsize,nsize,false,"science"));
 	menus[38].add(new Button(true,22,.5,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
