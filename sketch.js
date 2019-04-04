@@ -742,7 +742,7 @@ function populatemenus(){
 		menus[6].add(new Disptext("my mother and the hawk",.5,.25,.3));
 	menus[6].add(new Button(false,"https://www.facebook.com/FestivalCortometrajesRadioCity/photos/pcb.1894092230625175/1894072910627107/?type=3&theater",.16667,.35,hfs,hfs,false,"radio"));
 	menus[6].add(new Button(false,"http://altff.org/onewebmedia/Winners%20AltFF%20Spring%202018%20.pdf",.3333,.35,hfs,hfs,false,"altff"));
-	menus[6].add(new Button(false,"https://www.facebook.com/events/263396451033981/",.5,.35,hfs,hfs,false,"oga"));
+	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/connessioni-interpersonali-/harry-rubin-falcone-my.html",.5,.35,hfs,hfs,false,"oga"));
 	menus[6].add(new Button(false,"http://ibestff.com/official-selection-2018/",.6666667,.35,hfs,hfs,false,"ibestff"));
 	menus[6].add(new Button(false,"https://strasburgfilmfestival.eventive.org/films/5b5a653380886400145c2c85",.83333,.35,hfs,hfs,false,"shen"));
 				menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.58,.5,hfs,hfs,false,"cinemaway"));
@@ -750,6 +750,7 @@ function populatemenus(){
 				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/Documents/2018/VetitesiRend2018.pdf",.25,.5,hfs,hfs,false,"tiaf"));
 				menus[6].add(new Button(false,chi2,.42,.5,hfs,hfs,false,"chi2"));
 				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.93,.5,hfs,hfs,false,"orv"));
+				menus[6].add(new Button(false,"https://www.facebook.com/440651659706973/photos/a.639064316532372/639064813198989/?type=3&theater",(1-.83333333)/2,.5,hfs,hfs,false,"yorca"));
 
 	
 	menus[6].add(new Disptext("three dancers",.25,fl2y-.1,.2));
