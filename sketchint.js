@@ -5,7 +5,7 @@ var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
 var pimurl="15p5iMZQsp0";
 var hrfurl="3892272952";
-var chi2="http://airport-anifes.jp/en/showcase_item/my_mother/";
+var chi2="http://site2018.airport-anifes.jp/en/showcase_item/my_mother/";
 //background variables
 var numstars=100;
 var stars=[];
@@ -676,7 +676,7 @@ function populatemenus(){
 
 	menus[35].add(new Button(true,43,.75,.5,asize*1.5,asize*1.5,false,"sugar"));
 	menus[35].add(new Button(true,36,.25,.5,asize*1.5,asize*1.5,false,"hoodoos"));
-	menus[35].add(new Button(true,37,.5,.5,asize*1.5,asize*1.5,false,"pimba"));
+	//menus[35].add(new Button(true,37,.5,.5,asize*1.5,asize*1.5,false,"pimba"));
 	
 	menus[33].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	menus[34].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
