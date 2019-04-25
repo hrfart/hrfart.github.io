@@ -749,8 +749,8 @@ function populatemenus(){
 				menus[6].add(new Button(false,"https://indd.adobe.com/view/b41e2b0a-1558-4299-a21e-1223c373542f",.75,.5,hfs,hfs,false,"odd"));
 				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/Documents/2018/VetitesiRend2018.pdf",.25,.5,hfs,hfs,false,"tiaf"));
 				menus[6].add(new Button(false,chi2,.42,.5,hfs,hfs,false,"chi2"));
-				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.93,.5,hfs,hfs,false,"orv"));
-				menus[6].add(new Button(false,"https://www.facebook.com/440651659706973/photos/a.639064316532372/639064813198989/?type=3&theater",(1-.83333333)/2,.5,hfs,hfs,false,"yorca"));
+				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.6666667,.35,hfs,hfs,false,"orv"));
+				menus[6].add(new Button(false,"https://www.facebook.com/440651659706973/photos/a.639064316532372/639064813198989/?type=3&theater",.3333,.35,hfs,hfs,false,"yorca"));
 
 	
 	menus[6].add(new Disptext("three dancers",.14,fl2y-.1,.2));
