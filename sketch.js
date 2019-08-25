@@ -615,7 +615,7 @@ function populatemenus(){
 	menus[1].add(new Button(true,44,.7,.62,.2,.2,false,"sugar"));
 
 	menus[32].add(new Vid(1,hawkurl,32));
-	menus[39].add(new Vid(1,"pimurl",39));
+	menus[39].add(new Vid(1,pimurl,39));
 	menus[40].add(new Vid(1,hoourl,40));
 	menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
