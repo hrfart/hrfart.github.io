@@ -706,8 +706,8 @@ function populatemenus(){
 	
 	
 	//music
-	menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.27,.18));
-	menus[4].add(new Disptext("in jazz, funk, fusion, classical and new music. he also plays guitar, sings, and composes. ",.5,.31,.18));
+	//menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.27,.18));
+	//menus[4].add(new Disptext("in jazz, funk, fusion, classical and new music. he also plays guitar, sings, and composes. ",.5,.31,.18));
 	menus[4].add(new Disptext("soundtrack",.1,.66,.2));
 	menus[4].add(new Disptext("compositions",.1,.7,.2));
 //	menus[4].add(new Disptext("jazz",.2,.55,.2));
@@ -724,10 +724,10 @@ function populatemenus(){
 	//menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
 	//menus[4].add(new Button(true,3,.8,.55,mussize,mussize,true,"mys"));
 	
-	menus[4].add(new Button(true,26,.35,.45,mussize,mussize,false,"tric"));
-	menus[4].add(new Button(true,42,.55,.45,mussize,mussize,false,"hrfep"));
+	menus[4].add(new Button(true,26,.35,.4,mussize,mussize,false,"tric"));
+	menus[4].add(new Button(true,42,.55,.4,mussize,mussize,false,"hrfep"));
 
-	menus[4].add(new Button(false,"recursive_songm.html",.75,.45,mussize,mussize,false,"recsong"));
+	menus[4].add(new Button(false,"recursive_songm.html",.75,.4,mussize,mussize,false,"recsong"));
 
 	
 	//contact
