@@ -609,10 +609,10 @@ function populatemenus(){
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
 	menus[1].add(new Button(true,32,.3,.62,.2,.2,false,"hawkt"));
-	menus[1].add(new Button(true,39,.7,.62,.2,.2,false,"pimba"));
+	menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
-	menus[1].add(new Button(true,44,.8,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(true,44,.7,.62,.2,.2,false,"sugar"));
 
 	menus[32].add(new Vid(1,hawkurl,32));
 	menus[39].add(new Vid(1,"pimurl",39));
