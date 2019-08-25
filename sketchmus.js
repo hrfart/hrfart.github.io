@@ -3,7 +3,7 @@ var menu=4;
 var hawkfull="RDIF2s0oFig";
 var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
-var pimurl="15p5iMZQsp0";
+var pimurl="x17ZTdi26ek";
 var hrfurl="3892272952";
 var chi2="http://site2018.airport-anifes.jp/en/showcase_item/my_mother/";
 //background variables
@@ -608,14 +608,14 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
-		menus[1].add(new Button(true,32,.35,.62,.2,.2,false,"hawkt"));
-	//menus[1].add(new Button(true,39,.7,.62,.2,.2,false,"dog"));
+	menus[1].add(new Button(true,32,.3,.62,.2,.2,false,"hawkt"));
+	menus[1].add(new Button(true,39,.7,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
-	menus[1].add(new Button(true,44,.65,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(true,44,.8,.62,.2,.2,false,"sugar"));
 
 	menus[32].add(new Vid(1,hawkurl,32));
-	menus[39].add(new Vid(1,"ZMsiPa66dsE",39));
+	menus[39].add(new Vid(1,"pimurl",39));
 	menus[40].add(new Vid(1,hoourl,40));
 	menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
@@ -676,7 +676,7 @@ function populatemenus(){
 
 	menus[35].add(new Button(true,43,.75,.5,asize*1.5,asize*1.5,false,"sugar"));
 	menus[35].add(new Button(true,36,.25,.5,asize*1.5,asize*1.5,false,"hoodoos"));
-	//menus[35].add(new Button(true,37,.5,.5,asize*1.5,asize*1.5,false,"pimba"));
+	menus[35].add(new Button(true,37,.5,.5,asize*1.5,asize*1.5,false,"pimba"));
 	
 	menus[33].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
 	menus[34].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
