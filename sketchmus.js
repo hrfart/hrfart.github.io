@@ -1019,7 +1019,7 @@ function toidtuesday(){
 		    	handpos=handpos-.01
 		    	}
 			}
-			image(tthappy,h*.8,.25*h,1.2*h,.8/3.0*h)
+			image(tthappy,w*.5,.25*h,w*.8,.8/3.0*h)
 	}else{
 		image(ttnot,.5*w,.5*h,.4*h,.4*h)
 	}
