@@ -984,11 +984,10 @@ function toidtuesday(){
 
 	 var jsdate = new Date();
  	var dayOfWeek = jsdate.getDay();
-	dayOfWeek=2
 	if(dayOfWeek==2){
 		if(handdir==1){
 			if(handpos<1){
-		    	handpos=handpos+.01
+		    	handpos=min(handpos+.01*30/fr,1.01)
 			}else{
 			 if(altoidtaken==false){
 			 if(gmouseover(.5,.5,.04*w,.06*h)){
@@ -1004,7 +1003,7 @@ function toidtuesday(){
 			}
 			if(altoidtaken){
 				image(openhandnt,.5*w,-.5*h+.8*h*handpos,h/3*handpos,h*handpos)
-				toidtimer=toidtimer+1
+				toidtimer=toidtimer+1*30/fr
 				if(toidtimer>70){
 					handdir=-1
 				}
@@ -1016,7 +1015,7 @@ function toidtuesday(){
 			}else{
 				image(closedhand,.5*w,-.5*h+.8*h*handpos,h/3*handpos,h*handpos)
 				if(handpos>0){
-		    	handpos=handpos-.01
+		    	handpos=handpos-.01*30/fr
 		    	}
 			}
 			image(tthappy,w*.5,.25*h,w*.8,.8/3.0*h)
