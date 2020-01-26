@@ -972,7 +972,7 @@ function gmouseover(x,y,wi,hi){
 	};
 	
 
-var handpos=-.6
+var handpos=-.3
 var handdir=1
 var altoidtaken=false
 var toidsound
@@ -1019,7 +1019,7 @@ function toidtuesday(){
 		    	handpos=handpos-.01
 		    	}
 			}
-			image(tthappy,.5*w,.25*h,1.2*h,.8/3.0*h)
+			image(tthappy,h*.8,.25*h,1.2*h,.8/3.0*h)
 	}else{
 		image(ttnot,.5*w,.5*h,.4*h,.4*h)
 	}
