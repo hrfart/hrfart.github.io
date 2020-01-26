@@ -978,7 +978,8 @@ var altoidtaken=false
 var toidsound
 
 var toidtimer=0
-	
+var tempfr=30
+var tempfrwatch=0
 //////toid tuesday
 function toidtuesday(){
 
@@ -987,7 +988,12 @@ function toidtuesday(){
 	if(dayOfWeek==2){
 		if(handdir==1){
 			if(handpos<1){
-		    	handpos=min(handpos+.01*30/fr,1.01)
+		    	handpos=min(handpos+.01*30/tempfr,1.01)
+		    	tempfrwatch=tempfrwatch+1
+		    	if(tempfrwatch>10){
+		    		tempfr=fr
+		    		tempfrwatch=20	
+		    	}
 			}else{
 			 if(altoidtaken==false){
 			 if(gmouseover(.5,.5,.04*w,.06*h)){
