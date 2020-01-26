@@ -58,6 +58,9 @@ var justremoved=false;
 var opening;
 var normmenu;
 var normprev;
+
+
+
 //var opening2;
 function preload(){
 
@@ -70,6 +73,11 @@ opening.position(0,0);
 
 //"<iframe src='"+this.t+"' frameborder='0'></iframe>
 
+tthappy=loadImage(basepath+"tt_happy.png");
+ttnot=loadImage(basepath+"tt_not.png");
+openhand=loadImage(basepath+"handopen.png");
+openhandnt=loadImage(basepath+"handopennt.png");
+closedhand=loadImage(basepath+"handclosed.png");
 mute2=loadImage(basepath+"mute2.png");
 mute3=loadImage(basepath+"mute3.png");
 //image(mute2,0,0,w,h);
@@ -87,13 +95,15 @@ swells=loadSound(basepath+"swell.mp3");
 shrink=loadSound(basepath+"shrink.mp3");
 if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
 
+
+minty=loadSound(basepath+"minty.mp3");
 //load in sounds here
 for(var i=0;i<9;i++)leaves[i]=loadImage(basepath+"leaf"+i+".png");
 populatemenus();
 
 }
-
-
+var numtoidstars=30
+var toidstars=[]
 function setup(){
 	opening.remove();
 	//opening2.remove();
@@ -112,6 +122,7 @@ function setup(){
 		numstars=50;
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
+	for(var i=0;i<numtoidstars;i++)toidstars[i]=new toidStar();
 
 }
 
@@ -510,7 +521,11 @@ function Vid(youtubes,ss,mmm){
 	
 	
 	this.updateanddraw = function(){
-	
+		
+		if(this.youtube==5){
+			toidtuesday()
+			return
+		}
 		if(this.running==false&&this.ourmenu>6){
 			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen></iframe>");
   			else if(this.youtube>1) this.div= createDiv("<iframe src='"+this.t+"' frameborder='0'></iframe>");
@@ -568,7 +583,6 @@ function Menu(){
 	//this.nums=0;
 	this.t=0;
 	this.kk=0;
-	
 	this.close = function(){
 		this.buttons[0].close();
 	
@@ -599,7 +613,7 @@ function Menu(){
 
 
 function populatemenus(){
-	for(var i=0;i<48;i++) menus[i]=new Menu();
+	for(var i=0;i<49;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
@@ -692,6 +706,7 @@ function populatemenus(){
 	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
 	if(omobile||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
 	else 		menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
+	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
 	//http://hrfart.github.io/
 	
 	
@@ -849,6 +864,11 @@ function populatemenus(){
 	menus[30].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[31].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
+	
+	//toid tuesday
+	menus[48].add(new Vid(5,"",48))
+	menus[48].add(new Button(true,3,.5,.8,.1,.1,false,"back"));
+	
 	//menus[25].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	//menus[22].add(new Button(true,2,.5,.8,.2,.1,false,"back"));
 	
@@ -939,6 +959,72 @@ function Windleaf(){
 
 
 
+function gmouseover(x,y,wi,hi){
+		mm=1
+		if(touchX==lasttouchX && touchY==lasttouchY && omobile){
+			 return false;
+		}
+		
+		if(abs(x-mouseX/w)<wi/2*mm/w*sm&&abs(y-mouseY/h)<hi/2*mm/h*sm) return true;
+		else if(abs(x-touchX/w)<wi/2*mm/w*sm&&abs(y-touchY/h)<hi/2*mm/h*sm) return true;
+
+		else return false;
+	};
+	
+
+var handpos=-.6
+var handdir=1
+var altoidtaken=false
+var toidsound
+
+var toidtimer=0
+	
+//////toid tuesday
+function toidtuesday(){
+
+	 var jsdate = new Date();
+ 	var dayOfWeek = jsdate.getDay();
+	dayOfWeek=2
+	if(dayOfWeek==2){
+		if(handdir==1){
+			if(handpos<1){
+		    	handpos=handpos+.01
+			}else{
+			 if(altoidtaken==false){
+			 if(gmouseover(.5,.5,.04*w,.06*h)){
+			   cursor(HAND);
+			   if(mouseIsPressed||touchIsDown){
+			   	altoidtaken=true
+			   	minty.setVolume(1);
+			   	minty.play()
+			   	minty.setVolume(1);
+			   }
+			 }
+			 }
+			}
+			if(altoidtaken){
+				image(openhandnt,.5*w,-.5*h+.8*h*handpos,h/3*handpos,h*handpos)
+				toidtimer=toidtimer+1
+				if(toidtimer>70){
+					handdir=-1
+				}
+			}else{
+				image(openhand,.5*w,-.5*h+.8*h*handpos,h/3*handpos,h*handpos)
+				if(handpos>=1)for(var i=0;i<numtoidstars;i++)toidstars[i].updatedraw();
+			}
+				
+			}else{
+				image(closedhand,.5*w,-.5*h+.8*h*handpos,h/3*handpos,h*handpos)
+				if(handpos>0){
+		    	handpos=handpos-.01
+		    	}
+			}
+			image(tthappy,.5*w,.25*h,1.2*h,.8/3.0*h)
+	}else{
+		image(ttnot,.5*w,.5*h,.4*h,.4*h)
+	}
+	
+}
 
 
 //////////////////////BACKGROUND//////////////////////
@@ -985,6 +1071,51 @@ function Star(){
       fill(250,max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
     if(menu!=22||trans>0)  
   ellipse((this.x-.1)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
+    }
+   // text(""+twop,w/2,h/2);
+  //  return 0;
+    };
+    
+
+}
+
+
+
+
+
+
+function toidStar(){
+
+	this.x=.477+random(.04); 
+    this.y=.484+random(.04); 
+    this.s=.002+random(.002);
+    this.p=random(TWO_PI);
+    this.os=(.6+random(1.2));
+    this.b=150+random(55); 
+
+    this.updatedraw = function(){
+    //text(""+srin,w/2,h/2);
+   // 	fill(255,0);
+	
+    noStroke();
+    var ww=max(w,h*1280/720);
+    var twop=30;
+    for(var k=30;k>=1;k--)
+    	if(fr<k)
+    		twop=k;
+    twop=1/twop;
+	this.p = (this.p+this.os*1.2*twop)%TWO_PI;
+    //this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
+   // fill(255,255);
+    //text(twop,w/2,h/2);
+   // if(twop=="NaN")
+	 //   text(twop,w*.6,h/2);
+
+    //if(this.x<0)this.x+=1.2;
+    for(var j=srin;j>0;j--){
+      fill(250,2*max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
+    if(menu!=22||trans>0)  
+  ellipse((this.x)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
     }
    // text(""+twop,w/2,h/2);
   //  return 0;
