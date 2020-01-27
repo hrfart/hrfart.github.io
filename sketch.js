@@ -69,7 +69,7 @@ pngs=".png"
 if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
 
 
-if(omobile) pngs=".small.png"
+if(isMobileDevice()) pngs=".small.png"
 
 var ds=min(windowWidth,windowHeight);
 opening=createDiv("<img src='loadingscreen.png'  width = '"+windowWidth+"' height = '"+windowHeight+"'>");
@@ -380,7 +380,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.mm=min(h,w);
 		this.transs=0;
 		//this.transs=0;
-		if(omobile&&!this.internal){
+		if(isMobileDevice()&&!this.internal){
 			if(trans==0&&menu!=23&menu!=24&&menu!=25){
 				if(!this.linkup || justremoved){
 						if(this.picname=="stardrawer"||this.picname =="recsong")this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>");
@@ -729,7 +729,7 @@ function populatemenus(){
 	//interactive 
 	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
 	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
-	if(omobile||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
+	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
 	else 		menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
 	//http://hrfart.github.io/
