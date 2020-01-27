@@ -60,12 +60,12 @@ var normmenu;
 var normprev;
 
 var pngs=".png"
-
+var goforit=true
 //var opening2;
 function preload(){
 pngs=".png"
 if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
-var goforit=false
+
 
 if(omobile) pngs=".small.png"
 
@@ -122,8 +122,8 @@ function setup(){
 	if(omobile){
 		evol=0;
 		numstars=50;
-		sm=1.3
-		goforit=true
+		sm=1.5
+		goforit=false
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	for(var i=0;i<numtoidstars;i++)toidstars[i]=new toidStar();
@@ -395,7 +395,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-					if(goforit){
+					if(goforit==true){
 					cursor(HAND);
 					if(this.swell<1.3){
 					
