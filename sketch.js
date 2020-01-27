@@ -122,7 +122,7 @@ function setup(){
 	if(omobile){
 		evol=0;
 		numstars=50;
-		sm=1.2
+		sm=1.3
 		goforit=true
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
