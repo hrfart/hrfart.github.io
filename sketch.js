@@ -398,7 +398,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-					if(goforit==true){
+					if(mouseX){
 					cursor(HAND);
 					if(this.swell<1.3){
 					
