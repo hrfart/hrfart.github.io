@@ -61,6 +61,8 @@ var normprev;
 
 var pngs=".png"
 var goforit=false
+
+var touchGood=false
 //var opening2;
 function preload(){
 pngs=".png"
@@ -119,7 +121,7 @@ function setup(){
 	
 	//if(deviceOrientation=='undefined') omobile=false;
 	
-	if(omobile){
+	if(isMobileDevice()){
 		evol=0;
 		numstars=50;
 		sm=1.5
@@ -139,7 +141,7 @@ function setup(){
 
 function draw(){
 
-
+	touchGood=false
 	
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
@@ -398,7 +400,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-					if(mouseX){
+					if(!isMobileDevice()){
 					cursor(HAND);
 					if(this.swell<1.3){
 					
@@ -414,7 +416,9 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.swell=min(this.swell,1.3);
 						}
 				}
-				if(((mouseIsPressed && ok2click==0)||touchIsDown) ){
+				
+
+				if((mouseIsPressed && ok2click==0) || touchGood ){
 					
 					
 					if( this.internal==true && this.sound == false && !(this.ourmenu==22 && menu==22)){
@@ -501,7 +505,9 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 
 
 
-
+function touchStarted(){
+	touchGood=true
+}
 
 function Disptext(ss,xx,yy,si){
 	this.x=xx;
@@ -618,7 +624,9 @@ function Menu(){
 	};
 }
 
-
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
 
 
 function populatemenus(){
