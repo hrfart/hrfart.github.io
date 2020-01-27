@@ -393,7 +393,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-					if(omobile==false){
+					if(!omobile){
 					cursor(HAND);
 					if(this.swell<1.3){
 					
@@ -409,7 +409,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.swell=min(this.swell,1.3);
 						}
 				}
-				if((mouseIsPressed||touchIsDown) && ok2click==0){
+				if(((mouseIsPressed && ok2click==0)||touchIsDown) ){
 					
 					
 					if( this.internal==true && this.sound == false && !(this.ourmenu==22 && menu==22)){
