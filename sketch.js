@@ -357,7 +357,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 			lasttouchX=touchX;
 			lasttouchY=touchY;
 		}
-		mobilebad=10
+		mobilebad=200
 		if(this.sound) this.dosound();
 		else{
 			if(this.internal){
