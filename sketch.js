@@ -357,7 +357,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 			lasttouchX=touchX;
 			lasttouchY=touchY;
 		}
-		
+		mobilebad=10
 		if(this.sound) this.dosound();
 		else{
 			if(this.internal){
@@ -550,10 +550,8 @@ function Vid(youtubes,ss,mmm){
   			else if(this.youtube>1) this.div= createDiv("<iframe src='"+this.t+"' frameborder='0'></iframe>");
   			else this.div=createDiv("<iframe src=https://bandcamp.com/EmbeddedPlayer/album="+this.t+"/size=large/bgcol=333333/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/' seamless></iframe>");
   			this.running=true;
-  			if(isMobileDevice()==true){
+
   			
-  			}
-  			mobilebad=30
   		}
   		if(this.running==true){
 			if(this.youtube==0)this.div2=createDiv("<style> iframe{ width: "+min(w*.7,700)+"px; height: "+(h*.5)+"px; } </style>");
