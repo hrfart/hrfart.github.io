@@ -1078,13 +1078,12 @@ function Star(){
 	
     noStroke();
     var ww=max(w,h*1280/720);
-    var twop=30;
-    for(var k=30;k>=1;k--)
-    	if(fr<k)
-    		twop=k;
-    twop=1/twop;
-	this.p = (this.p+this.os*1.2*twop)%TWO_PI;
-    this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
+
+    if(fr<2){
+    	fr=2
+    }
+	this.p = (this.p+this.os*1.2/fr)%TWO_PI;
+    this.x-=this.s*.3*30/fr+.075*(.5-abs(.5-trans));
    // fill(255,255);
     //text(twop,w/2,h/2);
    // if(twop=="NaN")
