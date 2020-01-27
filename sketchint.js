@@ -59,11 +59,15 @@ var opening;
 var normmenu;
 var normprev;
 
-
+var pngs=".png"
 
 //var opening2;
 function preload(){
+pngs=".png"
+if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
 
+
+if(omobile) pngs=".small.png"
 
 var ds=min(windowWidth,windowHeight);
 opening=createDiv("<img src='loadingscreen.png'  width = '"+windowWidth+"' height = '"+windowHeight+"'>");
@@ -73,17 +77,16 @@ opening.position(0,0);
 
 //"<iframe src='"+this.t+"' frameborder='0'></iframe>
 
-tthappy=loadImage(basepath+"tt_happy.png");
-ttnot=loadImage(basepath+"tt_not.png");
-openhand=loadImage(basepath+"handopen.png");
-openhandnt=loadImage(basepath+"handopennt.png");
-closedhand=loadImage(basepath+"handclosed.png");
-mute2=loadImage(basepath+"mute2.png");
-mute3=loadImage(basepath+"mute3.png");
+tthappy=loadImage(basepath+"tt_happy"+pngs);
+ttnot=loadImage(basepath+"tt_not"+pngs);
+openhand=loadImage(basepath+"handopen"+pngs);
+openhandnt=loadImage(basepath+"handopennt"+pngs);
+closedhand=loadImage(basepath+"handclosed"+pngs);
+mute2=loadImage(basepath+"mute2"+pngs);
+mute3=loadImage(basepath+"mute3"+pngs);
 //image(mute2,0,0,w,h);
 //  wind=loadSound("http://hrfart.github.io/wind.mp3");
 // hand=loadImage("http://hrfart.github.io/hand.png"); 
-//	for(var i=0;i<3;i++)leaves[i]=loadImage("http://hrfart.github.io/leaf"+(i+1)+".png");
 
 music[0]=loadSound(basepath+"floating.mp3");
 //music[1]=loadSound(basepath+"Trictotrism.m4a");
@@ -93,16 +96,15 @@ music[0]=loadSound(basepath+"floating.mp3");
 wind=loadSound(basepath+"wind.mp3");
 swells=loadSound(basepath+"swell.mp3");
 shrink=loadSound(basepath+"shrink.mp3");
-if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
 
 
 minty=loadSound(basepath+"minty.mp3");
 //load in sounds here
-for(var i=0;i<9;i++)leaves[i]=loadImage(basepath+"leaf"+i+".png");
+for(var i=0;i<9;i++)leaves[i]=loadImage(basepath+"leaf"+i+pngs);
 populatemenus();
 
 }
-var numtoidstars=30
+var numtoidstars=20
 var toidstars=[]
 function setup(){
 	opening.remove();
@@ -303,7 +305,7 @@ function domusic(){
 //////////////////BUTTON/////////////////////
 
 function Button(inter,i,xx,yy,wii,hii,soundt,picc){
-	this.pic=loadImage(basepath+picc+".png");
+	this.pic=loadImage(basepath+picc+pngs);
 	this.picname=picc;
 	this.internal=inter;
 	this.link=i;
@@ -1112,7 +1114,7 @@ function toidStar(){
 
     //if(this.x<0)this.x+=1.2;
     for(var j=srin;j>0;j--){
-      fill(250,2*max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
+      fill(250,1.25*max(0,min(255,.6*(srin-j)/srin*this.b*(.2+.8*pow(sin(this.p),2)))));
     if(menu!=22||trans>0)  
   ellipse((this.x)*w,this.y*h,this.s*ww*j/srin*2,this.s*ww*j/srin*2); 
     }
