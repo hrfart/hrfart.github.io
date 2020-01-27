@@ -60,7 +60,7 @@ var normmenu;
 var normprev;
 
 var pngs=".png"
-var goforit=true
+var goforit=false
 //var opening2;
 function preload(){
 pngs=".png"
@@ -123,7 +123,10 @@ function setup(){
 		evol=0;
 		numstars=50;
 		sm=1.5
-		goforit=false
+		
+	}else{
+	
+	goforit=true
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	for(var i=0;i<numtoidstars;i++)toidstars[i]=new toidStar();
