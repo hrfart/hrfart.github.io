@@ -141,7 +141,7 @@ function setup(){
 
 function draw(){
 
-	touchGood=false
+	
 	
 	createCanvas(windowWidth, windowHeight);
 	w=windowWidth;
@@ -263,7 +263,7 @@ function draw(){
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
 
-  
+  touchGood=false
 
 }
 
