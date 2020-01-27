@@ -553,7 +553,7 @@ function Vid(youtubes,ss,mmm){
   			if(isMobileDevice()==true){
   			
   			}
-  			mobilebad=10
+  			mobilebad=30
   		}
   		if(this.running==true){
 			if(this.youtube==0)this.div2=createDiv("<style> iframe{ width: "+min(w*.7,700)+"px; height: "+(h*.5)+"px; } </style>");
