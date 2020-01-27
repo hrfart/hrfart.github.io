@@ -65,7 +65,7 @@ var pngs=".png"
 function preload(){
 pngs=".png"
 if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
-
+var goforit=false
 
 if(omobile) pngs=".small.png"
 
@@ -122,6 +122,8 @@ function setup(){
 	if(omobile){
 		evol=0;
 		numstars=50;
+		sm=1.2
+		goforit=true
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	for(var i=0;i<numtoidstars;i++)toidstars[i]=new toidStar();
@@ -393,7 +395,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-					if(!omobile && false){
+					if(!omobile){
 					cursor(HAND);
 					if(this.swell<1.3){
 					
