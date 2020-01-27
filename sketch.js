@@ -331,9 +331,9 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.mouseover = function(){
 		
-		if(touchX==lasttouchX && touchY==lasttouchY && omobile){
-			 return false;
-		}
+		//if(touchX==lasttouchX && touchY==lasttouchY && omobile){
+		//	 return false;
+		//}
 		
 		if(abs(this.x-mouseX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-mouseY/h)<this.hi/2*this.mm/h*sm) return true;
 		else if(abs(this.x-touchX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-touchY/h)<this.hi/2*this.mm/h*sm) return true;
@@ -393,21 +393,23 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-				cursor(HAND);
-				if(this.swell<1.3){
+					if(omobile==false){
+					cursor(HAND);
+					if(this.swell<1.3){
 					
-					if(this.swell<=1 && gosounds==true){
+						if(this.swell<=1 && gosounds==true){
 					
-						swells.stop();
+							swells.stop();
 						
-						swells.play();
-						swells.setVolume(evol);
+							swells.play();
+							swells.setVolume(evol);
 						
-					}
-					this.swell+=.045*30/fr;
-					this.swell=min(this.swell,1.3);
+						}
+						this.swell+=.045*30/fr;
+						this.swell=min(this.swell,1.3);
+						}
 				}
-				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
+				if((mouseIsPressed||touchIsDown) && ok2click==0){
 					
 					
 					if( this.internal==true && this.sound == false && !(this.ourmenu==22 && menu==22)){
