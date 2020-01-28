@@ -546,7 +546,7 @@ function Vid(youtubes,ss,mmm){
 		
 			//ANDROID BUG IS HERE:
 			
-			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen></iframe>");
+			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen width=\""+w+"\" height=\""+h+"\" ></iframe>");
   			else if(this.youtube>1) this.div= createDiv("<iframe src='"+this.t+"' frameborder='0'></iframe>");
   			else this.div=createDiv("<iframe src=https://bandcamp.com/EmbeddedPlayer/album="+this.t+"/size=large/bgcol=333333/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/' seamless></iframe>");
   			this.running=true;
