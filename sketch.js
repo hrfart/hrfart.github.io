@@ -150,7 +150,7 @@ function draw(){
 	}else{
 	mobilebad=mobilebad-1
 	}
-	
+	mobilebad=20
 	
 
   	
@@ -357,7 +357,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 			lasttouchX=touchX;
 			lasttouchY=touchY;
 		}
-		mobilebad=200
+		//mobilebad=200
 		if(this.sound) this.dosound();
 		else{
 			if(this.internal){
