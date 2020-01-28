@@ -60,14 +60,16 @@ var normmenu;
 var normprev;
 
 var pngs=".png"
+var goforit=false
 
+var touchGood=false
 //var opening2;
 function preload(){
 pngs=".png"
 if(deviceOrientation=='landscape' || deviceOrientation=='portrait') omobile=true;
 
 
-if(omobile) pngs=".small.png"
+if(isMobileDevice()) pngs=".small.png"
 
 var ds=min(windowWidth,windowHeight);
 opening=createDiv("<img src='loadingscreen.png'  width = '"+windowWidth+"' height = '"+windowHeight+"'>");
@@ -119,9 +121,14 @@ function setup(){
 	
 	//if(deviceOrientation=='undefined') omobile=false;
 	
-	if(omobile){
+	if(isMobileDevice()){
 		evol=0;
 		numstars=50;
+		sm=1.5
+		
+	}else{
+	
+	goforit=true
 	}
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	for(var i=0;i<numtoidstars;i++)toidstars[i]=new toidStar();
@@ -131,15 +138,16 @@ function setup(){
 
 
 
-
+var mobilebad=0
 function draw(){
 
-
 	
+
 	createCanvas(windowWidth, windowHeight);
+	
 	w=windowWidth;
 	h=windowHeight;
-	
+
 	
 
   	
@@ -256,7 +264,7 @@ function draw(){
    // if(oldm!=menu)trans.doit();
     if(!drewleaves)frontleaves()
 
-  
+  touchGood=false
 
 }
 
@@ -331,9 +339,9 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 	
 	this.mouseover = function(){
 		
-		if(touchX==lasttouchX && touchY==lasttouchY && omobile){
-			 return false;
-		}
+		//if(touchX==lasttouchX && touchY==lasttouchY && omobile){
+		//	 return false;
+		//}
 		
 		if(abs(this.x-mouseX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-mouseY/h)<this.hi/2*this.mm/h*sm) return true;
 		else if(abs(this.x-touchX/w)<this.wi/2*this.mm/w*sm&&abs(this.y-touchY/h)<this.hi/2*this.mm/h*sm) return true;
@@ -346,7 +354,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 			lasttouchX=touchX;
 			lasttouchY=touchY;
 		}
-		
+		//mobilebad=200
 		if(this.sound) this.dosound();
 		else{
 			if(this.internal){
@@ -369,7 +377,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.mm=min(h,w);
 		this.transs=0;
 		//this.transs=0;
-		if(omobile&&!this.internal){
+		if(isMobileDevice()&&!this.internal){
 			if(trans==0&&menu!=23&menu!=24&&menu!=25){
 				if(!this.linkup || justremoved){
 						if(this.picname=="stardrawer"||this.picname =="recsong")this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>");
@@ -393,21 +401,25 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 						this.kool.position(this.x*w-this.wi*w/2*1.3,this.y*h-this.hi*h*1.3/2);
 						this.linkup=true;
 				}
-				cursor(HAND);
-				if(this.swell<1.3){
+					if(!isMobileDevice()){
+					cursor(HAND);
+					if(this.swell<1.3){
 					
-					if(this.swell<=1 && gosounds==true){
+						if(this.swell<=1 && gosounds==true){
 					
-						swells.stop();
+							swells.stop();
 						
-						swells.play();
-						swells.setVolume(evol);
+							swells.play();
+							swells.setVolume(evol);
 						
-					}
-					this.swell+=.045*30/fr;
-					this.swell=min(this.swell,1.3);
+						}
+						this.swell+=.045*30/fr;
+						this.swell=min(this.swell,1.3);
+						}
 				}
-				if((mouseIsPressed||touchIsDown||omobile==true) && ok2click==0){
+				
+
+				if((mouseIsPressed && ok2click==0) || touchGood ){
 					
 					
 					if( this.internal==true && this.sound == false && !(this.ourmenu==22 && menu==22)){
@@ -494,7 +506,9 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 
 
 
-
+function touchStarted(){
+	touchGood=true
+}
 
 function Disptext(ss,xx,yy,si){
 	this.x=xx;
@@ -529,10 +543,15 @@ function Vid(youtubes,ss,mmm){
 			return
 		}
 		if(this.running==false&&this.ourmenu>6){
-			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen></iframe>");
+		
+			//ANDROID BUG IS HERE:
+			
+			if(this.youtube==1) this.div = createDiv("<iframe  src='https://www.youtube.com/embed/"+this.t+"' frameborder='0' allowfullscreen width=\""+w+"\" height=\""+h+"\" ></iframe>");
   			else if(this.youtube>1) this.div= createDiv("<iframe src='"+this.t+"' frameborder='0'></iframe>");
   			else this.div=createDiv("<iframe src=https://bandcamp.com/EmbeddedPlayer/album="+this.t+"/size=large/bgcol=333333/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/' seamless></iframe>");
   			this.running=true;
+
+  			
   		}
   		if(this.running==true){
 			if(this.youtube==0)this.div2=createDiv("<style> iframe{ width: "+min(w*.7,700)+"px; height: "+(h*.5)+"px; } </style>");
@@ -611,7 +630,9 @@ function Menu(){
 	};
 }
 
-
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+};
 
 
 function populatemenus(){
@@ -706,7 +727,7 @@ function populatemenus(){
 	//interactive 
 	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
 	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
-	if(omobile||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
+	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
 	else 		menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
 	//http://hrfart.github.io/
@@ -1055,13 +1076,12 @@ function Star(){
 	
     noStroke();
     var ww=max(w,h*1280/720);
-    var twop=30;
-    for(var k=30;k>=1;k--)
-    	if(fr<k)
-    		twop=k;
-    twop=1/twop;
-	this.p = (this.p+this.os*1.2*twop)%TWO_PI;
-    this.x-=this.s*.3*twop*30+.075*(.5-abs(.5-trans));
+
+    if(fr<2){
+    	fr=2
+    }
+	this.p = (this.p+this.os*1.2/fr)%TWO_PI;
+    this.x-=this.s*.3*30/fr+.075*(.5-abs(.5-trans));
    // fill(255,255);
     //text(twop,w/2,h/2);
    // if(twop=="NaN")
