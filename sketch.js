@@ -769,7 +769,7 @@ function populatemenus(){
 	menus[4].add(new Button(true,42,.55,.4,mussize,mussize,false,"hrfep"));
 
 	menus[4].add(new Button(false,"recursive_songm.html",.75,.4,mussize,mussize,false,"recsong"));
-	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.68,mussize*.7,mussize*.7,false,"tbc"));
+	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
 	menus[5].add(new Disptext("harry rubin-falcone: animation, bass, composition",.5,.35,.2));
