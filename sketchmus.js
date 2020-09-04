@@ -1,5 +1,6 @@
 var menu=4;
 
+var monurl="4QHjH7irm7E";
 var hawkfull="RDIF2s0oFig";
 var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
@@ -636,7 +637,7 @@ function isMobileDevice() {
 
 
 function populatemenus(){
-	for(var i=0;i<49;i++) menus[i]=new Menu();
+	for(var i=0;i<50;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
@@ -645,13 +646,13 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.3,.62,.2,.2,false,"hawkt"));
-	menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
+	menus[1].add(new Button(true,32,.4,.62,.2,.2,false,"montauk"));
+	//menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
-	menus[1].add(new Button(true,44,.7,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(true,44,.6,.62,.2,.2,false,"sugar"));
 
-	menus[32].add(new Vid(1,hawkurl,32));
+	menus[32].add(new Vid(1,monurl,32));
 	menus[39].add(new Vid(1,pimurl,39));
 	menus[40].add(new Vid(1,hoourl,40));
 	menus[41].add(new Vid(0,hrfurl,41));
@@ -696,8 +697,9 @@ function populatemenus(){
 
 	
 		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
-			menus[33].add(new Button(true,31,.366666,.4,asize*1.8,asize*1.8,false,"hawk1"));
-	menus[33].add(new Button(true,10,.73333,.4,asize*1.8,asize*1.8,false,"three"));
+	menus[33].add(new Button(true,31,.2,.4,asize*1.8,asize*1.8,false,"hawk1"));
+	menus[33].add(new Button(true,49,.5,.4,asize*1.8,asize*1.8,false,"mon"));
+	menus[33].add(new Button(true,10,.8,.4,asize*1.8,asize*1.8,false,"three"));
 	menus[33].add(new Button(true,14,.15,.68,asize,asize,false,"kite"));
 	menus[33].add(new Button(true,15,.27,.68,asize,asize,false,"ship"));
 	
@@ -757,6 +759,7 @@ function populatemenus(){
 	menus[4].add(new Button(true,20,.65,.68,mussize,mussize,false,"dancersst"));
 	menus[4].add(new Button(true,19,.45,.68,mussize,mussize,false,"mmsst"));
 	menus[4].add(new Button(true,21,.85,.68,mussize,mussize,false,"schlubst"));
+	
 
 	//menus[4].add(new Button(true,1,.4,.55,mussize,mussize,true,"tric"));
 	//menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
@@ -766,7 +769,7 @@ function populatemenus(){
 	menus[4].add(new Button(true,42,.55,.4,mussize,mussize,false,"hrfep"));
 
 	menus[4].add(new Button(false,"recursive_songm.html",.75,.4,mussize,mussize,false,"recsong"));
-
+	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.68,mussize*.7,mussize*.7,false,"tbc"));
 	
 	//contact
 	menus[5].add(new Disptext("harry rubin-falcone: animation, bass, composition",.5,.35,.2));
@@ -855,6 +858,7 @@ function populatemenus(){
 	menus[47].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
 	menus[31].add(new Vid(1,hawkfull,31));
+	menus[49].add(new Vid(1,monurl,31));
 	
 	//albums
 	menus[19].add(new Vid(0,"1696192640",19));
@@ -886,6 +890,7 @@ function populatemenus(){
 	menus[42].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[30].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[31].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+	menus[49].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	
 	
 	//toid tuesday
