@@ -653,17 +653,17 @@ function populatemenus(){
 	menus[1].add(new Button(true,44,.6,.62,.2,.2,false,"sugar"));
 
 	menus[32].add(new Vid(1,monurl,32));
-	menus[39].add(new Vid(1,pimurl,39));
-	menus[40].add(new Vid(1,hoourl,40));
-	menus[41].add(new Vid(0,hrfurl,41));
+	//menus[39].add(new Vid(1,pimurl,39));
+	//menus[40].add(new Vid(1,hoourl,40));
+	//menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
 	menus[43].add(new Vid(1,"WEh_utcEjYU",43));
 	menus[44].add(new Vid(1,"WEh_utcEjYU",44));
 	
 	menus[32].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
-	menus[39].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
-	menus[40].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
-	menus[41].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	//menus[39].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	//menus[40].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	//menus[41].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[44].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	
 	
@@ -684,9 +684,10 @@ function populatemenus(){
 	var nsize=.2;
 	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.625,.4,nsize,nsize,false,"youtube"));
 	menus[38].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
-	menus[38].add(new Button(true,6,.3,.65,nsize,nsize,false,"festivals"));
+	//festivals button 1
+	//menus[38].add(new Button(true,6,.5,.65,nsize,nsize,false,"festivals"));
 	menus[38].add(new Button(false,"https://www.ncbi.nlm.nih.gov/pubmed/?term=rubin-falcone",.7,.65,nsize,nsize,false,"science"));
-	menus[38].add(new Button(true,22,.5,.65,nsize,nsize,false,"mathart"));
+	menus[38].add(new Button(true,22,.3,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
 	var asizeb=.12;
@@ -779,40 +780,24 @@ function populatemenus(){
 	var fl2y=.72;
 	
 	//festivals
-	var hfs=.15;
-		menus[6].add(new Disptext("my mother and the hawk",.5,.25,.3));
-	menus[6].add(new Button(false,"https://www.facebook.com/FestivalCortometrajesRadioCity/photos/pcb.1894092230625175/1894072910627107/?type=3&theater",.16667,.35,hfs,hfs,false,"radio"));
-	//menus[6].add(new Button(false,"http://altff.org/onewebmedia/Winners%20AltFF%20Spring%202018%20.pdf",.3333,.35,hfs,hfs,false,"altff"));
-	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/connessioni-interpersonali-/harry-rubin-falcone-my.html",.5,.35,hfs,hfs,false,"oga"));
-	//menus[6].add(new Button(false,"http://ibestff.com/official-selection-2018/",.6666667,.35,hfs,hfs,false,"ibestff"));
-	menus[6].add(new Button(false,"https://strasburgfilmfestival.eventive.org/films/5b5a653380886400145c2c85",.83333,.35,hfs,hfs,false,"shen"));
-				menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.58,.5,hfs,hfs,false,"cinemaway"));
-				menus[6].add(new Button(false,"https://indd.adobe.com/view/b41e2b0a-1558-4299-a21e-1223c373542f",.75,.5,hfs,hfs,false,"odd"));
-				menus[6].add(new Button(false,"http://festival.tiszamozi.hu/Documents/2018/VetitesiRend2018.pdf",.25,.5,hfs,hfs,false,"tiaf"));
-				menus[6].add(new Button(false,chi2,.42,.5,hfs,hfs,false,"chi2"));
-				menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.6666667,.35,hfs,hfs,false,"orv"));
-				menus[6].add(new Button(false,"https://www.facebook.com/440651659706973/photos/a.639064316532372/639064813198989/?type=3&theater",.3333,.35,hfs,hfs,false,"yorca"));
-
-	
-	menus[6].add(new Disptext("three dancers",.14,fl2y-.1,.2));
-	var dansi=.19;
-	var fly2=.16;
-	menus[6].add(new Button(false,"http://site2016.airport-anifes.jp/en/nominate_item/three_dancers/",.08,.72,dansi,fly2,false,"chiose"));
-	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.2,.72,dansi,fly2,false,"darte"));
-	//menus[6].add(new Button(false,"http://largofilmawards.com/november-2016/",.32,.72,.1,fly2,false,"largo"));
-	//menus[6].add(new Button(false,"https://sites.google.com/view/hope-film-awards/home",.42,.72,.1,fly2,false,"hope"));
-
-
-	//menus[6].add(new Disptext("me and the machine ",.6,fl2y-.1,.2));
-	//menus[6].add(new Disptext("in space",.6,fl2y-.07,.2));
-
-	//menus[6].add(new Button(false,"http://www.eafit.edu.co/fismed/",.6,fl2y+.03,.15,.13,false,"fismed"));
-	
-	//menus[6].add(new Disptext("the ship we built",.77,fl2y-.07,.2));
-	//menus[6].add(new Button(false,"http://www.locomocionfest.com/festival/",.77,fl2y,.15,.13,false,"loco"));
-
-	menus[6].add(new Disptext("math art",.9,fl2y-.07,.2));
-	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",.9,fl2y+.01,.15,.15,false,"bridges"));
+// 	var hfs=.15;
+// 	menus[6].add(new Disptext("my mother and the hawk",.5,.25,.3));
+// 	menus[6].add(new Button(false,"https://www.facebook.com/FestivalCortometrajesRadioCity/photos/pcb.1894092230625175/1894072910627107/?type=3&theater",.16667,.35,hfs,hfs,false,"radio"));
+// 	menus[6].add(new Button(false,"http://www.werthergermondari.com/oga/connessioni-interpersonali-/harry-rubin-falcone-my.html",.5,.35,hfs,hfs,false,"oga"));
+// 	menus[6].add(new Button(false,"https://strasburgfilmfestival.eventive.org/films/5b5a653380886400145c2c85",.83333,.35,hfs,hfs,false,"shen"));
+// 	menus[6].add(new Button(false,"http://kinomarshrut.wixsite.com/fest/umovi-uchasti",.58,.5,hfs,hfs,false,"cinemaway"));
+// 	menus[6].add(new Button(false,"https://indd.adobe.com/view/b41e2b0a-1558-4299-a21e-1223c373542f",.75,.5,hfs,hfs,false,"odd"));
+// 	menus[6].add(new Button(false,"http://festival.tiszamozi.hu/Documents/2018/VetitesiRend2018.pdf",.25,.5,hfs,hfs,false,"tiaf"));
+// 	menus[6].add(new Button(false,chi2,.42,.5,hfs,hfs,false,"chi2"));
+// 	menus[6].add(new Button(false,"https://www.facebook.com/orvietocinemafest/photos/a.181100475954382/291980524866376/?type=3&theater",.6666667,.35,hfs,hfs,false,"orv"));
+// 	menus[6].add(new Button(false,"https://www.facebook.com/440651659706973/photos/a.639064316532372/639064813198989/?type=3&theater",.3333,.35,hfs,hfs,false,"yorca"));
+// 	menus[6].add(new Disptext("three dancers",.14,fl2y-.1,.2));
+// 	var dansi=.19;
+// 	var fly2=.16;
+// 	menus[6].add(new Button(false,"http://site2016.airport-anifes.jp/en/nominate_item/three_dancers/",.08,.72,dansi,fly2,false,"chiose"));
+// 	menus[6].add(new Button(false,"http://www.festivalcinemadarte.com/film-eng",.2,.72,dansi,fly2,false,"darte"));
+// 	menus[6].add(new Disptext("math art",.9,fl2y-.07,.2));
+// 	menus[6].add(new Button(false,"http://gallery.bridgesmathart.org/exhibitions/2013-joint-mathematics-meetings/hrubinfa",.9,fl2y+.01,.15,.15,false,"bridges"));
 
 	
 	
