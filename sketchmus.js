@@ -698,7 +698,7 @@ function populatemenus(){
 	
 		//menus[2].add(new Button(true,22,.9,.5,asize,asize,false,"leaf1"));
 	menus[33].add(new Button(true,31,.2,.4,asize*1.8,asize*1.8,false,"hawk1"));
-	menus[33].add(new Button(true,49,.5,.4,asize*1.8,asize*1.8,false,"mon"));
+	menus[33].add(new Button(true,49,.5,.4,asize*1.8,asize*1.8,false,"montauk"));
 	menus[33].add(new Button(true,10,.8,.4,asize*1.8,asize*1.8,false,"three"));
 	menus[33].add(new Button(true,14,.15,.68,asize,asize,false,"kite"));
 	menus[33].add(new Button(true,15,.27,.68,asize,asize,false,"ship"));
