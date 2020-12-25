@@ -5,7 +5,8 @@ var hawkfull="RDIF2s0oFig";
 var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
 var pimurl="x17ZTdi26ek";
-var hrfurl="3892272952";  
+var hrfurl="3892272952";
+var alsourl="1765750209";
 var chi2="http://site2018.airport-anifes.jp/en/showcase_item/my_mother/";
 //background variables
 var numstars=100;
@@ -637,7 +638,7 @@ function isMobileDevice() {
 
 
 function populatemenus(){
-	for(var i=0;i<50;i++) menus[i]=new Menu();
+	for(var i=0;i<60;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
@@ -646,17 +647,21 @@ function populatemenus(){
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
 	menus[1].add(new Disptext("most recent:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.4,.62,.2,.2,false,"montauk"));
+	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"montauk"));
 	//menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
-	menus[1].add(new Button(true,44,.6,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(true,44,.7,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"also"));
+	
 
 	menus[32].add(new Vid(1,monurl,32));
 	//menus[39].add(new Vid(1,pimurl,39));
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
+	menus[51].add(new Vid(0,alsourl,51));
+	menus[52].add(new Vid(0,alsourl,52));
 	menus[43].add(new Vid(1,"WEh_utcEjYU",43));
 	menus[44].add(new Vid(1,"WEh_utcEjYU",44));
 	
@@ -665,7 +670,7 @@ function populatemenus(){
 	//menus[40].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	//menus[41].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[44].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
-	
+	menus[51].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	
 
 	
@@ -766,8 +771,9 @@ function populatemenus(){
 	//menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
 	//menus[4].add(new Button(true,3,.8,.55,mussize,mussize,true,"mys"));
 	
-	menus[4].add(new Button(true,26,.35,.4,mussize,mussize,false,"tric"));
-	menus[4].add(new Button(true,42,.55,.4,mussize,mussize,false,"hrfep"));
+	menus[4].add(new Button(true,26,.15,.4,mussize,mussize,false,"tric"));
+	menus[4].add(new Button(true,42,.35,.4,mussize,mussize,false,"hrfep"));
+	menus[4].add(new Button(true,52,.55,.4,mussize,mussize,false,"also"));
 
 	menus[4].add(new Button(false,"recursive_songm.html",.75,.4,mussize,mussize,false,"recsong"));
 	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
@@ -873,6 +879,7 @@ function populatemenus(){
 	
 	menus[26].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[42].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
+	menus[52].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[30].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[31].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[49].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
