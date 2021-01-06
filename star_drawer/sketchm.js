@@ -41,11 +41,10 @@ var imageback;
 
 function preload(){
   noCursor();
-  //HERE
-//   wind=loadSound("http://harryrubinfalcone.com/wind2.mp3");
-//     tinkle=loadSound("http://harryrubinfalcone.com/tinkle.m4a");
-// music=loadSound("http://harryrubinfalcone.com/music.m4a");
-// 
+  wind=loadSound("http://harryrubinfalcone.com/wind2.mp3");
+    tinkle=loadSound("http://harryrubinfalcone.com/tinkle.m4a");
+music=loadSound("http://harryrubinfalcone.com/music.m4a");
+
 imageback=loadImage("http://harryrubinfalcone.com/back2.png");
  hand=loadImage("http://harryrubinfalcone.com/hand.png");
   brush=loadImage("http://harryrubinfalcone.com/brrush.png");
@@ -58,18 +57,17 @@ imageback=loadImage("http://harryrubinfalcone.com/back2.png");
 
 
 function setup(){
-//HERE
-// 	tinkle.setVolume(0);
-// 	tinkle.loop();
-// 	
-// 	wind.setVolume(.82);
-// 	wind.pan(-.5);
-// 	wind.loop();
-// 	
-// 	music.setVolume(.6);
-// 	music.pan(.3);
-// 	music.loop();
-// 	
+	tinkle.setVolume(0);
+	tinkle.loop();
+	
+	wind.setVolume(.82);
+	wind.pan(-.5);
+	wind.loop();
+	
+	music.setVolume(.6);
+	music.pan(.3);
+	music.loop();
+	
 	mooner = new Moon();
 	imageMode(CENTER);
 	stars=[];
@@ -116,20 +114,17 @@ createCanvas(windowWidth, windowHeight);
     //  mouseX+xx*j/starsper,mouseY+yy*j/starsper,clus));
       
     }
+  }else {clickt=0;
+  if(tinksound>0)tinksound-=.004;
+  if(tinksound<0)tinksound=0;
   }
-  //HERE
-  // else {clickt=0;
-//   if(tinksound>0)tinksound-=.004;
-//   if(tinksound<0)tinksound=0;
-//   }
   mooner.drawmoon(mouseY,h);
   oldx=mouseX;
   oldy=mouseY;
-
-//HERE   
-// tinkle.setVolume(tinksound);
-// tinkle.pan(sin(tinkpan)*.7);
-// tinkpan+=.1;
+  
+tinkle.setVolume(tinksound);
+tinkle.pan(sin(tinkpan)*.7);
+tinkpan+=.1;
  for(var i=0;i<numtrees;i++)trees[i].updatedraw();
 
 //deal with back button
