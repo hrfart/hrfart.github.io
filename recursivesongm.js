@@ -33,7 +33,7 @@ var linkback=0;
 var imageback;
 
 function preload(){
-imageback=loadImage("http://harryrubinfalcone.com/back2.png");
+imageback=loadImage("back2.png");
 }
 
 function setup(){

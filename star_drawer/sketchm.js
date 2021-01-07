@@ -40,23 +40,25 @@ var linkback=0;
 var imageback;
 
 function preload(){
+	print('test1')
   noCursor();
-  wind=loadSound("http://harryrubinfalcone.com/wind2.mp3");
-    tinkle=loadSound("http://harryrubinfalcone.com/tinkle.m4a");
-music=loadSound("http://harryrubinfalcone.com/music.m4a");
+  wind=loadSound("wind2.mp3");
+    tinkle=loadSound("tinkle.m4a");
+music=loadSound("music.m4a");
 
-imageback=loadImage("http://harryrubinfalcone.com/back2.png");
- hand=loadImage("http://harryrubinfalcone.com/hand.png");
-  brush=loadImage("http://harryrubinfalcone.com/brrush.png");
-  blink=loadImage("http://harryrubinfalcone.com/blink.png");
-  moon=loadImage("http://harryrubinfalcone.com/moon.png");
-	for(var i=0;i<3;i++)leaves[i]=loadImage("http://harryrubinfalcone.com/leaf"+(i+1)+"s.png");
+imageback=loadImage("back2.png");
+ hand=loadImage("hand.png");
+  brush=loadImage("brrush.png");
+  blink=loadImage("blink.png");
+  moon=loadImage("moon.png");
+	for(var i=0;i<3;i++)leaves[i]=loadImage("leaf"+(i+1)+"s.png");
 
-
+print('ok1')
 }
 
 
 function setup(){
+	print('TEST')
 	tinkle.setVolume(0);
 	tinkle.loop();
 	
@@ -78,6 +80,7 @@ function setup(){
    frameRate(fr);
 	for(var i=0;i<numstars;i++)stars[i]=new Star();
 	for(var i=0;i<numtrees;i++)trees[i]=new Tree();
+	print('OK')
 }
 
 var oldx,oldy,speed,clus,xx,yy,clickt;

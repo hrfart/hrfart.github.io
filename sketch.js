@@ -143,7 +143,6 @@ function setup(){
 var mobilebad=0
 function draw(){
 
-	
 
 	createCanvas(windowWidth, windowHeight);
 	
