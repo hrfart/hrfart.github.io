@@ -4,9 +4,10 @@ var monurl="4QHjH7irm7E";
 var hawkfull="RDIF2s0oFig";
 var hawkurl="EMJP3AHmMx4";
 var hoourl="f5YsAUwXSHQ";
-var pimurl="x17ZTdi26ek";
+var pimurl="15p5iMZQsp0";
 var hrfurl="3892272952";
 var alsourl="1765750209";
+var marvurl="2790698205";
 var chi2="http://site2018.airport-anifes.jp/en/showcase_item/my_mother/";
 //background variables
 var numstars=100;
@@ -143,7 +144,6 @@ function setup(){
 var mobilebad=0
 function draw(){
 
-	
 
 	createCanvas(windowWidth, windowHeight);
 	
@@ -652,7 +652,7 @@ function populatemenus(){
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
 	menus[1].add(new Button(true,44,.7,.62,.2,.2,false,"sugar"));
-	menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"also"));
+	menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"marv"));
 	
 
 	menus[32].add(new Vid(1,monurl,32));
@@ -660,7 +660,7 @@ function populatemenus(){
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
-	menus[51].add(new Vid(0,alsourl,51));
+	menus[51].add(new Vid(0,marvurl,51));
 	menus[52].add(new Vid(0,alsourl,52));
 	menus[43].add(new Vid(1,"WEh_utcEjYU",43));
 	menus[44].add(new Vid(1,"WEh_utcEjYU",44));
@@ -688,10 +688,10 @@ function populatemenus(){
 	
 	var nsize=.2;
 	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.625,.4,nsize,nsize,false,"youtube"));
-	menus[38].add(new Button(false,"https://harryrubin-falcone.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
+	menus[38].add(new Button(false,"https://hrfep.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
 	//festivals button 1
 	//menus[38].add(new Button(true,6,.5,.65,nsize,nsize,false,"festivals"));
-	menus[38].add(new Button(false,"https://www.ncbi.nlm.nih.gov/pubmed/?term=rubin-falcone",.7,.65,nsize,nsize,false,"science"));
+	menus[38].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.7,.65,nsize,nsize,false,"science"));
 	menus[38].add(new Button(true,22,.3,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
@@ -771,7 +771,7 @@ function populatemenus(){
 	//menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
 	//menus[4].add(new Button(true,3,.8,.55,mussize,mussize,true,"mys"));
 	
-	menus[4].add(new Button(true,26,.15,.4,mussize,mussize,false,"tric"));
+	menus[4].add(new Button(true,26,.15,.4,mussize,mussize,false,"marv"));
 	menus[4].add(new Button(true,42,.35,.4,mussize,mussize,false,"hrfep"));
 	menus[4].add(new Button(true,52,.55,.4,mussize,mussize,false,"also"));
 
@@ -779,7 +779,7 @@ function populatemenus(){
 	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
-	menus[5].add(new Disptext("harry rubin-falcone: animation, bass, composition",.5,.35,.2));
+	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition, animation",.5,.35,.2));
 	menus[5].add(new Button(false,"mailto:harryrubinfalcone@gmail.com",.5,.6,.25,.25,false,"contact2"));
 	
 	
@@ -855,7 +855,7 @@ function populatemenus(){
 	menus[19].add(new Vid(0,"1696192640",19));
 	menus[20].add(new Vid(0,"387913001",20));
 	menus[21].add(new Vid(0,"3372271177",21));
-	menus[26].add(new Vid(0,"2524251407",26));
+	menus[26].add(new Vid(0,marvurl,26));
 	menus[30].add(new Vid(0,"1426352574",30));
 
 	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
