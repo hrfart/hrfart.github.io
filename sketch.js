@@ -735,14 +735,14 @@ function populatemenus(){
 	menus[2].add(new Button(true,34,.75,.65,asize*1,asize*1,false,"mms"));
 
 	//interactive 
-		menus[3].add(new Button(true,54,.35,.4,.3,.3,false,"adj"));
-	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.65,.4,.3,.3,false,"stardrawer"));
-	else 		menus[3].add(new Button(true,24,.65,.4,.3,.3,false,"stardrawer"));
+		menus[3].add(new Button(true,54,.4,.38,.3,.3,false,"adj"));
+	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.6,.38,.3,.3,false,"stardrawer"));
+	else 		menus[3].add(new Button(true,24,.6,.38,.3,.3,false,"stardrawer"));
 
 	
-	menus[3].add(new Button(true,27,.75,.6,.2,.2,false,"schlub"));
-	menus[3].add(new Button(false,"recursive_songm.html",.75,.4,.2,.2,false,"recsong"));
-	menus[3].add(new Button(true,23,.25,.6,.2,.2,false,"staycation"));
+	menus[3].add(new Button(true,27,.75,.63,.2,.2,false,"schlub"));
+	menus[3].add(new Button(false,"recursive_songm.html",.75,.63,.2,.2,false,"recsong"));
+	menus[3].add(new Button(true,23,.25,.63,.2,.2,false,"staycation"));
 
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
 
