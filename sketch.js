@@ -645,9 +645,9 @@ function populatemenus(){
 	//menus[1].add(new Disptext("",.5,.65,.2));
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
-	menus[1].add(new Disptext("most recent:",.5,.5,.3));
+	menus[1].add(new Disptext("highlights:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"montauk"));
+	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"adj"));
 	//menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
@@ -655,7 +655,8 @@ function populatemenus(){
 	menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"marv"));
 	
 
-	menus[32].add(new Vid(1,monurl,32));
+	menus[32].add(new Vid(1,"fG04xYxpzKI",32));
+		menus[32].add(new Disptext("An upcoming metafictional adventure game.",.2,.8,.3));
 	//menus[39].add(new Vid(1,pimurl,39));
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
@@ -858,13 +859,13 @@ function populatemenus(){
 	menus[26].add(new Vid(0,marvurl,26));
 	menus[30].add(new Vid(0,"1426352574",30));
 
-	menus[22].add(new Disptext("Sorry! This page often won't load on chrome. \n Please try another browser, or look elsewhere!",.5,.35,.4));
+	menus[22].add(new Disptext("Sorry! This page won't load on chrome. \n Please try another browser, \n or check out the rest of the site!",.5,.35,.3));
 	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
 	menus[23].add(new Vid(4,"http://hrfart.github.io/app",23));
 	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
 	menus[21].add(new Vid(0,"3372271177",21));
 	
-	menus[23].add(new Disptext("Sorry! This page often won't load on chrome. \n Please try another browser, or look elsewhere!",.5,.35,.4));
+	menus[23].add(new Disptext("Sorry! This page often won't load on chrome. \n Please try another browser, \n or check out the rest of the site!",.5,.35,.3));
 
 	//menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
 	//menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
