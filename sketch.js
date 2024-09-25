@@ -680,20 +680,21 @@ function populatemenus(){
 	var mmy=.11
 	//full time menu
 	menus[0].add(new Button(true,1,.125,mmy,mms,mms,false,"home"));
-	menus[0].add(new Button(true,2,.375,mmy,mms,mms,false,"animation"));
-	menus[0].add(new Button(true,3,.625,mmy,mms,mms,false,"interactive"));
-	menus[0].add(new Button(true,4,.875,mmy,mms,mms,false,"music"));
-	menus[0].add(new Button(true,38,.75,.92,.12,.12,false,"more"));
-	menus[0].add(new Button(true,5,.25,.92,.12,.12,false,"contact"));
-	menus[0].add(new Button(true,0,.5,.92,.12,.12,true,"mute"));
-	
+	menus[0].add(new Button(true,4,.375,mmy,mms,mms,false,"music"));
+	menus[0].add(new Button(true,2,.625,mmy,mms,mms,false,"animation"));
+	menus[0].add(new Button(true,3,.875,mmy,mms,mms,false,"interactive"));
+	menus[0].add(new Button(true,38,.875,.92,.mms,mms,false,"more"));
+	menus[0].add(new Button(true,5,.375,.92,.12,.12,false,"contact"));
+	menus[0].add(new Button(true,0,.625,.92,.12,.12,true,"mute"));
+	menus[38].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.92,mms,mms,false,"science"));
 	
 	var nsize=.2;
-	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.625,.4,nsize,nsize,false,"youtube"));
-	menus[38].add(new Button(false,"https://hrfep.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
+	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.675,.4,nsize,nsize,false,"youtube"));
+	menus[38].add(new Button(false,"https://open.spotify.com/artist/68vXoQCXrBp1gbESCOkLdo",.5,.4,nsize,nsize,false,"spotify"));
+	menus[38].add(new Button(false,"https://hrfep.bandcamp.com/",.325,.4,nsize,nsize,false,"bandcamp"));
 	//festivals button 1
 	//menus[38].add(new Button(true,6,.5,.65,nsize,nsize,false,"festivals"));
-	menus[38].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.7,.65,nsize,nsize,false,"science"));
+	menus[38].add(new Button(false,"https://www.wattpad.com/user/hrfisaok",.7,.65,nsize,nsize,false,"fiction"));
 	menus[38].add(new Button(true,22,.3,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
@@ -740,7 +741,7 @@ function populatemenus(){
 	else 		menus[3].add(new Button(true,24,.6,.38,.3,.3,false,"stardrawer"));
 
 	
-	menus[3].add(new Button(true,27,.75,.63,.2,.2,false,"schlub"));
+	menus[3].add(new Button(true,27,.5,.63,.2,.2,false,"schlub"));
 	menus[3].add(new Button(false,"recursive_songm.html",.75,.63,.2,.2,false,"recsong"));
 	menus[3].add(new Button(true,23,.25,.63,.2,.2,false,"staycation"));
 
