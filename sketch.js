@@ -683,10 +683,10 @@ function populatemenus(){
 	menus[0].add(new Button(true,4,.375,mmy,mms,mms,false,"music"));
 	menus[0].add(new Button(true,2,.625,mmy,mms,mms,false,"animation"));
 	menus[0].add(new Button(true,3,.875,mmy,mms,mms,false,"interactive"));
-	menus[0].add(new Button(true,38,.875,.92,mms,mms,false,"more"));
+	menus[0].add(new Button(true,38,.875,.9,.16,.16,false,"more"));
 	menus[0].add(new Button(true,5,.375,.92,.12,.12,false,"contact"));
 	menus[0].add(new Button(true,0,.625,.92,.12,.12,true,"mute"));
-	menus[0].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.92,mms,mms,false,"science"));
+	menus[0].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.9,.16,.16,false,"science"));
 	
 	var nsize=.2;
 	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.675,.4,nsize,nsize,false,"youtube"));
@@ -741,9 +741,9 @@ function populatemenus(){
 	else 		menus[3].add(new Button(true,24,.6,.38,.3,.3,false,"stardrawer"));
 
 	
-	menus[3].add(new Button(true,27,.5,.63,.2,.2,false,"schlub"));
-	menus[3].add(new Button(false,"recursive_songm.html",.75,.63,.2,.2,false,"recsong"));
-	menus[3].add(new Button(true,23,.25,.63,.2,.2,false,"staycation"));
+	menus[3].add(new Button(true,27,.5,.65,.2,.2,false,"schlub"));
+	menus[3].add(new Button(false,"recursive_songm.html",.75,.65,.2,.2,false,"recsong"));
+	menus[3].add(new Button(true,23,.25,.65,.2,.2,false,"staycation"));
 
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
 
@@ -876,7 +876,7 @@ function populatemenus(){
 	menus[53].add(new Vid(0,"4182708555",53));
 
 	menus[22].add(new Disptext("Sorry! This page won't load on chrome. \n Please try another browser, \n or check out the rest of the site!",.5,.35,.3));
-	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
+	menus[22].add(new Vid(4,"http://hrfart.github.io/home.html",22));
 	menus[23].add(new Vid(4,"http://hrfart.github.io/app",23));
 	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
 	// menus[21].add(new Vid(0,"3372271177",21));
