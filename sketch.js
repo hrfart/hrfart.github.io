@@ -686,7 +686,7 @@ function populatemenus(){
 	menus[0].add(new Button(true,38,.875,.92,mms,mms,false,"more"));
 	menus[0].add(new Button(true,5,.375,.92,.12,.12,false,"contact"));
 	menus[0].add(new Button(true,0,.625,.92,.12,.12,true,"mute"));
-	menus[38].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.92,mms,mms,false,"science"));
+	menus[0].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.92,mms,mms,false,"science"));
 	
 	var nsize=.2;
 	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.675,.4,nsize,nsize,false,"youtube"));
@@ -694,8 +694,8 @@ function populatemenus(){
 	menus[38].add(new Button(false,"https://hrfep.bandcamp.com/",.325,.4,nsize,nsize,false,"bandcamp"));
 	//festivals button 1
 	//menus[38].add(new Button(true,6,.5,.65,nsize,nsize,false,"festivals"));
-	menus[38].add(new Button(false,"https://www.wattpad.com/user/hrfisaok",.7,.65,nsize,nsize,false,"fiction"));
-	menus[38].add(new Button(true,22,.3,.65,nsize,nsize,false,"mathart"));
+	menus[38].add(new Button(false,"https://www.wattpad.com/user/hrfisaok",.58,.65,nsize,nsize,false,"fiction"));
+	menus[38].add(new Button(true,22,.42,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
 	var asizeb=.12;
