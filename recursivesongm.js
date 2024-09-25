@@ -182,7 +182,7 @@ sounds[j]=new p5.SinOsc(440);
   
   //deal with back button
 if(linkback==0){
-	linkback=createA("http://harryrubinfalcone.com/music.html","<img src='blank.png' width='"+w*.12+"' height='"+this.h*.18+"'>");
+	linkback=createA("http://harryrubinfalcone.com/interactive.html","<img src='blank.png' width='"+w*.12+"' height='"+this.h*.18+"'>");
 	linkback.position(w*.88,h*0);
 }else if(wold!=w || hold!=h){
 	linkback.remove();
