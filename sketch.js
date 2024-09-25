@@ -683,7 +683,7 @@ function populatemenus(){
 	menus[0].add(new Button(true,4,.375,mmy,mms,mms,false,"music"));
 	menus[0].add(new Button(true,2,.625,mmy,mms,mms,false,"animation"));
 	menus[0].add(new Button(true,3,.875,mmy,mms,mms,false,"interactive"));
-	menus[0].add(new Button(true,38,.875,.92,.mms,mms,false,"more"));
+	menus[0].add(new Button(true,38,.875,.92,mms,mms,false,"more"));
 	menus[0].add(new Button(true,5,.375,.92,.12,.12,false,"contact"));
 	menus[0].add(new Button(true,0,.625,.92,.12,.12,true,"mute"));
 	menus[38].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.92,mms,mms,false,"science"));
