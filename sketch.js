@@ -656,8 +656,8 @@ function populatemenus(){
 	
 
 	menus[32].add(new Vid(1,"fG04xYxpzKI",32));
-		menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
-				menus[32].add(new Disptext("Original art and music",.8,.76,.2));
+	menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
+	menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
 	//menus[39].add(new Vid(1,pimurl,39));
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
@@ -735,15 +735,23 @@ function populatemenus(){
 	menus[2].add(new Button(true,34,.75,.65,asize*1,asize*1,false,"mms"));
 
 	//interactive 
-	menus[3].add(new Button(false,"recursive_songm.html",.75,.4,.15,.15,false,"recsong"));
-	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
-	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
-	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
-	else 		menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
+		menus[3].add(new Button(true,54,.35,.4,.3,.3,false,"adj"));
+	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.65,.4,.3,.3,false,"stardrawer"));
+	else 		menus[3].add(new Button(true,24,.65,.4,.3,.3,false,"stardrawer"));
+
+	
+	menus[3].add(new Button(true,27,.75,.6,.2,.2,false,"schlub"));
+	menus[3].add(new Button(false,"recursive_songm.html",.75,.4,.2,.2,false,"recsong"));
+	menus[3].add(new Button(true,23,.25,.6,.2,.2,false,"staycation"));
+
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
+
+
 	//http://hrfart.github.io/
-	
-	
+	menus[54].add(new Vid(1,"fG04xYxpzKI",54));
+	menus[54].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
+	menus[54].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
+	menus[54].add(new Button(true,3,.5,.75,.1,.1,false,"back"));
 	
 	//schlub
 	menus[27].add(new Vid(1,"XY8F_tS6JKU",27));
@@ -778,7 +786,7 @@ function populatemenus(){
 	menus[4].add(new Button(true,42,.35,.4,mussize,mussize,false,"hrfep"));
 	menus[4].add(new Button(true,52,.55,.4,mussize,mussize,false,"also"));
 
-	menus[4].add(new Button(true,53,.78,.4,mussize*.75,mussize*.75,false,"solo"));
+	menus[4].add(new Button(true,53,.84,.4,mussize*.75,mussize*.75,false,"solo"));
 	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
