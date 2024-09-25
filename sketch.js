@@ -641,7 +641,7 @@ function populatemenus(){
 	for(var i=0;i<60;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
+	menus[1].add(new Disptext("harry rubin-falcone: music, digital art, AI",.5,.35,.4));
 	//menus[1].add(new Disptext("",.5,.65,.2));
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
@@ -779,7 +779,7 @@ function populatemenus(){
 	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
-	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition, animation",.5,.35,.2));
+	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition \n animation and interactive art \n AI and research",.5,.35,.2));
 	menus[5].add(new Button(false,"mailto:harryrubinfalcone@gmail.com",.5,.6,.25,.25,false,"contact2"));
 	
 	
