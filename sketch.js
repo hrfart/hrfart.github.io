@@ -878,7 +878,7 @@ function populatemenus(){
 	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
 	menus[23].add(new Vid(4,"http://hrfart.github.io/app",23));
 	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
-	menus[21].add(new Vid(0,"3372271177",21));
+	// menus[21].add(new Vid(0,"3372271177",21));
 	
 	menus[23].add(new Disptext("Sorry! This page often won't load on chrome. \n Please try another browser, \n or check out the rest of the site!",.5,.35,.3));
 
