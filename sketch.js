@@ -686,8 +686,13 @@ function populatemenus(){
 	menus[0].add(new Button(true,38,.875,.9,.16,.16,false,"more"));
 	menus[0].add(new Button(true,5,.375,.92,.12,.12,false,"contact"));
 	menus[0].add(new Button(true,0,.625,.92,.12,.12,true,"mute"));
-	menus[0].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.125,.9,.16,.16,false,"science"));
+	menus[0].add(new Button(true,55,.125,.9,.16,.16,false,"ai"));
+
+	//AI section
+	menus[55].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.5,.4,.2,.2,false,"papers"));
 	
+	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University",.5,.6,.2));
+
 	var nsize=.2;
 	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.675,.4,nsize,nsize,false,"youtube"));
 	menus[38].add(new Button(false,"https://open.spotify.com/artist/68vXoQCXrBp1gbESCOkLdo",.5,.4,nsize,nsize,false,"spotify"));
