@@ -380,7 +380,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.transs=0;
 		//this.transs=0;
 		if(isMobileDevice()&&!this.internal){
-			if(trans==0&&menu!=23&menu!=24&&menu!=25){
+			if(trans==0&&menu!=23&menu!=24&&menu!=25&&menu!=55){
 				if(!this.linkup || justremoved){
 						if(this.picname=="stardrawer"||this.picname =="recsong")this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>");
 						else this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>","_"+this.link);
@@ -693,7 +693,7 @@ function populatemenus(){
 	menus[55].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.3,.4,.2,.2,false,"papers"));
 	//add crowd source here
 	menus[55].add(new Button(false,"https://harryrubinfalcone.com/TBD",.7,.4,.13,.13,false,"crowd"));
-	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University",.5,.6,.2));
+	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University.",.5,.6,.2));
 
 	menus[56].add(new Vid(1,"mWzxS828-x8",56));
 	menus[56].add(new Button(true,55,.5,.75,.1,.1,false,"back"));
