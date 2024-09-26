@@ -689,9 +689,10 @@ function populatemenus(){
 	menus[0].add(new Button(true,55,.125,.9,.16,.16,false,"ai"));
 
 	//AI section
-	menus[55].add(new Button(true,56,.5,.4,.13,.13,false,"crowd"));
+	menus[55].add(new Button(true,56,.5,.4,.13,.13,false,"collective"));
 	menus[55].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.3,.4,.2,.2,false,"papers"));
-	
+	//add crowd source here
+	menus[55].add(new Button(false,"https://harryrubinfalcone.com/TBD",.7,.4,.13,.13,false,"crowd"));
 	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University",.5,.6,.2));
 
 	menus[56].add(new Vid(1,"mWzxS828-x8",56));
