@@ -165,7 +165,7 @@ function draw(){
 	
 	//up to 6 are standards, 33-35 are animation subcategories, 38 is more page
 	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38 || menu==55);
-	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38 ||| prevmenu==55);
+	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38 || prevmenu==55);
 	
 	//22 and 23 are math art and staycation which should be like videos by not silent.
 	if(!normmenu)silentm=true;
