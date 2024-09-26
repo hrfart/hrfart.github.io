@@ -164,8 +164,8 @@ function draw(){
 	silentpm=false;
 	
 	//up to 6 are standards, 33-35 are animation subcategories, 38 is more page
-	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38);
-	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38);
+	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38 || menu==55);
+	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38 ||| prevmenu==55);
 	
 	//22 and 23 are math art and staycation which should be like videos by not silent.
 	if(!normmenu)silentm=true;
@@ -380,7 +380,7 @@ function Button(inter,i,xx,yy,wii,hii,soundt,picc){
 		this.transs=0;
 		//this.transs=0;
 		if(isMobileDevice()&&!this.internal){
-			if(trans==0&&menu!=23&menu!=24&&menu!=25&&menu!=55){
+			if(trans==0&&menu!=23&menu!=24&&menu!=25){
 				if(!this.linkup || justremoved){
 						if(this.picname=="stardrawer"||this.picname =="recsong")this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>");
 						else this.kool= createA(this.link,"<img src='blank.png' width='"+this.wi*w*1.3+"' height='"+this.hi*h*1.3+"'>","_"+this.link);
