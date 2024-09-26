@@ -164,8 +164,8 @@ function draw(){
 	silentpm=false;
 	
 	//up to 6 are standards, 33-35 are animation subcategories, 38 is more page
-	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38);
-	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38);
+	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38 || menu==55);
+	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38 || prevmenu==55);
 	
 	//22 and 23 are math art and staycation which should be like videos by not silent.
 	if(!normmenu)silentm=true;
@@ -641,13 +641,13 @@ function populatemenus(){
 	for(var i=0;i<60;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone: music and animation",.5,.35,.4));
+	menus[1].add(new Disptext("harry rubin-falcone: music, digital art, AI",.5,.35,.4));
 	//menus[1].add(new Disptext("",.5,.65,.2));
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
-	menus[1].add(new Disptext("most recent:",.5,.5,.3));
+	menus[1].add(new Disptext("highlights:",.5,.5,.3));
 	
-	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"montauk"));
+	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"adj"));
 	//menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
@@ -655,7 +655,9 @@ function populatemenus(){
 	menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"marv"));
 	
 
-	menus[32].add(new Vid(1,monurl,32));
+	menus[32].add(new Vid(1,"fG04xYxpzKI",32));
+	menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
+	menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
 	//menus[39].add(new Vid(1,pimurl,39));
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
@@ -678,21 +680,33 @@ function populatemenus(){
 	var mmy=.11
 	//full time menu
 	menus[0].add(new Button(true,1,.125,mmy,mms,mms,false,"home"));
-	menus[0].add(new Button(true,2,.375,mmy,mms,mms,false,"animation"));
-	menus[0].add(new Button(true,3,.625,mmy,mms,mms,false,"interactive"));
-	menus[0].add(new Button(true,4,.875,mmy,mms,mms,false,"music"));
-	menus[0].add(new Button(true,38,.75,.92,.12,.12,false,"more"));
-	menus[0].add(new Button(true,5,.25,.92,.12,.12,false,"contact"));
-	menus[0].add(new Button(true,0,.5,.92,.12,.12,true,"mute"));
-	
-	
+	menus[0].add(new Button(true,4,.375,mmy,mms,mms,false,"music"));
+	menus[0].add(new Button(true,2,.625,mmy,mms,mms,false,"animation"));
+	menus[0].add(new Button(true,3,.875,mmy,mms,mms,false,"interactive"));
+	menus[0].add(new Button(true,38,.875,.9,.16,.16,false,"more"));
+	menus[0].add(new Button(true,5,.375,.92,.12,.12,false,"contact"));
+	menus[0].add(new Button(true,0,.625,.92,.12,.12,true,"mute"));
+	menus[0].add(new Button(true,55,.125,.9,.16,.16,false,"ai"));
+
+	//AI section
+	menus[55].add(new Button(true,56,.5,.4,.13,.13,false,"collective"));
+	menus[55].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.3,.4,.2,.2,false,"papers"));
+	//add crowd source here
+	menus[55].add(new Button(false,"https://harryrubinfalcone.com/TBD",.7,.4,.13,.13,false,"crowd"));
+	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University.",.5,.6,.2));
+
+	menus[56].add(new Vid(1,"mWzxS828-x8",56));
+	menus[56].add(new Button(true,55,.5,.75,.1,.1,false,"back"));
+
+
 	var nsize=.2;
-	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.625,.4,nsize,nsize,false,"youtube"));
-	menus[38].add(new Button(false,"https://hrfep.bandcamp.com/",.375,.4,nsize,nsize,false,"bandcamp"));
+	menus[38].add(new Button(false,"https://www.youtube.com/channel/UCedqcMJnznhrbnWOLWwdUbA",.675,.4,nsize,nsize,false,"youtube"));
+	menus[38].add(new Button(false,"https://open.spotify.com/artist/68vXoQCXrBp1gbESCOkLdo",.5,.4,nsize,nsize,false,"spotify"));
+	menus[38].add(new Button(false,"https://hrfep.bandcamp.com/",.325,.4,nsize,nsize,false,"bandcamp"));
 	//festivals button 1
 	//menus[38].add(new Button(true,6,.5,.65,nsize,nsize,false,"festivals"));
-	menus[38].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.7,.65,nsize,nsize,false,"science"));
-	menus[38].add(new Button(true,22,.3,.65,nsize,nsize,false,"mathart"));
+	menus[38].add(new Button(false,"https://www.wattpad.com/user/hrfisaok",.58,.65,nsize,nsize,false,"fiction"));
+	menus[38].add(new Button(true,22,.42,.65,nsize,nsize,false,"mathart"));
 	
 	var asize=.18;
 	var asizeb=.12;
@@ -733,14 +747,23 @@ function populatemenus(){
 	menus[2].add(new Button(true,34,.75,.65,asize*1,asize*1,false,"mms"));
 
 	//interactive 
-	menus[3].add(new Button(true,27,.75,.6,.3,.3,false,"schlub"));
-	menus[3].add(new Button(true,23,.25,.6,.3,.3,false,"staycation"));
-	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.5,.4,.3,.3,false,"stardrawer"));
-	else 		menus[3].add(new Button(true,24,.5,.4,.3,.3,false,"stardrawer"));
+		menus[3].add(new Button(true,54,.4,.38,.3,.3,false,"adj"));
+	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.6,.38,.3,.3,false,"stardrawer"));
+	else 		menus[3].add(new Button(true,24,.6,.38,.3,.3,false,"stardrawer"));
+
+	
+	menus[3].add(new Button(true,27,.5,.65,.2,.2,false,"schlub"));
+	menus[3].add(new Button(false,"recursive_songm.html",.75,.65,.2,.2,false,"recsong"));
+	menus[3].add(new Button(true,23,.25,.65,.2,.2,false,"staycation"));
+
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
+
+
 	//http://hrfart.github.io/
-	
-	
+	menus[54].add(new Vid(1,"fG04xYxpzKI",54));
+	menus[54].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
+	menus[54].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
+	menus[54].add(new Button(true,3,.5,.75,.1,.1,false,"back"));
 	
 	//schlub
 	menus[27].add(new Vid(1,"XY8F_tS6JKU",27));
@@ -764,7 +787,7 @@ function populatemenus(){
 	menus[4].add(new Button(true,30,.25,.68,mussize,mussize,false,"hawk2"));
 	menus[4].add(new Button(true,20,.65,.68,mussize,mussize,false,"dancersst"));
 	menus[4].add(new Button(true,19,.45,.68,mussize,mussize,false,"mmsst"));
-	menus[4].add(new Button(true,21,.85,.68,mussize,mussize,false,"schlubst"));
+	menus[4].add(new Button(true,21,.85,.68,mussize,mussize,false,"adjost"));
 	
 
 	//menus[4].add(new Button(true,1,.4,.55,mussize,mussize,true,"tric"));
@@ -775,16 +798,20 @@ function populatemenus(){
 	menus[4].add(new Button(true,42,.35,.4,mussize,mussize,false,"hrfep"));
 	menus[4].add(new Button(true,52,.55,.4,mussize,mussize,false,"also"));
 
-	menus[4].add(new Button(false,"recursive_songm.html",.75,.4,mussize,mussize,false,"recsong"));
+	menus[4].add(new Button(true,53,.84,.4,mussize*.75,mussize*.75,false,"solo"));
 	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
-	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition, animation",.5,.35,.2));
+	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition \n animation and interactive art \n AI and research",.5,.35,.2));
 	menus[5].add(new Button(false,"mailto:harryrubinfalcone@gmail.com",.5,.6,.25,.25,false,"contact2"));
 	
 	
 	var fl2y=.72;
 	
+
+	
+
+
 	//festivals
 // 	var hfs=.15;
 // 	menus[6].add(new Disptext("my mother and the hawk",.5,.25,.3));
@@ -854,15 +881,21 @@ function populatemenus(){
 	//albums
 	menus[19].add(new Vid(0,"1696192640",19));
 	menus[20].add(new Vid(0,"387913001",20));
-	menus[21].add(new Vid(0,"3372271177",21));
+	menus[21].add(new Vid(0,"2826046610",21));
 	menus[26].add(new Vid(0,marvurl,26));
 	menus[30].add(new Vid(0,"1426352574",30));
+	menus[53].add(new Vid(0,"4182708555",53));
+
 
 	menus[22].add(new Vid(3,"http://hrfart.github.io/home.html",22));
+	menus[22].add(new Disptext("Sorry! This page won't load on chrome. \n Please try another browser, \n or check out the rest of the site!",.5,.35,.3));
+
 	menus[23].add(new Vid(4,"http://hrfart.github.io/app",23));
 	menus[24].add(new Vid(4,"http://hrfart.github.io/star_drawer",24));
-	menus[21].add(new Vid(0,"3372271177",21));
+	// menus[21].add(new Vid(0,"3372271177",21));
 	
+	menus[23].add(new Disptext("Sorry! This page often won't load on chrome. \n Please try another browser, \n or check out the rest of the site!",.5,.35,.3));
+
 	//menus[23].add(new Button(false,"http://hrfart.github.io/app/index.html",.97,.35,.1,.1,false,"newtab"));
 	//menus[24].add(new Button(false,"http://hrfart.github.io/star_drawer/index.html",.97,.35,.1,.1,false,"newtab"));
 	menus[23].add(new Button(true,3,.97,.65,.1,.1,false,"back2"));
@@ -881,8 +914,10 @@ function populatemenus(){
 	menus[42].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[52].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[30].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
+	menus[53].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[31].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[49].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
+
 	
 	
 	//toid tuesday
