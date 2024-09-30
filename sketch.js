@@ -641,11 +641,11 @@ function populatemenus(){
 	for(var i=0;i<70;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone: music, digital art, AI",.5,.35,.4));
+	menus[1].add(new Disptext("harry rubin-falcone: music, digital art, AI",.5,.35,.45));
 	//menus[1].add(new Disptext("",.5,.65,.2));
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
-	menus[1].add(new Disptext("highlights:",.5,.5,.3));
+	menus[1].add(new Disptext("highlights:",.5,.5,.4));
 	
 	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"adj"));
 	//menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
@@ -656,8 +656,8 @@ function populatemenus(){
 	
 
 	menus[32].add(new Vid(1,"fG04xYxpzKI",32));
-	menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
-	menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
+	menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.3));
+	menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.3));
 	//menus[39].add(new Vid(1,pimurl,39));
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
@@ -692,8 +692,8 @@ function populatemenus(){
 	menus[55].add(new Button(true,56,.5,.4,.13,.13,false,"collective"));
 	menus[55].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.3,.4,.2,.2,false,"papers"));
 	//add crowd source here
-	menus[55].add(new Button(false,"https://harryrubinfalcone.com/TBD",.7,.4,.13,.13,false,"crowd"));
-	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University.",.5,.6,.2));
+	menus[55].add(new Button(false,"https://crowdloop.org",.7,.4,.13,.13,false,"crowd"));
+	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University.",.5,.6,.3));
 
 	menus[56].add(new Vid(1,"mWzxS828-x8",56));
 	menus[56].add(new Button(true,55,.5,.75,.1,.1,false,"back"));
@@ -777,32 +777,36 @@ function populatemenus(){
 	//music
 	//menus[4].add(new Disptext("harry rubin-falcone is a new york city-based upright and electric bass player, primarily interested",.5,.27,.18));
 	//menus[4].add(new Disptext("in jazz, funk, fusion, classical and new music. he also plays guitar, sings, and composes. ",.5,.31,.18));
-	menus[4].add(new Disptext("soundtrack",.1,.66,.2));
-	menus[4].add(new Disptext("compositions",.1,.7,.2));
+	// menus[4].add(new Disptext("soundtrack",.1,.66,.2));
+	// menus[4].add(new Disptext("compositions",.1,.7,.2));
 //	menus[4].add(new Disptext("jazz",.2,.55,.2));
 //	menus[4].add(new Disptext("math \"music\"",.1,.72,.2)
 
 
-	var mussize=.15
-	menus[4].add(new Button(true,30,.25,.68,mussize,mussize,false,"hawk2"));
-	menus[4].add(new Button(true,20,.65,.68,mussize,mussize,false,"dancersst"));
-	menus[4].add(new Button(true,19,.45,.68,mussize,mussize,false,"mmsst"));
-	menus[4].add(new Button(true,21,.85,.68,mussize,mussize,false,"adjost"));
+	var mussize=.2
 	
 
 	//menus[4].add(new Button(true,1,.4,.55,mussize,mussize,true,"tric"));
 	//menus[4].add(new Button(true,2,.6,.55,mussize,mussize,true,"aut"));
 	//menus[4].add(new Button(true,3,.8,.55,mussize,mussize,true,"mys"));
 	
-	menus[4].add(new Button(true,26,.15,.4,mussize,mussize,false,"marv"));
-	menus[4].add(new Button(true,42,.35,.4,mussize,mussize,false,"hrfep"));
-	menus[4].add(new Button(true,52,.55,.4,mussize,mussize,false,"also"));
+	menus[4].add(new Button(true,26,.3,.4,mussize,mussize,false,"marv"));
+	menus[4].add(new Button(true,42,.5,.4,mussize,mussize,false,"hrfep"));
+	menus[4].add(new Button(true,52,.7,.4,mussize,mussize,false,"also"));
+	menus[4].add(new Button(true,57,.5,.65,mussize*.8,mussize*.8,false,"soundtracks"));
 
-	menus[4].add(new Button(true,53,.84,.4,mussize*.75,mussize*.75,false,"solo"));
-	menus[4].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.95,.4,mussize*.5,mussize*.5,false,"tbc"));
+	mussize=.17;
+	
+	menus[57].add(new Button(true,30,.25,.4,mussize,mussize,false,"hawk2"));
+	menus[57].add(new Button(true,20,.65,.4,mussize,mussize,false,"dancersst"));
+	menus[57].add(new Button(true,19,.45,.4,mussize,mussize,false,"mmsst"));
+	menus[57].add(new Button(true,21,.85,.4,mussize,mussize,false,"adjost"));
+	
+	menus[57].add(new Button(true,53,.3,.65,mussize*.75,mussize*.75,false,"solo"));
+	menus[57].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.7,.65,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
-	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition \n animation and interactive art \n AI and research",.5,.35,.2));
+	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition \n animation and interactive art \n AI and research",.5,.35,.25));
 	menus[5].add(new Button(false,"mailto:harryrubinfalcone@gmail.com",.5,.6,.25,.25,false,"contact2"));
 	
 	
@@ -908,13 +912,14 @@ function populatemenus(){
 	//menus[22].add(new Vid(false,"1696192640"));
 	//add back buttons
 	//for(var i=7;i<19;i++)menus[i].add(new Button(true,2,.5,.75,.1,.1,false,"back"));
-	for(var i=19;i<22;i++)menus[i].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
+	for(var i=19;i<22;i++)menus[i].add(new Button(true,57,.5,.75,.1,.1,false,"back"));
 	
 	menus[26].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[42].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[52].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
-	menus[30].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
-	menus[53].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
+	menus[30].add(new Button(true,57,.5,.75,.1,.1,false,"back"));
+	menus[53].add(new Button(true,57,.5,.75,.1,.1,false,"back"));
+	menus[57].add(new Button(true,4,.5,.75,.1,.1,false,"back"));
 	menus[31].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 	menus[49].add(new Button(true,33,.5,.75,.1,.1,false,"back"));
 
