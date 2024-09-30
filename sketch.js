@@ -164,8 +164,8 @@ function draw(){
 	silentpm=false;
 	
 	//up to 6 are standards, 33-35 are animation subcategories, 38 is more page
-	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38 || menu==55);
-	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38 || prevmenu==55);
+	normmenu=(menu<=6  || menu==33   || menu==34   || menu==35 || menu==38 || menu==55|| menu==57);
+	normprev=(prevmenu<=6  || prevmenu==33   || prevmenu==34   || prevmenu==35 || prevmenu==38 || prevmenu==55 || prevmenu==57);
 	
 	//22 and 23 are math art and staycation which should be like videos by not silent.
 	if(!normmenu)silentm=true;
@@ -638,7 +638,7 @@ function isMobileDevice() {
 
 
 function populatemenus(){
-	for(var i=0;i<60;i++) menus[i]=new Menu();
+	for(var i=0;i<70;i++) menus[i]=new Menu();
 	
 	//main menu
 	menus[1].add(new Disptext("harry rubin-falcone: music, digital art, AI",.5,.35,.4));
@@ -747,14 +747,14 @@ function populatemenus(){
 	menus[2].add(new Button(true,34,.75,.65,asize*1,asize*1,false,"mms"));
 
 	//interactive 
-		menus[3].add(new Button(true,54,.4,.38,.3,.3,false,"adj"));
-	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.6,.38,.3,.3,false,"stardrawer"));
-	else 		menus[3].add(new Button(true,24,.6,.38,.3,.3,false,"stardrawer"));
+		menus[3].add(new Button(true,54,.4,.38,.23,.23,false,"adj"));
+	if(isMobileDevice()||true)		menus[3].add(new Button(false,"star_drawer/indexm.html",.6,.38,.23,.23,false,"stardrawer"));
+	else 		menus[3].add(new Button(true,24,.6,.38,.23,.23,false,"stardrawer"));
 
 	
-	menus[3].add(new Button(true,27,.5,.65,.2,.2,false,"schlub"));
-	menus[3].add(new Button(false,"recursive_songm.html",.75,.65,.2,.2,false,"recsong"));
-	menus[3].add(new Button(true,23,.25,.65,.2,.2,false,"staycation"));
+	menus[3].add(new Button(true,27,.5,.65,.15,.15,false,"schlub"));
+	menus[3].add(new Button(false,"recursive_songm.html",.75,.65,.15,.15,false,"recsong"));
+	menus[3].add(new Button(true,23,.25,.65,.15,.15,false,"staycation"));
 
 	menus[3].add(new Button(true,48,.5,.8,.05,.05,false,"tt_b"));
 
