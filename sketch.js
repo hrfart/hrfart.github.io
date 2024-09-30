@@ -797,16 +797,16 @@ function populatemenus(){
 
 	mussize=.17;
 	
-	menus[57].add(new Button(true,30,.25,.4,mussize,mussize,false,"hawk2"));
-	menus[57].add(new Button(true,20,.65,.4,mussize,mussize,false,"dancersst"));
-	menus[57].add(new Button(true,19,.45,.4,mussize,mussize,false,"mmsst"));
-	menus[57].add(new Button(true,21,.85,.4,mussize,mussize,false,"adjost"));
+	menus[57].add(new Button(true,30,.2,.4,mussize,mussize,false,"hawk2"));
+	menus[57].add(new Button(true,20,.6,.4,mussize,mussize,false,"dancersst"));
+	menus[57].add(new Button(true,19,.4,.4,mussize,mussize,false,"mmsst"));
+	menus[57].add(new Button(true,21,.8,.4,mussize,mussize,false,"adjost"));
 	
-	menus[57].add(new Button(true,53,.3,.65,mussize*.75,mussize*.75,false,"solo"));
-	menus[57].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.7,.65,mussize*.5,mussize*.5,false,"tbc"));
+	menus[57].add(new Button(true,53,.35,.65,mussize*.75,mussize*.75,false,"solo"));
+	menus[57].add(new Button(false,"https://open.spotify.com/album/36DTTcJgcMrD7gNuCff03P",.65,.65,mussize*.5,mussize*.5,false,"tbc"));
 	
 	//contact
-	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition \n animation and interactive art \n AI and research",.5,.35,.25));
+	menus[5].add(new Disptext("harry rubin-falcone: bass, guitar, composition \n animation and interactive art \n AI and research",.5,.35,.3));
 	menus[5].add(new Button(false,"mailto:harryrubinfalcone@gmail.com",.5,.6,.25,.25,false,"contact2"));
 	
 	
