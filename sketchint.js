@@ -641,28 +641,31 @@ function populatemenus(){
 	for(var i=0;i<70;i++) menus[i]=new Menu();
 	
 	//main menu
-	menus[1].add(new Disptext("harry rubin-falcone: music, digital art, AI",.5,.35,.45));
+	menus[1].add(new Disptext("harry rubin-falcone: \n music, digital art, AI",.5,.35,.45));
 	//menus[1].add(new Disptext("",.5,.65,.2));
 	//menus[1].add(new Disptext("a mother and daughter discuss life on a terrace overlooking the city.",.5,.65,.2));
 	//menus[1].add(new Disptext("a moving painting with fractal and hand drawn art, coming 2018",.5,.7,.2));
-	menus[1].add(new Disptext("highlights:",.5,.5,.4));
+	// menus[1].add(new Disptext("highlights:",.5,.5,.4));
 	
 	menus[1].add(new Button(true,32,.5,.62,.2,.2,false,"adj"));
 	//menus[1].add(new Button(true,39,.5,.62,.2,.2,false,"pimba"));
 	//menus[1].add(new Button(true,40,.5,.62,.2,.2,false,"hoodoos"));
 	//menus[1].add(new Button(true,41,.7,.62,.2,.2,false,"hrfep"));
-	menus[1].add(new Button(true,44,.7,.62,.2,.2,false,"sugar"));
-	menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"marv"));
+	menus[1].add(new Button(true,44,.3,.62,.2,.2,false,"sugar"));
+	menus[1].add(new Button(false,"http://crowdloop.org",.7,.62,.2,.2,false,"crowd"));
+	// menus[1].add(new Button(true,51,.3,.62,.2,.2,false,"marv"));
 	
 
 	menus[32].add(new Vid(1,"fG04xYxpzKI",32));
-	menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.3));
-	menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.3));
+	menus[32].add(new Button(false,"https://pwntwn.itch.io/the-adjacency",.25,.8,.15,.15,false,"download"));
+	// menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.3));
+	// menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.3));
+	
 	//menus[39].add(new Vid(1,pimurl,39));
 	//menus[40].add(new Vid(1,hoourl,40));
 	//menus[41].add(new Vid(0,hrfurl,41));
 	menus[42].add(new Vid(0,hrfurl,42));
-	menus[51].add(new Vid(0,marvurl,51));
+	// menus[51].add(new Vid(0,marvurl,51));
 	menus[52].add(new Vid(0,alsourl,52));
 	menus[43].add(new Vid(1,"WEh_utcEjYU",43));
 	menus[44].add(new Vid(1,"WEh_utcEjYU",44));
@@ -672,7 +675,7 @@ function populatemenus(){
 	//menus[40].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	//menus[41].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	menus[44].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
-	menus[51].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
+	// menus[51].add(new Button(true,1,.5,.75,.1,.1,false,"back"));
 	
 
 	
@@ -692,8 +695,8 @@ function populatemenus(){
 	menus[55].add(new Button(true,56,.5,.4,.13,.13,false,"collective"));
 	menus[55].add(new Button(false,"https://scholar.google.com/citations?user=6iljBF4AAAAJ&hl=en",.3,.4,.2,.2,false,"papers"));
 	//add crowd source here
-	menus[55].add(new Button(false,"https://crowdloop.org",.7,.4,.13,.13,false,"crowd"));
-	menus[55].add(new Disptext("I’m interested in using LLMs to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis for psychiatry research at Columbia University.",.5,.6,.3));
+	menus[55].add(new Button(false,"http://crowdloop.org",.7,.4,.13,.13,false,"crowd"));
+	menus[55].add(new Disptext("I’m interested in using AI to promote collaborative intelligence and tackle \n societal challenges. I hold a PhD from the University of Michigan, where I \n developed machine learning solutions for time-series forecasting, and previously \n worked in brain image analysis at Columbia University.",.5,.6,.3));
 
 	menus[56].add(new Vid(1,"mWzxS828-x8",56));
 	menus[56].add(new Button(true,55,.5,.75,.1,.1,false,"back"));
@@ -761,8 +764,9 @@ function populatemenus(){
 
 	//http://hrfart.github.io/
 	menus[54].add(new Vid(1,"fG04xYxpzKI",54));
-	menus[54].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
-	menus[54].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
+	menus[54].add(new Button(false,"https://pwntwn.itch.io/the-adjacency",.25,.8,.15,.15,false,"download"));
+	// menus[54].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
+	// menus[54].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
 	menus[54].add(new Button(true,3,.5,.75,.1,.1,false,"back"));
 	
 	//schlub
