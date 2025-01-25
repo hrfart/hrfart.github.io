@@ -657,7 +657,7 @@ function populatemenus(){
 	
 
 	menus[32].add(new Vid(1,"fG04xYxpzKI",32));
-	menus[32].add(new Button(false,"https://pwntwn.itch.io/the-adjacency",.2,.8,.15,.15,false,"download"));
+	menus[32].add(new Button(false,"https://pwntwn.itch.io/the-adjacency",.25,.8,.15,.15,false,"download"));
 	// menus[32].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.3));
 	// menus[32].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.3));
 	
@@ -764,7 +764,7 @@ function populatemenus(){
 
 	//http://hrfart.github.io/
 	menus[54].add(new Vid(1,"fG04xYxpzKI",54));
-	menus[54].add(new Button(false,"https://pwntwn.itch.io/the-adjacency",.2,.8,.15,.15,false,"download"));
+	menus[54].add(new Button(false,"https://pwntwn.itch.io/the-adjacency",.25,.8,.15,.15,false,"download"));
 	// menus[54].add(new Disptext("An upcoming metafictional \n adventure game.",.2,.76,.2));
 	// menus[54].add(new Disptext("Original art and music. \n Coming... eventually!",.8,.76,.2));
 	menus[54].add(new Button(true,3,.5,.75,.1,.1,false,"back"));
